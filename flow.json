@@ -1,0 +1,88 @@
+{
+  "nome": "promoavatar",
+  "prefixo": "A",
+  "versao_def": 1,
+  "alvos": {
+    "pessoa-comum": {
+      "canal": "lives21",
+      "gatilho": "Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples."
+    },
+    "jovens": {
+      "canal": "lives22",
+      "gatilho": "Você pode começar uma profissão que ainda está nascendo."
+    },
+    "profissionais": {
+      "canal": "lives23",
+      "gatilho": "Não abandone sua profissão. Aprenda a ampliá-la com IA."
+    },
+    "mulheres": {
+      "canal": "lives24",
+      "gatilho": "Use a IA para conquistar autonomia, produtividade e novas oportunidades."
+    },
+    "empreendedores": {
+      "canal": "lives25",
+      "gatilho": "Transforme IA em redução de custos, vendas e novos negócios."
+    },
+    "tecnicos": {
+      "canal": "lives26",
+      "gatilho": "Pare de apenas testar ferramentas. Aprenda a construir sistemas e agentes."
+    },
+    "40mais": {
+      "canal": "lives27",
+      "gatilho": "Sua experiência vale mais quando é multiplicada pela IA."
+    },
+    "60mais": {
+      "canal": "lives28",
+      "gatilho": "A IA pode transformar sua experiência de vida em conhecimento, renda e propósito."
+    },
+    "educadores": {
+      "canal": "lives29",
+      "gatilho": "Você não vai ser substituído pela IA — mas pode ser o professor que ensina com ela."
+    },
+    "criadores": {
+      "canal": "lives30",
+      "gatilho": "Pare de pagar ferramenta cara. Monte sua própria fábrica de conteúdo com IA."
+    },
+    "recolocacao": {
+      "canal": "lives31",
+      "gatilho": "Perdeu o emprego ou quer mudar de área? A IA pode ser o atalho do seu recomeço."
+    },
+    "familia": {
+      "canal": "lives32",
+      "gatilho": "As formações de hoje não preparam seu filho para o mundo que vem — você pode formá-lo para o próximo momento da IA."
+    }
+  },
+  "fases": [
+    {
+      "id": "texto",
+      "escopo": "fluxo",
+      "fila": "texto",
+      "kind": "agent",
+      "tarefa": "fluxo-agente",
+      "prompt": "prompts/fase1-texto.md",
+      "max_tentativas": 2,
+      "pausa_apos": true
+    },
+    {
+      "id": "baixar",
+      "escopo": "alvo",
+      "fila": "io",
+      "kind": "function",
+      "tarefa": "heygen.baixar",
+      "max_tentativas": 3,
+      "espera": {
+        "intervalo": 120,
+        "timeout": 5400
+      }
+    },
+    {
+      "id": "reel",
+      "escopo": "alvo",
+      "fila": "render",
+      "kind": "agent",
+      "tarefa": "reel",
+      "max_tentativas": 2,
+      "entrega": "capa impacto, público {canal}: headline-choque baseada no gatilho \"{gatilho}\", use as SOBREPOSIÇÕES do texto da fase 1 quando disponíveis, legenda palavra-a-palavra, CTA fixo Saiba mais no inema.club"
+    }
+  ]
+}

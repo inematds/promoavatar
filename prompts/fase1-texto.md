@@ -62,7 +62,22 @@ branco.
 use urgência que o assunto sustente (uma data real, uma condição real). Sem
 isso, o fecho é o CTA, sem pressão fabricada.
 
-**11. Nome que você não entende, você NÃO usa.** Se o assunto trouxer um nome
+**11. As SOBREPOSIÇÕES são o roteiro VISUAL do reel, e seguem os quatro
+gatilhos.** Não são decoração nem resumo da fala. Quem monta o vídeo (fase 3) lê
+esta seção, então ela precisa entregar, nesta ordem e nomeada assim:
+
+- **ATENÇÃO (0–2s)** — a headline-choque que aparece na tela junto do gancho
+  falado. Curta o bastante para ser lida de relance. Se precisa de duas leituras,
+  perdeu.
+- **RETENÇÃO (miolo)** — o que segura até o fim: uma lacuna de curiosidade
+  aberta cedo e fechada depois ("o terceiro é o que ninguém faz"), uma
+  contagem, uma virada. Algo que dê motivo para NÃO deslizar o dedo.
+- **ENGAJAMENTO** — o convite a agir dentro do vídeo: uma pergunta direta para
+  responder nos comentários, um "salva isto", um "marca alguém que precisa".
+  Escolha UM, o que fizer sentido para este público.
+- **CTA (fecho)** — a ordem final, curta e imperativa, junto do CTA falado.
+
+**12. Nome que você não entende, você NÃO usa.** Se o assunto trouxer um nome
 próprio cujo papel não está explicado (marca, plataforma, pessoa), não o cite
 como se o público soubesse o que é. Ou o assunto explica, ou a frase sai.
 

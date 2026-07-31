@@ -82,3 +82,28 @@ Enquanto as duas não forem respondidas, o roteiro perde duas alavancas: a prova
 social (quem é a Tiza) e a urgência real (a data). A urgência fabricada
 ("garanta sua vaga") está proibida no prompt justamente porque não há vaga
 limitada que a sustente.
+
+---
+
+## 5. Os quatro gatilhos, do texto ao vídeo (2026-07-31)
+
+O gancho não podia morrer no roteiro: quem retém é o VÍDEO. Os quatro momentos
+agora estão amarrados nos dois lugares onde são decididos:
+
+| gatilho | onde | quem executa |
+|---|---|---|
+| ATENÇÃO (0–2s) | 1ª frase da FALA + headline na tela | fase 1 escreve, fase 3 monta |
+| RETENÇÃO (miolo) | lacuna de curiosidade + imagem trocando por segmento | fase 1 abre, fase 3 sustenta |
+| ENGAJAMENTO | convite a agir na tela (comentar / salvar / marcar) | fase 1 escolhe, fase 3 posiciona |
+| CTA (fecho) | ordem imperativa, falada e na tela | fase 1 escreve, fase 3 fixa |
+
+Implementado em `prompts/fase1-texto.md` (regra 11: as SOBREPOSIÇÕES viram o
+roteiro VISUAL, nomeadas com os quatro) e no `entrega` da fase `reel` no
+`flow.json`, que manda CRIAR o que faltar em vez de sair sem.
+
+**Cuidado ao mexer:** o `flow.json` é CONGELADO na criação do fluxo. Os fluxos
+que já existem seguem com a instrução antiga; só os novos pegam esta.
+
+**Ainda aberto:** o CTA como clipe pronto (item 2 acima). Se ele virar clipe, o
+quarto gatilho sai do caminho do LLM e do render — passa a ser concat de
+ffmpeg, sempre idêntico.

@@ -17,7 +17,9 @@ no registry do bot mais um repo como este, sem uma linha de TypeScript.
 | `prompts/fase1-texto.md` | o que o agente recebe para escrever os roteiros |
 | `HELP.md` | a ajuda que aparece no chat em `/promoavatar help` |
 | `textos/A<N>/` | os roteiros gerados, um arquivo por público |
-| `docs/` | as decisões e o que ainda está aberto |
+| `docs/pipeline.md` | **a tabela de tudo**: etapas, LLM/IA/worker, custo e tempo |
+| `docs/canais-e-destinos.md` | para quem e onde fica cada reel |
+| `docs/` | as demais decisões e o que ainda está aberto |
 
 ## Para quem, e onde fica
 

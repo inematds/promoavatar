@@ -1,6 +1,8 @@
 # Melhorias criativas do roteiro e do reel
 
-Anotação para revisar depois. **Nada aqui está implementado.**
+Anotação. O item 1 (gancho) e a crítica dos 12 pontos JÁ viraram as REGRAS DE
+ESCRITA de `prompts/fase1-texto.md` em 2026-07-31. O item 2 (CTA como clipe)
+continua sem implementação.
 
 ## 1. Falta a frase de gatilho na ENTRADA
 
@@ -57,3 +59,26 @@ A decidir antes:
 Gancho na entrada e CTA no fim são as duas pontas da retenção. Vale tratá-los
 juntos quando formos mexer: o modo "capa de impacto" da skill `reel-edita-inema`
 já é focado em retenção, e é onde os dois encostam.
+
+---
+
+## 4. Duas perguntas que travam o roteiro (2026-07-31)
+
+Saíram da crítica ao roteiro de `jovens`. O prompt já tem regra defensiva para
+as duas — ele OMITE em vez de inventar — mas isso é remendo: o certo é a
+resposta entrar no assunto.
+
+**"Tiza" — o que é?** Aparece no assunto como "todo apoio da comunidade e da
+tiza", e o agente escreveu "a Tiza" com maiúscula, tratando como nome próprio.
+Marca? Plataforma? Assistente? Pessoa? Sem saber, o público ouve um nome que
+não significa nada. Regra atual: nome cujo papel não está explicado no assunto
+não é citado.
+
+**A data de início.** O roteiro saiu com "começa dia tal" — rascunho, e rascunho
+derruba a credibilidade inteira. Regra atual: data, preço e número só entram se
+vierem LITERALMENTE no assunto; senão a frase sai sem eles.
+
+Enquanto as duas não forem respondidas, o roteiro perde duas alavancas: a prova
+social (quem é a Tiza) e a urgência real (a data). A urgência fabricada
+("garanta sua vaga") está proibida no prompt justamente porque não há vaga
+limitada que a sustente.

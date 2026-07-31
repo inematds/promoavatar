@@ -7,12 +7,13 @@ COMO USAR
 
   /promoavatar Não comece aprendendo ferramentas
   /promoavatar Assunto | alvos=mulheres           só um público (barato p/ testar)
+  /promoavatar Assunto --alvo=jovens --alvo=40mais   mesma coisa, forma curta
   /promoavatar Assunto | sombra                   mostra o plano, não enfileira
   /promoavatar Assunto | de=baixar                você já fez texto E avatar
 
 FLUXO
 
-  1. texto    o bot escreve 3 versões por público
+  1. texto    o bot escreve UM roteiro por público
      ⏸️  PARA — você revisa os textos e gera os avatares no estúdio
   2. baixar   /aprovar A#N → o bot acha os vídeos pelo TÍTULO e baixa
   3. reel     monta o reel (capa de impacto com o gatilho do público) e
@@ -42,3 +43,13 @@ PÚBLICOS
 
 Cada um tem canal (livesN) e gatilho próprios — a lista mora no flow.json
 deste repo, e é ele que o bot lê. Mudou um público? Muda ali, sem tocar no bot.
+
+ONDE O REEL É ENTREGUE
+
+O canal do público vira pasta pela regra:
+
+  lives24  ->  ~/projetos/yt-pub-lives24/imports/videos
+
+O caminho não está escrito em lugar nenhum: é derivado. Trocar o canal de um
+público = editar o flow.json. Criar canal novo = criar a pasta, só isso.
+Detalhe em docs/canais-e-destinos.md.

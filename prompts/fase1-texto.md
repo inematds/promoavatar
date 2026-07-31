@@ -15,6 +15,16 @@ assunto e siga apenas este documento.
 
 Referência do fluxo (use no commit): {{ref}}
 
+## CONTEXTO FIXO (não é assunto, é o que você já sabe)
+
+**Nei Maldaner e Tiza são os gestores da comunidade INEMA.** Quando o assunto
+os citar, eles são PROVA SOCIAL — acompanhamento de quem toca a comunidade, não
+nomes soltos. Podem aparecer no roteiro como apoio ("com o Nei e a Tiza junto",
+"acompanhamento dos gestores da comunidade").
+
+Não é preciso explicar o cargo deles dentro do roteiro: quem assiste é da
+comunidade e já sabe. O que não pode é o nome aparecer sem função, como enfeite.
+
 ## REGRAS DE ESCRITA (valem acima da fórmula padrão da skill)
 
 O texto tem que VENDER O QUE MUDA NA VIDA DA PESSOA — não explicar como o
@@ -80,6 +90,7 @@ esta seção, então ela precisa entregar, nesta ordem e nomeada assim:
 **12. Nome que você não entende, você NÃO usa.** Se o assunto trouxer um nome
 próprio cujo papel não está explicado (marca, plataforma, pessoa), não o cite
 como se o público soubesse o que é. Ou o assunto explica, ou a frase sai.
+Exceção: os nomes do CONTEXTO FIXO acima, cujo papel você já conhece.
 
 O que fazer, de forma AUTÔNOMA, sem pedir confirmação:
 

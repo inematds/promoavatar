@@ -68,20 +68,20 @@ Saíram da crítica ao roteiro de `jovens`. O prompt já tem regra defensiva par
 as duas — ele OMITE em vez de inventar — mas isso é remendo: o certo é a
 resposta entrar no assunto.
 
-**"Tiza" — o que é?** Aparece no assunto como "todo apoio da comunidade e da
-tiza", e o agente escreveu "a Tiza" com maiúscula, tratando como nome próprio.
-Marca? Plataforma? Assistente? Pessoa? Sem saber, o público ouve um nome que
-não significa nada. Regra atual: nome cujo papel não está explicado no assunto
-não é citado.
+**"Tiza" — o que é?** ✅ RESPONDIDO em 2026-07-31: **Nei Maldaner e Tiza são os
+gestores da comunidade INEMA.** Viraram CONTEXTO FIXO no
+`prompts/fase1-texto.md`, com exceção explícita à regra 12 — que, sem isso,
+apagaria a Tiza do roteiro por ser nome sem papel declarado. No roteiro eles são
+PROVA SOCIAL; não é preciso explicar o cargo, porque quem assiste é da
+comunidade e já sabe.
 
 **A data de início.** O roteiro saiu com "começa dia tal" — rascunho, e rascunho
 derruba a credibilidade inteira. Regra atual: data, preço e número só entram se
 vierem LITERALMENTE no assunto; senão a frase sai sem eles.
 
-Enquanto as duas não forem respondidas, o roteiro perde duas alavancas: a prova
-social (quem é a Tiza) e a urgência real (a data). A urgência fabricada
-("garanta sua vaga") está proibida no prompt justamente porque não há vaga
-limitada que a sustente.
+Sobra a DATA. Sem ela o roteiro perde a urgência real — e a fabricada ("garanta
+sua vaga") está proibida no prompt justamente porque não há vaga limitada que a
+sustente. A prova social já está resolvida.
 
 ---
 

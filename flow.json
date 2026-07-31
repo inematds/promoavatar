@@ -4,7 +4,7 @@
   "versao_def": 1,
   "alvos": {
     "pessoa-comum": {
-      "canal": "lives21",
+      "canal": "lives2",
       "gatilho": "Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples."
     },
     "jovens": {
@@ -16,35 +16,35 @@
       "gatilho": "Não abandone sua profissão. Aprenda a ampliá-la com IA."
     },
     "mulheres": {
-      "canal": "lives24",
+      "canal": "lives4",
       "gatilho": "Use a IA para conquistar autonomia, produtividade e novas oportunidades."
     },
     "empreendedores": {
-      "canal": "lives25",
+      "canal": "lives1",
       "gatilho": "Transforme IA em redução de custos, vendas e novos negócios."
     },
     "tecnicos": {
-      "canal": "lives26",
+      "canal": "lives6",
       "gatilho": "Pare de apenas testar ferramentas. Aprenda a construir sistemas e agentes."
     },
     "40mais": {
-      "canal": "lives27",
+      "canal": "lives7",
       "gatilho": "Sua experiência vale mais quando é multiplicada pela IA."
     },
     "60mais": {
-      "canal": "lives28",
+      "canal": "lives8",
       "gatilho": "A IA pode transformar sua experiência de vida em conhecimento, renda e propósito."
     },
     "educadores": {
-      "canal": "lives29",
+      "canal": "lives9",
       "gatilho": "Você não vai ser substituído pela IA — mas pode ser o professor que ensina com ela."
     },
     "criadores": {
-      "canal": "lives30",
+      "canal": "lives11",
       "gatilho": "Pare de pagar ferramenta cara. Monte sua própria fábrica de conteúdo com IA."
     },
     "recolocacao": {
-      "canal": "lives31",
+      "canal": "lives3",
       "gatilho": "Perdeu o emprego ou quer mudar de área? A IA pode ser o atalho do seu recomeço."
     },
     "familia": {

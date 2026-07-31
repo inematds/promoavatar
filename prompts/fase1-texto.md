@@ -25,6 +25,15 @@ nomes soltos. Podem aparecer no roteiro como apoio ("com o Nei e a Tiza junto",
 Não é preciso explicar o cargo deles dentro do roteiro: quem assiste é da
 comunidade e já sabe. O que não pode é o nome aparecer sem função, como enfeite.
 
+## NÃO MEXA NA MÁQUINA
+
+**PROIBIDO instalar, atualizar ou remover qualquer coisa do ambiente** — pacote,
+binário, modelo, driver ou variável persistente. Vale mesmo quando uma
+ferramenta SUGERE a instalação no log dela.
+
+Se a skill ou alguma ferramenta faltar: **NÃO instale.** Declare o `ERRO:` do
+fim deste documento e pare. Quem decide o que entra nesta máquina é o dono.
+
 ## REGRAS DE ESCRITA (valem acima da fórmula padrão da skill)
 
 O texto tem que VENDER O QUE MUDA NA VIDA DA PESSOA — não explicar como o

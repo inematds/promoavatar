@@ -107,3 +107,30 @@ que já existem seguem com a instrução antiga; só os novos pegam esta.
 **Ainda aberto:** o CTA como clipe pronto (item 2 acima). Se ele virar clipe, o
 quarto gatilho sai do caminho do LLM e do render — passa a ser concat de
 ffmpeg, sempre idêntico.
+
+---
+
+## 6. Legenda mais perto da borda inferior (2026-07-31)
+
+Hoje a legenda palavra-a-palavra fica **na altura do peito** — é o que a skill
+`reel-edita-inema` faz por padrão ("palavra-chave âmbar na altura do peito").
+Pedido: descer, para mais perto da **borda inferior**.
+
+Onde mexer — e as duas opções não são equivalentes:
+
+**a) No `entrega` da fase `reel` (`flow.json` deste repo).** Vale só para o
+promoavatar, é versionado aqui, e não afeta mais ninguém. **Mas o `flow.json` é
+CONGELADO na criação do fluxo**: os fluxos que já existem seguem com a instrução
+antiga, e não dá para testar via `/refazer` — só criando fluxo novo.
+
+**b) Na skill `reel-edita-inema` (`~/.claude/skills/`).** Pega todo reel, de
+qualquer origem, inclusive os disparados direto no chat. Mais abrangente e mais
+arriscado: muda o padrão de coisas que ninguém está olhando agora.
+
+Inclinação: **(a)**, porque o pedido nasceu deste pipeline e a mudança fica
+rastreável no repo do domínio.
+
+A decidir: **quanto** mais perto? "Borda inferior" pode virar legenda colada no
+rodapé, e aí ela briga com a barra de interface do Instagram/TikTok, que come os
+últimos ~15% da tela em 9:16. Uma margem segura provavelmente é o alvo real —
+não o extremo. Vale olhar um dos reels do A#8 e medir.

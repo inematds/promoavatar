@@ -74,16 +74,74 @@ O download casa por igualdade exata de string. Nome diferente = vídeo nunca
 encontrado, e a fase expira em 90 minutos. O chat te manda o título pronto junto
 de cada roteiro, justamente para não ser digitado de memória.
 
-## Ajustes mais comuns
+## Opções na criação
 
-| quero… | mexo em |
-|---|---|
-| trocar o canal de um público | `flow.json` → `alvos.<publico>.canal` |
-| mudar o gancho de um público | `flow.json` → `alvos.<publico>.gatilho` |
-| mudar como os roteiros são escritos | `prompts/fase1-texto.md` |
-| mudar como o reel é montado | `flow.json` → fase `reel`, campo `entrega` |
-| mudar a ajuda do chat | `HELP.md` |
+| opção | padrão | o que faz |
+|---|---|---|
+| `--alvo=jovens` (repetível) ou `\| alvos=a,b` | todos os 12 | só esses públicos |
+| `\| legenda` ou `\| legenda=sim` | **SEM legenda** | legenda palavra-a-palavra no reel, com a caixa encostada na borda INFERIOR |
+| `\| versao=N` | 1 | muda o `-vN` do título do estúdio |
+| `\| de=<fase>` | — | começa no meio (você já fez texto e/ou avatar) |
+| `\| sombra` | — | mostra o plano, não enfileira nada |
 
-**Atenção:** o `flow.json` e os prompts são **congelados na criação de cada
-fluxo**. Editar aqui vale para os PRÓXIMOS — um fluxo em andamento não muda de
-regra no meio do caminho, e por isso `/refazer` também não pega a mudança.
+```
+/promoavatar <assunto> --alvo=jovens --legenda
+```
+
+Legenda é decisão de quem publica, por isso o padrão é não ter. Ligar é
+explícito, na criação — e vale para o fluxo inteiro.
+
+## Onde mudar o quê
+
+A regra: **o que é decisão de público ou de campanha mora neste repo; o que é
+identidade visual da marca mora na skill.** A skill é global — mexer nela muda
+TODO reel, inclusive os disparados direto no chat.
+
+| quero mudar… | arquivo | camada |
+|---|---|---|
+| o canal de um público | `flow.json` → `alvos.<publico>.canal` | domínio |
+| o gancho de um público | `flow.json` → `alvos.<publico>.gatilho` | domínio |
+| **como os roteiros são escritos** | `prompts/fase1-texto.md` | domínio |
+| **o que este fluxo pede ao reel** | `flow.json` → fase `reel`, campo `entrega` | domínio |
+| **o clipe de CTA do fim** | `cta/cta-9x16.mp4` — troque o arquivo | domínio |
+| a ajuda do chat | `HELP.md` | domínio |
+| **como o reel é MONTADO** (cores, fontes, posições, SFX, modos) | `~/.claude/skills/reel-edita-inema/SKILL.md` | skill (global) |
+| o que o agente recebe antes de chamar a skill | `inemaccbot/prompts/reel.md` | bot |
+| filas, timeouts, modelo e esforço | `inemaccbot/config/skills.json` | bot |
+
+### O prompt do texto (`prompts/fase1-texto.md`)
+
+É onde vivem, nesta ordem:
+
+1. **CONTEXTO FIXO** — o que o agente já sabe (Nei e Tiza são os gestores da
+   comunidade), para não citar nome sem função nem inventar quem são.
+2. **NÃO MEXA NA MÁQUINA** — proibição de instalar qualquer coisa. Um render
+   instalou um binário errado seguindo dica de log e derrubou o render seguinte.
+3. **REGRAS DE ESCRITA** — as 12 regras: gancho nos 2 primeiros segundos, dor
+   antes da solução, nomear a profissão, benefício antes da mecânica, frases
+   curtas, promessa do tamanho certo, CTA imperativo, nada de placeholder, nada
+   de urgência inventada, e as SOBREPOSIÇÕES como roteiro VISUAL com os quatro
+   gatilhos (atenção · retenção · engajamento · CTA).
+4. **O contrato de saída** — `{{pasta}}`, `RESULT:`/`ERRO:`.
+
+Variáveis que o bot injeta: `{{input}}` (o assunto), `{{publicos}}` (os alvos
+REAIS do fluxo), `{{pasta}}` (onde gravar, absoluto), `{{ref}}`, `{{saida}}`.
+
+### O estilo do reel — duas camadas
+
+O `entrega` da fase `reel` no `flow.json` é o que ESTE pipeline pede: os quatro
+gatilhos, a headline a partir do `{gatilho}` do público, e os dois marcadores
+que a criação resolve — `{legenda}` e `{cta}`.
+
+A skill `reel-edita-inema` é quem sabe montar: composição empilhada 9:16, cores,
+fontes, corte de silêncio, legenda palavra-a-palavra, SFX. Mudar ali muda a
+marca inteira.
+
+**Melhorar o reel, na ordem do mais barato:** trocar o clipe de `cta/`; ajustar
+o `entrega` do `flow.json`; e só então mexer na skill.
+
+## Atenção: tudo aqui é congelado na criação
+
+O `flow.json`, os prompts e as opções (`legenda`, `cta`) são **congelados quando
+o fluxo nasce**. Editar vale para os PRÓXIMOS — um fluxo em andamento não muda
+de regra no meio do caminho, e por isso nem `/refazer` pega a mudança.

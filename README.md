@@ -91,6 +91,49 @@ de cada roteiro, justamente para não ser digitado de memória.
 Legenda é decisão de quem publica, por isso o padrão é não ter. Ligar é
 explícito, na criação — e vale para o fluxo inteiro.
 
+### Legenda: o que vem da HeyGen e o que é nosso
+
+Essa opção controla **só a legenda que o nosso editor desenha**. Ela não vê o
+MP4 que veio do HeyGen: se o avatar chegar com legenda **queimada nos pixels**,
+ela sobrevive ao reel inteiro, mesmo com a opção desligada — não existe etapa de
+remoção, máscara ou inpaint no pipeline.
+
+O que a API do HeyGen oferece (`video_status.get`):
+
+| campo | o que é | usamos? |
+|---|---|---|
+| `video_url` | MP4 **sem** legenda queimada | **sim, sempre** |
+| `video_url_caption` | MP4 **com** legenda queimada | não |
+| `caption_url` | legenda solta (arquivo), quando existe | não |
+
+O download do bot lê **só `video_url`**
+(`inemaccbot/src/fila/tarefas/heygen.ts`).
+
+**Não dá para escolher nada na hora de baixar.** O download é um `GET` numa URL
+pronta — não há `?estilo=`, `?formato=`, `?idioma=`. Seis endpoints de legenda
+foram sondados (`v1/video.caption`, `v2/video/caption`, `v1/video.subtitle`,
+`v1/caption.list`, `v2/caption_styles`, `v2/video/<id>`) e deram **404 nos
+seis**. Estilo, fonte e posição da legenda queimada se decidem **no estúdio,
+antes de renderizar**; depois disso estão nos pixels, e só regravando.
+
+**O que foi medido (2026-08-01, chave real da conta):** os 25 vídeos completos
+mais recentes — `video_url_caption` nulo e `caption_url` vazio em **todos**.
+Nenhum vídeo da conta tem legenda hoje.
+
+**O que NÃO foi medido:** o comportamento com a legenda **ligada** no estúdio.
+Os nomes dos campos sugerem que `video_url` continuaria limpo e o
+`video_url_caption` passaria a vir preenchido — mas não há observação que prove
+isso, e a hipótese contrária (a legenda entrar no render principal) não está
+descartada. **Até alguém testar, a garantia é uma só: gravar SEM legenda no
+estúdio.** O teste custa um vídeo: renderize um com legenda ligada e olhe os
+dois campos.
+
+Consequências práticas de deixar passar uma legenda queimada:
+
+- ela vem posicionada para o enquadramento 16:9, não para a faixa do meio do
+  9:16 — pode ser cortada ou colidir com a base;
+- com a opção `legenda` ligada, saem **duas** legendas.
+
 ## Onde mudar o quê
 
 A regra: **o que é decisão de público ou de campanha mora neste repo; o que é

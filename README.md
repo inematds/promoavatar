@@ -160,15 +160,47 @@ TODO reel, inclusive os disparados direto no chat.
    comunidade), para não citar nome sem função nem inventar quem são.
 2. **NÃO MEXA NA MÁQUINA** — proibição de instalar qualquer coisa. Um render
    instalou um binário errado seguindo dica de log e derrubou o render seguinte.
-3. **REGRAS DE ESCRITA** — as 12 regras: gancho nos 2 primeiros segundos, dor
+3. **PASSO ZERO** — tese central, elemento demonstrável e a escolha explícita de
+   um formato entre 11. Sem escolher, o agente cai sempre em dor→solução→CTA,
+   que é molde de anúncio, e anúncio não é compartilhado.
+4. **OFICINA DE GANCHO** — cinco primeiras frases por público, quatro
+   descartadas POR ESCRITO. O critério é o teste da lacuna: depois da frase, a
+   pessoa precisa da próxima para fechar o sentido? Se a frase se basta, é
+   afirmação, não gancho. Teto de 9 palavras.
+5. **REGRAS DE ESCRITA** — as 16 regras: gancho nos 2 primeiros segundos, dor
    antes da solução, nomear a profissão, benefício antes da mecânica, frases
    curtas, promessa do tamanho certo, CTA imperativo, nada de placeholder, nada
-   de urgência inventada, e as SOBREPOSIÇÕES como roteiro VISUAL com os quatro
-   gatilhos (atenção · retenção · engajamento · CTA).
-4. **O contrato de saída** — `{{pasta}}`, `RESULT:`/`ERRO:`.
+   de urgência inventada, as SOBREPOSIÇÕES como roteiro VISUAL com os quatro
+   gatilhos (atenção · retenção · engajamento · CTA), a lacuna vivendo na FALA,
+   valor completo antes da marca, a última frase decidindo o compartilhamento, e
+   escrever para UMA pessoa concreta.
+6. **O contrato de saída** — `{{pasta}}`, `RESULT:`/`ERRO:`.
 
 Variáveis que o bot injeta: `{{input}}` (o assunto), `{{publicos}}` (os alvos
 REAIS do fluxo), `{{pasta}}` (onde gravar, absoluto), `{{ref}}`, `{{saida}}`.
+
+#### Assunto que é DEBATE: o prompt crava uma posição
+
+Assunto que chega como pergunta em aberto ("isso é bom ou ruim?", "o que você
+acha?") tinha um resultado previsível: o agente explicava os dois lados e
+fechava em "o importante é se preparar". Correto e morno — ninguém comenta com
+equilibrista, e o vídeo é visto e esquecido.
+
+A causa não era falta de talento: são as regras 9 e 10 (não invente dado, não
+invente urgência) fazendo o agente recuar até o meio-termo, que é o único lugar
+onde ele tem certeza de não estar afirmando nada.
+
+Então o prompt agora manda **tomar um lado** nesse caso, e **escrever no resumo
+qual posição cravou e por quê**. Isso não afrouxa as regras 9 e 10: opinião é
+permitida, fato inventado não.
+
+**A posição que você mandar vence a dele.** Se você escreve a sua no assunto, ele
+usa a sua; o bloco só existe para quando você não escreveu. Escrever a sua
+continua sendo o melhor caminho — junto com um fato concreto (para a linha PROVA
+não ficar vazia) e a pergunta que você quer nos comentários.
+
+Como o resumo diz a posição escolhida, você discorda dela **no portão**, antes de
+gerar avatar nenhum — `/refazer` custa um texto, não um render.
 
 ### O estilo do reel — duas camadas
 

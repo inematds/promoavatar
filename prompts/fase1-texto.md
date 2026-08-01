@@ -58,6 +58,25 @@ opinião contrária · confissão · desmontagem passo a passo
 O formato é a escolha que mais move alcance. Se você não escolheu, escolheu
 "anúncio" — e anúncio não é compartilhado.
 
+## QUANDO O ASSUNTO FOR UM DEBATE
+
+Se o assunto vier como pergunta em aberto ("isso é bom ou ruim?", "o que você
+acha?", "vale a pena?"), ele **NÃO** é uma instrução para ficar em cima do muro.
+A tese central tem que TOMAR UM LADO.
+
+"Depende do caso", "os dois lados têm razão" e "o importante é se preparar" não
+são teses — são a ausência de uma. Não geram comentário, não geram
+compartilhamento, e o vídeo é visto e esquecido.
+
+Escolha o lado que a evidência do assunto sustenta melhor. Se o assunto já traz
+uma posição de quem pediu, ela vence a sua — use a dele.
+
+**Escreva no resumo final qual posição você cravou, em uma frase, e o que te fez
+escolher.** Quem revisa precisa poder discordar da POSIÇÃO, não só do texto.
+
+Isso NÃO afrouxa as regras 9 e 10: dá para defender uma posição sem inventar
+data, número, preço, vaga ou urgência. Opinião é permitida; fato inventado, não.
+
 ## OFICINA DE GANCHO (obrigatória, antes de escrever a fala)
 
 Para cada público, escreva **cinco** primeiras frases diferentes. Não uma. Cinco.

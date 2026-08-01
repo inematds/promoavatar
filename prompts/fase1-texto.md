@@ -34,17 +34,59 @@ ferramenta SUGERE a instalação no log dela.
 Se a skill ou alguma ferramenta faltar: **NÃO instale.** Declare o `ERRO:` do
 fim deste documento e pare. Quem decide o que entra nesta máquina é o dono.
 
+## PASSO ZERO: decida antes de escrever
+
+É UM vídeo por público. Um só. Ele não pode ser morno em três frentes — tem que
+ser alto em uma. Antes de qualquer roteiro, decida:
+
+**1. Tese central.** O ponto do assunto em UMA frase específica. Uma só, para o
+assunto inteiro — todos os públicos saem dela.
+Fraca: "A IA está mudando tudo." Forte: "Quem aprende só ferramentas de IA fica
+obsoleto junto com elas."
+
+**2. Elemento demonstrável.** O que APARECE NA TELA para provar: tela de
+ferramenta, resultado gerado, comparação, antes e depois, sistema rodando,
+número real. Isso vira a linha PROVA das SOBREPOSIÇÕES. Sem prova visual o
+vídeo é opinião, e opinião não é compartilhada.
+
+**3. Formato.** Escolha UM e escreva qual no arquivo. Não misture:
+
+afirmação provocativa · pergunta incômoda · mito versus realidade · erro comum ·
+o que ninguém te conta · previsão · comparação · consequência inesperada ·
+opinião contrária · confissão · desmontagem passo a passo
+
+O formato é a escolha que mais move alcance. Se você não escolheu, escolheu
+"anúncio" — e anúncio não é compartilhado.
+
+## OFICINA DE GANCHO (obrigatória, antes de escrever a fala)
+
+Para cada público, escreva **cinco** primeiras frases diferentes. Não uma. Cinco.
+Depois mate quatro e diga por quê no arquivo.
+
+**O teste da lacuna** — o único critério que decide: depois de ouvir a frase, a
+pessoa PRECISA da próxima para fechar o sentido? Se a frase já se basta, é
+afirmação, não gancho. "Sua experiência vale mais com IA" fecha em si — morre.
+"Aos 55 ele fez em duas horas o que a agência cobrava três mil" não fecha —
+vive.
+
+Tipos que passam no teste: número específico e estranho · contradição ("o mais
+experiente é quem mais apanha") · custo ("você está pagando por algo que já
+tem") · a ordem direta ("pare de X") · a confissão ("eu errei isso por dois
+anos") · o nome inesperado · o prazo curto e concreto.
+
+**Máximo de 9 palavras na primeira frase.** Se não coube, não é gancho, é
+introdução.
+
 ## REGRAS DE ESCRITA (valem acima da fórmula padrão da skill)
 
 O texto tem que VENDER O QUE MUDA NA VIDA DA PESSOA — não explicar como o
 sistema funciona. Esta é a falha que mais aparece: roteiro que descreve bem a
 mecânica e não diz o que o público ganha.
 
-**1. Gancho nos 2 primeiros segundos.** A PRIMEIRA frase da FALA é um gatilho de
-atenção: uma tensão, uma pergunta incômoda ou uma afirmação que cria dúvida.
-Não é saudação, não é o nome do curso, não é "você já pensou em...". Afirmação
-morna ("sua experiência vale mais com IA") NÃO é gancho — não cria pergunta na
-cabeça de ninguém.
+**1. Gancho nos 2 primeiros segundos.** É a frase que venceu a OFICINA acima.
+Não é saudação, não é o nome do curso, não é "você já pensou em...", não é
+"você sabia". Nunca comece pela categoria ("a inteligência artificial está
+mudando o mercado") — comece pela consequência dela na vida de alguém.
 
 **2. A dor vem antes da solução, e é a dor DESTE público.** Use o gatilho do
 público. Para jovem: falta de experiência, medo de escolher profissão que vai
@@ -101,6 +143,27 @@ próprio cujo papel não está explicado (marca, plataforma, pessoa), não o cit
 como se o público soubesse o que é. Ou o assunto explica, ou a frase sai.
 Exceção: os nomes do CONTEXTO FIXO acima, cujo papel você já conhece.
 
+**13. A lacuna vive na FALA, não só na tela.** Abra na primeira frase algo que
+só fecha perto do fim ("e o terceiro é o que quase ninguém faz", "e o custo
+disso não é o que você pensa") — e FECHE de verdade. Lacuna aberta e não
+fechada é clickbait: a pessoa termina irritada e não compartilha.
+
+**14. Valor completo antes da marca.** O inema.club entra no FECHO, não no
+miolo. Quem desliza no CTA já assistiu o vídeo inteiro — o algoritmo conta isso
+a favor. Marca citada cedo transforma o vídeo em anúncio nos 3 primeiros
+segundos, e aí ninguém chega ao CTA.
+
+**15. A última frase decide o compartilhamento.** Ela reconecta com o gancho e
+entrega uma frase que a pessoa consegue REPETIR — uma regra, um princípio, uma
+virada. "Entre no inema.club" é a ordem, não o fecho: o fecho é a ideia que a
+pessoa leva. Sem ela o vídeo é visto e esquecido.
+
+**16. Uma pessoa, não um público.** Escreva para UMA pessoa concreta daquele
+público, com uma situação específica (o cara de 52 anos que foi dispensado, a
+mãe que abriu o caderno do filho). Plural genérico ("os profissionais precisam
+se atualizar") não gera identificação, e identificação é o que faz marcar
+alguém nos comentários.
+
 O que fazer, de forma AUTÔNOMA, sem pedir confirmação:
 
 1. **UMA versão** de roteiro falado (~35–40s) por público — a melhor, não três.
@@ -111,10 +174,22 @@ O que fazer, de forma AUTÔNOMA, sem pedir confirmação:
    `pessoa-comum`…), em minúsculas e sem acento.
 3. Cada arquivo tem as seções FALA / SOBREPOSIÇÕES / ESTRUTURA exatamente como
    a skill manda. A seção falada começa com `### FALA` — é ela que vai para o
-   HeyGen, e o bot a lê deste arquivo para mandar no chat.
-   Antes de gravar, releia a FALA contra as REGRAS DE ESCRITA acima e responda a
-   si mesmo: **qual é o gancho, e o que muda na vida desta pessoa?** Se a
-   resposta não estiver nas duas primeiras frases, reescreva.
+   HeyGen, e o bot a lê deste arquivo para mandar no chat. **Nada pode vir antes
+   do `### FALA` a não ser as duas linhas de decisão** (o portão lê a primeira
+   seção FALA e só ela):
+
+   ```
+   Formato escolhido: <um da lista do PASSO ZERO>
+   Ganchos descartados: <os 4 que perderam, e em uma linha por que>
+   ```
+
+   Antes de gravar, releia a FALA e responda a si mesmo, honestamente:
+   - **o gancho abre uma lacuna, ou é só uma frase verdadeira?**
+   - **o que muda na vida desta pessoa, e está nas duas primeiras frases?**
+   - **eu mandaria isto para alguém que conheço?**
+
+   Se qualquer resposta for não, reescreva. Reescrever aqui é grátis; o avatar
+   e o reel não são.
 4. `git add` dos arquivos gerados e UM commit (autor
    `inematds <inematds@gmail.com>`) no repo onde `{{pasta}}` fica, com mensagem
    curta descrevendo o assunto. Se citar quantidade, CONTE os arquivos — a

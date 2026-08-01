@@ -9,6 +9,7 @@ COMO USAR
   /promoavatar Assunto | alvos=mulheres           só um público (barato p/ testar)
   /promoavatar Assunto --alvo=jovens --alvo=40mais   mesma coisa, forma curta
   /promoavatar Assunto | sombra                   mostra o plano, não enfileira
+  /promoavatar Assunto | legenda                  COM legenda (padrão é sem)
   /promoavatar Assunto | de=baixar                você já fez texto E avatar
 
 FLUXO

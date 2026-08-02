@@ -70,3 +70,17 @@ O canal do público vira pasta pela regra:
 O caminho não está escrito em lugar nenhum: é derivado. Trocar o canal de um
 público = editar o flow.json. Criar canal novo = criar a pasta, só isso.
 Detalhe em docs/canais-e-destinos.md.
+
+OS AVATARES: SUA MÃO OU A API
+
+Por padrão você grava no HeyGen (é o de sempre). Com `| api`, o BOT gera —
+e isso gasta da carteira pré-paga da HeyGen (~US$ 1 por minuto de vídeo).
+
+  /promoavatar <assunto> | api
+  /promoavatar <assunto> | api | sem-portao   gera E não para para aprovar
+
+`| api` NÃO tira o portão: você ainda revisa os textos e dá /aprovar antes de
+gastar. Para a esteira inteira sem parar, peça as duas flags.
+
+Confira antes com `| sombra`: a fase `gerar` só aparece no plano quando a
+opção `| api` está ligada.

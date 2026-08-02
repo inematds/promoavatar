@@ -30,13 +30,21 @@ O <N> é o número do fluxo, que aparece quando você cria (`criado: A#7`). É p
 esse nome que o download encontra o vídeo — nome diferente, vídeo não
 encontrado, e a fase expira em 90 minutos. O /status A#7 mostra os títulos.
 
-GRAVE SEM LEGENDA NO ESTÚDIO
+A LEGENDA DO AVATAR SE DECIDE NO ESTÚDIO
 
-A opção `| legenda` acima é a legenda que o NOSSO editor desenha. Ela não
-remove legenda que já venha queimada nos pixels do vídeo do HeyGen — não
-existe etapa de remoção no pipeline, e não dá para escolher nada na hora de
-baixar. Legenda queimada vem posicionada para 16:9 e atrapalha no 9:16; com
-`| legenda` ligada, saem duas. Detalhe e o que foi medido: README.md.
+Gravou com legenda no HeyGen, o download traz o vídeo legendado; gravou sem,
+traz o limpo. O bot não escolhe — ele pega a versão legendada quando ela
+existe.
+
+A opção `| legenda` acima é OUTRA coisa: é a legenda que o NOSSO editor
+desenha. Ligar as duas faz sair DUAS legendas. Escolha uma:
+
+  legenda no estúdio   ->  crie o fluxo SEM `| legenda`
+  reel com `| legenda` ->  grave SEM legenda no estúdio
+
+E lembre: legenda queimada vem enquadrada para 16:9 — no 9:16 ela pode ser
+cortada ou colidir com a base, e não há como removê-la depois. Detalhe e o
+que foi medido: README.md.
 
 ACOMPANHAR
 

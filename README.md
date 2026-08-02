@@ -102,16 +102,18 @@ MP4 que veio do HeyGen: se o avatar chegar com legenda **queimada nos pixels**,
 ela sobrevive ao reel inteiro, mesmo com a opção desligada — não existe etapa de
 remoção, máscara ou inpaint no pipeline.
 
-O que a API do HeyGen oferece (`video_status.get`):
+**A legenda do avatar é decidida no estúdio.** O que a API do HeyGen oferece
+(`video_status.get`):
 
 | campo | o que é | usamos? |
 |---|---|---|
-| `video_url` | MP4 **sem** legenda queimada | **sim, sempre** |
-| `video_url_caption` | MP4 **com** legenda queimada | não |
+| `video_url` | MP4 **sem** legenda queimada | sim, quando não há versão legendada |
+| `video_url_caption` | MP4 **com** legenda queimada | **sim, quando vem preenchido** |
 | `caption_url` | legenda solta (arquivo), quando existe | não |
 
-O download do bot lê **só `video_url`**
-(`inemaccbot/src/fila/tarefas/heygen.ts`).
+O download do bot prefere o `video_url_caption` e cai no `video_url` quando ele
+não vem (`escolherUrl`, `inemaccbot/src/fila/tarefas/heygen.ts`). Ou seja:
+gravou com legenda no estúdio, o reel sai com ela; gravou sem, sai sem.
 
 **Não dá para escolher nada na hora de baixar.** O download é um `GET` numa URL
 pronta — não há `?estilo=`, `?formato=`, `?idioma=`. Seis endpoints de legenda
@@ -127,16 +129,16 @@ Nenhum vídeo da conta tem legenda hoje.
 **O que NÃO foi medido:** o comportamento com a legenda **ligada** no estúdio.
 Os nomes dos campos sugerem que `video_url` continuaria limpo e o
 `video_url_caption` passaria a vir preenchido — mas não há observação que prove
-isso, e a hipótese contrária (a legenda entrar no render principal) não está
-descartada. **Até alguém testar, a garantia é uma só: gravar SEM legenda no
-estúdio.** O teste custa um vídeo: renderize um com legenda ligada e olhe os
-dois campos.
+isso. O teste custa um vídeo: renderize um com legenda ligada e olhe os dois
+campos.
 
-Consequências práticas de deixar passar uma legenda queimada:
+Consequências práticas de gravar com legenda queimada:
 
 - ela vem posicionada para o enquadramento 16:9, não para a faixa do meio do
   9:16 — pode ser cortada ou colidir com a base;
-- com a opção `legenda` ligada, saem **duas** legendas.
+- com a opção `legenda` ligada, saem **duas** legendas. **Ligar uma é decidir
+  desligar a outra**: legenda no estúdio → reel sem `| legenda`; reel com
+  `| legenda` → estúdio sem legenda.
 
 ## Onde mudar o quê
 

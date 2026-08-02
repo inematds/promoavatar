@@ -153,7 +153,7 @@
   </div>
   <div class="grid g3" style="margin-top:28px">
     <div class="card"><h3>1 · texto</h3><p>Um roteiro por público, gravado em <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>. O chat te manda cada roteiro junto com o TÍTULO exato do vídeo.</p></div>
-    <div class="card"><h3>2 · baixar</h3><p>Acha o vídeo no HeyGen pelo título e baixa o MP4 <strong>sem legenda queimada</strong>. A janela da fase é de 90 minutos.</p></div>
+    <div class="card"><h3>2 · baixar</h3><p>Acha o vídeo no HeyGen pelo título e baixa o MP4 — <strong>com</strong> a legenda queimada se o estúdio gravou com ela, limpo se não. A janela da fase é de 90 minutos.</p></div>
     <div class="card"><h3>3 · reel</h3><p>Monta o reel 9:16 (capa de impacto com o gatilho do público) e entrega direto na pasta do canal daquele público.</p></div>
   </div>
 </div></section>
@@ -213,8 +213,9 @@ A&lt;N&gt;-&lt;publico&gt;-v1
     <p>No estúdio, o vídeo precisa se chamar exatamente <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. O download casa por igualdade exata de string: nome diferente = vídeo nunca encontrado, e a fase expira em 90 minutos. O chat te manda o título pronto justamente para não ser digitado de memória.</p>
 <pre><span class="s">A7-mulheres-v1</span>
 <span class="s">A7-jovens-v1</span>
-<span class="c"># e GRAVE SEM LEGENDA no estúdio — legenda queimada</span>
-<span class="c"># não tem como ser removida depois</span></pre>
+<span class="c"># a legenda do avatar se decide AQUI: gravou com ela, o reel</span>
+<span class="c"># sai com ela — e não há como removê-la depois. Nesse caso,</span>
+<span class="c"># crie o fluxo SEM | legenda, senão saem duas.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
@@ -258,7 +259,7 @@ inemaccbot/config/skills.json</pre>
   <p class="sub" style="margin-top:22px"><strong>Melhorar o reel, na ordem do mais barato:</strong> trocar o clipe de <code>cta/</code> → ajustar o <code>entrega</code> do <code>flow.json</code> → e só então mexer na skill.</p>
   <div class="grid g2" style="margin-top:10px">
     <div class="card"><h3>Para quem, e onde fica</h3><p>O domínio diz <strong>para quem</strong> (<code>"canal": "lives24"</code>); o bot sabe <strong>onde</strong> — sempre <code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code>. Nunca ponha caminho no <code>flow.json</code>.</p></div>
-    <div class="card"><h3>Legenda: o que é nosso e o que não é</h3><p>A opção <code>| legenda</code> controla só a legenda que o nosso editor desenha. Legenda queimada nos pixels pelo HeyGen sobrevive ao reel inteiro — não há remoção no pipeline, e com a opção ligada saem duas. Por isso: grave sem legenda no estúdio.</p></div>
+    <div class="card"><h3>Legenda: o que é nosso e o que não é</h3><p>Quem decide a legenda do avatar é o <strong>estúdio</strong>: o download pega a versão legendada quando ela existe, e a limpa quando não. A opção <code>| legenda</code> é outra — é a que o nosso editor desenha. Ligar as duas faz sair <strong>duas</strong>; e legenda queimada vem enquadrada para 16:9, sem remoção possível depois.</p></div>
   </div>
 </div></section>
 

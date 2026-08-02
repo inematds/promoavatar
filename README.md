@@ -3,6 +3,10 @@
 Repo de **domínio** do fluxo `/promoavatar` do inemaccbot: reels de divulgação
 para 12 públicos, com portão humano no meio.
 
+## 📖 Guia de uso
+
+Guia completo (landing + passo a passo): **https://inematds.github.io/promoavatar/guia/**
+
 O bot escreve os roteiros e PARA. Você grava os avatares no HeyGen; quando
 terminar, libera e ele baixa, monta os reels e entrega em cada canal.
 

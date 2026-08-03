@@ -156,8 +156,16 @@ texto errado (acento quebrado, fala pela metade). Selecione TUDO no editor
 Corrigir por cima produz um vídeo com texto corrompido que PARECE sucesso — o
 pior desfecho possível, porque ninguém vai conferir.
 
-Ao terminar, escreva o título gerado em {{saida}} e sua ÚLTIMA linha deve ser:
+Ao terminar, escreva o título gerado **dentro** de {{saida}} — só o título, é o
+conteúdo do arquivo.
+
+Depois, **na SUA RESPOSTA** (o texto que você devolve ao terminar, não o
+arquivo), a ÚLTIMA linha deve ser exatamente:
 `RESULT: {{saida}}`
 
-Se falhar, sua ÚLTIMA linha deve ser:
+São dois lugares diferentes e é fácil confundir: o `RESULT:` é o recibo que você
+entrega ao bot, não faz parte do artefato. Escrevê-lo dentro do arquivo faz o
+job só passar por uma rede de segurança, em vez de cumprir o contrato.
+
+Se falhar, a ÚLTIMA linha da SUA RESPOSTA deve ser:
 `ERRO: <motivo curto>`

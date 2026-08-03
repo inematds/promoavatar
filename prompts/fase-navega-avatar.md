@@ -82,8 +82,13 @@ Com a aba `visible`, digite pela tool `computer` (`action: "type"`) — ela pass
 pelo CDP e acentua certo. Para textos longos, prefira a área de transferência,
 que é uma ação só e imune a acento:
 
+Escreva a FALA num arquivo com a tool `Write` (ex.: `/tmp/fala-{{alvo}}.txt`) e
+mande o arquivo para a área de transferência. **Nunca** ponha o texto acentuado
+dentro de uma variável ou de aspas no shell — escapar isso é a mesma classe de
+bug que essa receita existe para evitar.
+
 ```bash
-printf '%s' "$TEXTO" | DISPLAY=:99 xclip -selection clipboard
+DISPLAY=:99 xclip -selection clipboard < /tmp/fala-{{alvo}}.txt
 DISPLAY=:99 xdotool key --clearmodifiers ctrl+v
 ```
 

@@ -1,7 +1,10 @@
 {
   "nome": "imagem-plena",
-  "descricao": "A imagem ocupa o QUADRO INTEIRO e o avatar entra num recorte arredondado no canto inferior. Inverte o peso: a imagem conta a história, a pessoa comenta. Bom para 'pergunta incômoda', 'previsão', 'consequência inesperada' — onde a metáfora visual prende sozinha.",
-  "canvas": { "largura": 1080, "altura": 1920 },
+  "descricao": "A imagem ocupa o QUADRO INTEIRO e o avatar entra num recorte arredondado no TOPO-DIREITA. O canto inferior é proibido: em produção a interface da rede (legenda, @, botões) cobre o rodapé e o avatar simplesmente não apareceria. Inverte o peso: a imagem conta a história, a pessoa comenta. Bom para 'pergunta incômoda', 'previsão', 'consequência inesperada'.",
+  "canvas": {
+    "largura": 1080,
+    "altura": 1920
+  },
   "cores": {
     "fundo": "#0E1116",
     "texto": "#FFFFFF",
@@ -9,22 +12,38 @@
   },
   "faixas": {
     "topo": {
-      "y": 0, "altura": 1920,
+      "y": 0,
+      "altura": 1920,
       "fonte": "imagens",
       "escurecer": 0.58,
       "headline": {
-        "tamanho": 88, "peso": 900, "entrelinha": 1.02,
-        "margem_lateral": 56, "ancora": "topo", "topo_em": 300,
+        "tamanho": 88,
+        "peso": 900,
+        "entrelinha": 1.02,
+        "margem_lateral": 56,
+        "ancora": "topo",
+        "topo_em": 420,
         "maiusculas": true
+      },
+      "imagem": {
+        "largura": 1088,
+        "altura": 1920,
+        "_nota": "multiplos de 16; o preparar.py gera nesta proporcao em vez de assumir a faixa do topo"
       }
     },
     "meio": {
-      "fonte": "avatar", "audio": true,
+      "fonte": "avatar",
+      "audio": true,
       "forma": "pip",
       "pip": {
-        "largura": 468, "altura": 264,
-        "esquerda": 56, "rodape": 120,
-        "raio": 28, "borda": 3
+        "largura": 468,
+        "altura": 264,
+        "ancora_v": "topo",
+        "topo": 72,
+        "ancora_h": "direita",
+        "direita": 48,
+        "raio": 28,
+        "borda": 3
       }
     }
   },

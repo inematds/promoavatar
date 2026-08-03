@@ -165,10 +165,31 @@ Isso acontece porque o render não conhece o público nem a tese — só o texto
 sobrou. Você conhece. Então a imagem é decidida aqui, **onde ainda dá para
 revisar antes de gastar**.
 
-Escreva uma seção `## IMAGENS` com **uma linha por gatilho**, nomeadas
-`IMAGEM 1` a `IMAGEM 4`, na mesma ordem das SOBREPOSIÇÕES (ATENÇÃO, RETENÇÃO,
-ENGAJAMENTO, CTA). Cada linha é o prompt visual pronto, para ir direto ao
-gerador — não é descrição do que você quis dizer.
+**Uma imagem por SEGMENTO DA FALA — não uma por gatilho.** A imagem do topo
+troca a cada segmento: é o motor de re-hook do reel. Medido no reel 229
+(2026-08-03): **9 imagens distintas em 45s**, cada uma de 3 a 10 segundos no ar.
+Os quatro gatilhos são outro eixo — são funções narrativas espalhadas AO LONGO
+da fala, não a segmentação. Entregar só quatro imagens obriga o render a
+inventar o resto, que é exatamente de onde vem o clichê.
+
+Quebre a sua FALA nos pontos em que o assunto ou o ângulo MUDA (a mesma quebra
+que o reel usaria) — numa fala de 35–40s isso dá tipicamente **6 a 10
+segmentos**. Escreva uma seção `## IMAGENS` com **uma linha por segmento**,
+numeradas `IMAGEM 1`, `IMAGEM 2`… na ordem da fala. Cada linha traz:
+
+```
+IMAGEM <N> — "<as 4-6 primeiras palavras do segmento>" [gatilho, se houver]
+<prompt visual pronto, em inglês, para ir direto ao gerador>
+```
+
+Citar o começo do segmento é o que **amarra a imagem ao texto**: quem monta o
+reel sabe exatamente sobre qual frase ela entra, e você é obrigado a olhar para
+a frase ao escrever o prompt — em vez de ilustrar o assunto em geral. Marque
+entre colchetes o segmento que carrega ATENÇÃO, RETENÇÃO, ENGAJAMENTO e CTA
+(nem todo segmento carrega um).
+
+O prompt é o texto final que vai ao gerador — não é descrição do que você quis
+dizer.
 
 - **`IMAGEM 1` é a CAPA do feed e carrega a PROVOCAÇÃO**, não o tema. Ela é vista
   pequena, parada e antes de qualquer texto ser lido. Três testes, e ela precisa
@@ -186,7 +207,17 @@ gerador — não é descrição do que você quis dizer.
   inesperada, o antes/depois no mesmo quadro, o detalhe humano que denuncia a
   mudança. Use a pessoa concreta da regra 16 — ela já é específica.
 - **Sem texto embutido na imagem.** O texto entra como camada no reel; letra
-  gerada por IA sai torta. Descreva a cena, nunca peça palavras nela.
+  gerada por IA sai torta. Descreva a cena, nunca peça palavras nela — e isso
+  inclui **não pedir conteúdo escrito na cena** ("uma linha recém-escrita", "uma
+  placa dizendo X"). Testado em 2026-08-03: pedir uma linha escrita E proibir
+  lettering no mesmo prompt faz o gerador obedecer à proibição e deixar o lugar
+  VAZIO. Se a cena precisa de escrita, descreva o gesto ou a marca (giz circulando
+  algo, papel rabiscado), nunca o texto.
+- **Não conte com posicionamento relativo.** "Os dois bancos DO MESMO LADO da
+  mesa" foi ignorado no teste — o gerador pôs um de cada lado, invertendo o
+  sentido (parceria virou confronto). Se a composição carrega o significado,
+  escolha uma cena em que ela seja natural, não uma que dependa do gerador
+  obedecer a uma instrução espacial.
 - **Escreva o prompt em inglês.** O gerador responde melhor, e o texto falado
   continua em português.
 - Cada imagem herda a chave `<publico>#<N>` (o reel usa em `--seed-key`), então

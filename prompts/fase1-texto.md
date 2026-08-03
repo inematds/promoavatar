@@ -157,6 +157,41 @@ esta seção, então ela precisa entregar, nesta ordem e nomeada assim:
   Escolha UM, o que fizer sentido para este público.
 - **CTA (fecho)** — a ordem final, curta e imperativa, junto do CTA falado.
 
+**11b. As IMAGENS também são suas — uma por gatilho.** Hoje quem escreve o
+prompt de cada imagem é o agente do reel, na hora, e o resultado cai sempre no
+mesmo clichê de banco de imagens (medido em 2026-08-03: cinco prompts diferentes
+produziram cinco variações de "pessoa de perfil diante de holograma ciano").
+Isso acontece porque o render não conhece o público nem a tese — só o texto que
+sobrou. Você conhece. Então a imagem é decidida aqui, **onde ainda dá para
+revisar antes de gastar**.
+
+Escreva uma seção `## IMAGENS` com **uma linha por gatilho**, nomeadas
+`IMAGEM 1` a `IMAGEM 4`, na mesma ordem das SOBREPOSIÇÕES (ATENÇÃO, RETENÇÃO,
+ENGAJAMENTO, CTA). Cada linha é o prompt visual pronto, para ir direto ao
+gerador — não é descrição do que você quis dizer.
+
+- **`IMAGEM 1` é a CAPA do feed e carrega a PROVOCAÇÃO**, não o tema. Ela é vista
+  pequena, parada e antes de qualquer texto ser lido. Três testes, e ela precisa
+  passar nos três: **(a) transferência** — se serviria para qualquer outro reel
+  sobre o mesmo tema, está errada; tem de ser presa a ESTE assunto e ao gatilho
+  DESTE público; **(b) polegar** — reduzida a 1/4 e sem a headline, ainda
+  provoca uma pergunta?; **(c) tensão** — mostra o que se PERDE, o que QUEBRA, o
+  que fica absurdo ou o "depois" chocante, ou só mostra o objeto do assunto? Só
+  o objeto = ilustração = refazer.
+- **Proibidos:** pessoa de perfil diante de tela/holograma brilhante · HUD
+  circular · chuva de código estilo matrix · cérebro de circuitos · robô
+  apertando mão de humano · lâmpada de ideia. São os clichês que o gerador
+  produz sozinho quando o prompt é vago.
+- **Prefira** a consequência concreta, o objeto fora de lugar, a escala
+  inesperada, o antes/depois no mesmo quadro, o detalhe humano que denuncia a
+  mudança. Use a pessoa concreta da regra 16 — ela já é específica.
+- **Sem texto embutido na imagem.** O texto entra como camada no reel; letra
+  gerada por IA sai torta. Descreva a cena, nunca peça palavras nela.
+- **Escreva o prompt em inglês.** O gerador responde melhor, e o texto falado
+  continua em português.
+- Cada imagem herda a chave `<publico>#<N>` (o reel usa em `--seed-key`), então
+  a numeração é contrato: não pule nem renomeie.
+
 **12. Nome que você não entende, você NÃO usa.** Se o assunto trouxer um nome
 próprio cujo papel não está explicado (marca, plataforma, pessoa), não o cite
 como se o público soubesse o que é. Ou o assunto explica, ou a frase sai.
@@ -191,8 +226,10 @@ O que fazer, de forma AUTÔNOMA, sem pedir confirmação:
    contrato: não escolha outra pasta, outro repo nem outro slug. `<publico>` é
    exatamente o nome do público no pipeline (`mulheres`, `40mais`,
    `pessoa-comum`…), em minúsculas e sem acento.
-3. Cada arquivo tem as seções FALA / SOBREPOSIÇÕES / ESTRUTURA exatamente como
-   a skill manda. A seção falada começa com `### FALA` — é ela que vai para o
+3. Cada arquivo tem as seções FALA / SOBREPOSIÇÕES / IMAGENS / ESTRUTURA
+   exatamente como a skill manda (IMAGENS é a da regra 11b, e vem logo depois
+   das SOBREPOSIÇÕES — as duas juntas são o roteiro visual que a fase do reel
+   lê). A seção falada começa com `### FALA` — é ela que vai para o
    HeyGen, e o bot a lê deste arquivo para mandar no chat. **Nada pode vir antes
    do `### FALA` a não ser as duas linhas de decisão** (o portão lê a primeira
    seção FALA e só ela):

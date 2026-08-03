@@ -90,6 +90,16 @@
       }
     },
     {
+      "id": "navega-avatar",
+      "escopo": "alvo",
+      "fila": "navegador",
+      "kind": "agent",
+      "tarefa": "fluxo-navegador",
+      "prompt": "prompts/fase-navega-avatar.md",
+      "opcional": "navega",
+      "max_tentativas": 2
+    },
+    {
       "id": "baixar",
       "escopo": "alvo",
       "fila": "io",

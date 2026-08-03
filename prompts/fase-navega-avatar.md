@@ -25,15 +25,27 @@ conserto é no template, não aqui.
 
 ## O caminho (verificado em 2026-08-03)
 
+> **PORTÃO: não execute NADA desta seção antes de terminar a seção seguinte
+> ("Abrir a aba e TRAZÊ-LA À FRENTE") com `visibilityState: 'visible'`
+> confirmado.** Leia o prompt inteiro antes de agir. Clonar com a aba oculta é
+> o que deixa clone órfão para trás (ver o passo 1 sobre nome duplicado).
+
 1. Página de Projetos → busque `TEMPLATE-AVATAR`.
+   **Se a busca devolver MAIS DE UM resultado com esse nome, PARE e reporte** —
+   um deles é clone órfão de uma tentativa anterior, você não tem como saber
+   qual é o original, e clonar do errado corrompe todos os públicos em silêncio.
+   Limpar duplicata é do usuário; adivinhar aqui não é aceitável.
 2. Passe o mouse sobre o card do template → aparece um ⋮ no canto superior
    direito do CARD → **`Edit as New`**.
    (O ⋮ da PÁGINA do vídeo não serve: lá só há `Create Template`, `Move to` e
    `Delete`.)
 3. O estúdio abre em `app.heygen.com/create-v4/<novo-id>` **na mesma aba**.
-4. **Troque o título.** O campo do título tem *placeholder* "Untitled Video",
-   mas o VALOR vem clonado do template — ou seja, ele chega preenchido com o
-   nome do template, não vazio. Apague o que está lá e escreva `{{titulo}}`.
+4. **Troque o título — ANTES de qualquer outra coisa no estúdio.** O clone nasce
+   com o NOME DO TEMPLATE, então enquanto você não renomear existem dois
+   `TEMPLATE-AVATAR` no HeyGen e a busca do passo 1 fica ambígua para a próxima
+   rodada. Renomear primeiro fecha essa janela em segundos. O campo tem
+   *placeholder* "Untitled Video", mas o VALOR vem clonado: apague o que está lá
+   e escreva `{{titulo}}`.
 5. **Troque a fala.** O texto do script também vem clonado. Selecione tudo no
    editor e substitua pela FALA deste público.
 6. `Generate`.
@@ -54,7 +66,7 @@ Receita determinística (verificada em 2026-08-03):
 
 1. `tabs_context_mcp` com `createIfEmpty: true` → anote o `tabId`.
 2. `navigate` essa aba para `https://app.heygen.com/projects`.
-3. **Traga a aba à frente pelo X**, senão ela fica `hidden` para sempre:
+3. **Traga a aba à frente pelo X.** O passo que resolve é o `ctrl+2`:
    ```bash
    export DISPLAY=:99
    W=$(xdotool search --onlyvisible --class chromium | head -1)
@@ -63,6 +75,16 @@ Receita determinística (verificada em 2026-08-03):
    ```
    Depois do reset do `stack99` a janela tem exatamente UMA aba, então a sua é a
    de número 2 — daí o `ctrl+2`.
+
+   **`windowactivate` sozinho NUNCA basta, e parar nele é o erro clássico.** A
+   janela já está mapeada e já está ativa — ela só está mostrando a aba de
+   Projects do `stack99`. Ativá-la de novo não muda nada, e o `visibilityState`
+   segue `hidden`. Quem troca a aba em foco é o `ctrl+2`.
+
+   **Diagnóstico que o agente anterior errou:** aba `hidden` **NÃO** quer dizer
+   "abriu uma segunda janela não mapeada". Só existe UMA janela no `:99`, e sua
+   aba está DENTRO dela, em segundo plano. Não conclua que o cenário é
+   impossível e desista — é o esperado, e o `ctrl+2` é a saída.
 4. **Confirme** com `javascript_tool` na aba:
    `({vis: document.visibilityState, focus: document.hasFocus()})`.
    Tem que vir `vis: 'visible'`. Se vier `'hidden'`, tente `ctrl+Tab` (até 5

@@ -77,6 +77,9 @@ def main() -> int:
     ap.add_argument("--sem-cta", action="store_true")
     ap.add_argument("--pular-preparo", action="store_true",
                     help="ja existe index.html e voce so quer render/QC")
+    ap.add_argument("--saida", default=None,
+                    help="copia o entregavel para ESTE caminho no fim (contrato da "
+                         "fase do bot: o servico vigia esse arquivo)")
     a = ap.parse_args()
 
     ws = Path(os.path.expanduser(a.ws))
@@ -175,6 +178,15 @@ def main() -> int:
     if r.returncode != 0:
         print("REPROVADO no QC.")
         return 3
+
+    # A copia para `--saida` e a ULTIMA coisa, depois de todos os portoes: o
+    # servico do bot trata o aparecimento desse arquivo como "render pronto".
+    # Copiar antes do QC faria um reel reprovado ser entregue como bom.
+    if a.saida:
+        destino = Path(os.path.expanduser(a.saida))
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(entrega, destino)
+        print(f"saida       {destino}")
 
     print(f"\nPRONTO      {entrega}")
     print(f"OLHE        {ws/'qc'/'mosaico.png'}  — uma imagem, nao a serie de frames.")

@@ -180,8 +180,12 @@ numeradas `IMAGEM 1`, `IMAGEM 2`… na ordem da fala. Cada linha traz:
 ```
 IMAGEM <N> — "<as 4-6 primeiras palavras do segmento>" [gatilho, se houver]
 headline: PRIMEIRA LINHA | SEGUNDA LINHA
+hook: uma frase de painel com {a palavra-chave} entre chaves
 <prompt visual pronto, em inglês, para ir direto ao gerador>
 ```
+
+**As DUAS linhas são obrigatórias — `headline` E `hook`.** Elas vão para faixas
+diferentes da tela e nenhuma substitui a outra.
 
 **A `headline` é o texto que aparece NA TELA sobre aquela imagem** — não é a
 fala, é o que a pessoa lê enquanto ouve. Regras:
@@ -196,6 +200,25 @@ fala, é o que a pessoa lê enquanto ouve. Regras:
 - **sem ponto final.** É cartaz, não frase.
 - **a da IMAGEM 1 é a mais importante:** ela aparece no frame 0, que é a capa no
   feed, junto da imagem da provocação.
+
+**O `hook` é o texto da faixa de BASE** — o painel de baixo, que ocupa 1/3 da
+tela nos layouts empilhados. Regras:
+
+- **duas linhas cheias, tipografia grande.** A base é um PAINEL, não uma legenda:
+  se o texto não enche duas linhas, reescreva o hook em vez de diminuir a fonte.
+- **marque a palavra-chave entre `{chaves}`** — ela sai na cor de acento, o
+  MESMO acento da headline daquele segmento.
+- **não repita a headline.** A headline é o cartaz sobre a imagem; o hook é o
+  comentário que aprofunda ou vira a chave. Dizer a mesma coisa duas vezes na
+  mesma tela desperdiça 1/3 do quadro.
+- **sem ponto final desnecessário**; frase curta, ritmo de manchete.
+
+Escreva o `hook` em TODAS as imagens, mesmo sabendo que o layout pode não ter
+faixa de base (`diptico` e `imagem-plena` não têm). O layout é resolvido depois,
+a partir do `Formato escolhido:` — se o hook faltar e o layout tiver base, ela
+sai **vazia**. Foi o que aconteceu no A#23: `hook` em 0 de 8 imagens nos dois
+públicos, e o reel do `jovens` saiu com o painel de baixo preto. Hook sobrando é
+gratuito; hook faltando é um terço da tela vazio.
 
 Por que ela vem daqui e não do render: hoje o agente do reel a inventa na hora,
 sem conhecer o público nem a tese, e ninguém revisa. Escrita aqui, ela é

@@ -73,6 +73,25 @@ da tela**.
 - **Imagem enviada pelo dono nunca é cortada** (`arquivo:` na seção IMAGENS):
   cabe inteira, com fundo borrado no resto. `modo: cover` pede o contrário.
 
+## 0. O caminho é UM comando
+
+```
+python3 <repo>/scripts/montar-reel.py --avatar <mp4> --ws <workspace> \
+    --alvo <publico> --textos <repo>/textos/<REF>/<publico>.md
+```
+
+Faz a sequência inteira: preparar → portão 1 → render → revisor → CTA → QC.
+Nomes de saída **fixos**: `<ws>/motion/corpo.mp4`, `<ws>/final/reel.mp4`,
+`<ws>/qc/mosaico.png`. Exit 0 pronto · 3 algum portão reprovou · 2 erro de
+arquivo.
+
+Levantados 7 workspaces do A#22: saíram **7 estruturas diferentes**, a mesma
+coisa com três nomes e listas de concat escritas à mão. Não era variação
+editorial, era improviso — por isso os nomes agora são do script.
+
+As seções abaixo descrevem o que ele faz por dentro, e os comandos avulsos que
+você usa **quando algo reprova**. No caminho feliz você não os chama.
+
 ## 4. QC: o determinístico PRIMEIRO, o olho depois
 
 Frame é o item mais caro do job: cada um entra no contexto e é **relido em toda

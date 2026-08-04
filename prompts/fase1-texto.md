@@ -179,8 +179,28 @@ numeradas `IMAGEM 1`, `IMAGEM 2`… na ordem da fala. Cada linha traz:
 
 ```
 IMAGEM <N> — "<as 4-6 primeiras palavras do segmento>" [gatilho, se houver]
+headline: PRIMEIRA LINHA | SEGUNDA LINHA
 <prompt visual pronto, em inglês, para ir direto ao gerador>
 ```
+
+**A `headline` é o texto que aparece NA TELA sobre aquela imagem** — não é a
+fala, é o que a pessoa lê enquanto ouve. Regras:
+
+- **duas linhas, separadas por `|`.** O trecho DEPOIS do `|` sai destacado na
+  cor de acento — ponha ali a palavra que carrega o golpe ("ISSO MUDA O QUE É |
+  CONSTRUIR"). Uma linha só também vale, mas perde o destaque.
+- **legível de relance.** Se precisa de duas leituras, perdeu — o vídeo já
+  passou. Máximo ~5 palavras por linha.
+- **não repita a fala palavra por palavra.** A tela dá o resumo ou a tensão do
+  que está sendo dito; repetir vira legenda, e legenda é outra coisa.
+- **sem ponto final.** É cartaz, não frase.
+- **a da IMAGEM 1 é a mais importante:** ela aparece no frame 0, que é a capa no
+  feed, junto da imagem da provocação.
+
+Por que ela vem daqui e não do render: hoje o agente do reel a inventa na hora,
+sem conhecer o público nem a tese, e ninguém revisa. Escrita aqui, ela é
+decidida por quem escreveu a fala e **revisada por você no portão** — e o reel
+deixa de ter o que improvisar.
 
 Citar o começo do segmento é o que **amarra a imagem ao texto**: quem monta o
 reel sabe exatamente sobre qual frase ela entra, e você é obrigado a olhar para

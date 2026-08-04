@@ -104,7 +104,31 @@ verificação por imagem levou uma tarefa de 3 min para 13 min e 13,5M tokens.
   os dois caminhos caros que o script substitui, e cada frame solto é relido em
   toda mensagem seguinte até o fim do job. Três perguntas, e só elas: a imagem 1
   provoca? a headline lê de relance? o fecho tem o CTA?
-- **Rode uma vez só, no render ANTES do `mix-sfx.py`** — ele usa `-c:v copy`, o
-  vídeo sai bit a bit idêntico e a segunda passada não vê nada novo.
-- **Não reveja imagem depois do `mix-sfx.py`:** o que muda é o áudio, e áudio
-  não se confere com imagem.
+- **Rode uma vez só.** Rever a mesma imagem duas vezes não vê nada novo.
+- **Portão 4, o revisor — script, não subagente:**
+
+  ```
+  python3 <repo>/scripts/revisor.py --video <ws>/motion/<render-final>.mp4 --ws <ws>
+  ```
+
+  Re-transcreve o áudio do **render final** (é a única forma de pegar áudio
+  perdido ou dessincronizado na montagem), roda `verify-cut.py` e
+  `lint-timeline.py`. Exit 0 passa · 3 reprova. **Não spawne subagente revisor**
+  — a FASE 5 da skill global não vale aqui (ver `docs/decisoes-reel.md`).
+
+## 5. O que NÃO entra neste pipeline
+
+Três coisas que a skill global manda fazer e que aqui estão fora. Estão
+registradas com evidência e caminho de volta em `docs/decisoes-reel.md` — se for
+mudar alguma, leia lá antes: as três se apoiam no mesmo pressuposto (o avatar é
+**TTS do HeyGen**, não gravação humana) e caem juntas se ele mudar.
+
+- **SFX não entram.** Não gere, não mixe, não crie `sfx/`. Estava na receita e
+  não aconteceu em 18 de 18 reels.
+- **Legenda: default SEM.** Quem decide é o estúdio. Não inverta por conta
+  própria — já se inverteu por acidente uma vez e inutilizou uma medição de
+  custo inteira.
+- **Corte de repetições não se aplica.** `islands.py` / `cut.py` são para bruto
+  gravado por pessoa. `repeticoes=0` em 18 de 18. TTS não tem falso começo,
+  blooper nem tomada repetida — e por isso o `revisor.py` trata repetição de
+  n-grama como informativa, não como defeito.

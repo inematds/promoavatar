@@ -34,6 +34,30 @@ Só as etapas **2** e **5** gastam modelo.
 Repartição de tempo medida: **96% agente, 4% render** (50,8 s de 21min34).
 Mexer em qualidade ou resolução mexe nos 4%.
 
+## O tempo do HeyGen é fila, não custo (medido no A#23, 2026-08-04)
+
+O render de um avatar de **36s levou ~65 minutos** entre `pending`,
+`processing` e `completed`, com só 2 vídeos na fila. **Isso é a fila do plano da
+conta, não um gargalo do pipeline** — decisão do dono: *faz parte, não é custo*.
+Não medir contra isso, não tentar otimizar, não confundir com job travado.
+
+O que o log mostra durante essa espera é o comportamento CERTO:
+
+```
+[job 361] ainda não: "A23-jovens-v1" está pending — nova checagem em 120s
+[job 361] ainda não: "A23-jovens-v1" está processing — nova checagem em 120s
+```
+
+O que **é** consequência real disto, e vale vigiar: `espera.timeout` da fase
+`baixar` é **5400s (90 min)** por job. Com fila lenta e muitos públicos na mesma
+conta, um vídeo pode passar de 90 min esperando e o job cai por timeout **mesmo
+com o avatar ficando pronto depois**. O avatar não se perde (fica `completed` no
+HeyGen); o conserto é `/refazer` daquele público, e aí o `baixar` acha na hora,
+por título exato.
+
+Lembre que `espera.timeout` é **congelado por fluxo**: mudá-lo no `flow.json`
+não alcança fluxo já criado.
+
 ## Como escala
 
 | | 1 público | 12 públicos |

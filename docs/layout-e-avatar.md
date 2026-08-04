@@ -7,20 +7,25 @@ templates no HeyGen e o prompt continuou apontando para um nome só.
 
 ## O que existe no HeyGen (e não estava escrito em lugar nenhum)
 
-Dois projetos de origem, não um:
+Conferido na API em 2026-08-04 (`v1/video.list`): são **três** projetos `draft`,
+não um:
 
 - **`TEMPLATE-AVATAR16`** — avatar horizontal (16:9);
-- **`TEMPLATE-AVATAR9`** — avatar vertical (9:16), com a legenda desativada.
+- **`TEMPLATE-AVATAR9`** — avatar vertical (9:16), com a legenda desativada;
+- **`TEMPLATE-AVATAR`** — o antigo, sem sufixo, ainda lá.
+
+É o terceiro que o `prompts/fase-navega-avatar.md` busca hoje. Como ele existe
+com esse nome **exato**, a busca não deu ambiguidade e o A#23 clonou sem
+reportar nada — o que também quer dizer que os dois novos estão parados, sem uso.
 
 > A legenda **não importa** para este sistema (decisão do dono, 2026-08-04):
 > o pipeline não usa legenda do HeyGen, e o layout se ajusta vindo ela ou não.
 > Não é critério de escolha entre os dois.
 
-O `prompts/fase-navega-avatar.md` hoje busca **`TEMPLATE-AVATAR`**, sem sufixo.
-Isso casa com os dois por prefixo — e o prompt manda **parar e reportar quando a
-busca devolve mais de um resultado**. Vale conferir se a busca do HeyGen é exata
-ou por prefixo antes de mexer: se for por prefixo, a regra de ambiguidade já
-está sendo contornada de alguma forma, e é preciso entender qual.
+**Cuidado ao mexer:** o prompt manda **parar e reportar quando a busca devolve
+mais de um resultado**, e os três nomes compartilham o prefixo `TEMPLATE-AVATAR`.
+Se a busca do estúdio for por prefixo, apontar a fase para o `-16` ou o `-9` sem
+mais nada pode passar a casar três resultados e travar. Conferir isso antes.
 
 ## A regra
 

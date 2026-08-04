@@ -16,7 +16,11 @@ O que faz, nesta ordem:
   5. GERA AS IMAGENS DA SECAO `## IMAGENS` do arquivo de texto do publico —
      uma por segmento, com --seed-key "<alvo>#<N>" e 1088x704 (a faixa do topo);
   6. escreve `manifesto.json` com tudo, para o agente NAO precisar sair
-     procurando arquivo com ls/grep (isso era outro cluster grande de chamadas).
+     procurando arquivo com ls/grep (isso era outro cluster grande de chamadas);
+  7. CHAMA o montar.py e entrega `motion/index.html` pronto. `--flow`/`--mapa`
+     tem default no proprio repo deste script, entao o template e resolvido
+     mesmo que ninguem passe nada. Sem isso restava um caminho alternativo
+     (escrever HTML a mao) e o agente pegava esse caminho em 3 de 5 reels.
 
 O passo 5 e o que fecha a Etapa 3: a fase de texto decide as imagens, e aqui
 elas sao geradas MECANICAMENTE. Medido no A#19: o agente do reel ignorou a
@@ -26,6 +30,7 @@ Uso:
   python3 preparar.py --avatar edicion/avatar.mp4 --ws ~/projetos/output/reels/x \\
       --alvo jovens --textos ~/projetos/promoavatar/textos/A19/jovens.md
   [--explicativo edicion/exp.mp4] [--sem-imagens] [--sem-transcricao]
+  [--sem-montar] [--flow ... --mapa ... --template ...  (so para override)]
 """
 import argparse, json, os, re, subprocess, sys, shutil
 from pathlib import Path
@@ -130,6 +135,14 @@ def tempos_dos_segmentos(transcript: dict, imagens: list) -> list:
     return achados
 
 
+def ler_json_seguro(p) -> dict:
+    """JSON de um caminho que pode nao existir — devolve {} em vez de explodir."""
+    try:
+        return json.loads(Path(os.path.expanduser(p)).read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
 def ler_imagens(md: Path) -> list:
     """Le a secao `## IMAGENS` do arquivo do publico.
 
@@ -182,11 +195,27 @@ def main() -> int:
     ap.add_argument("--sem-imagens", action="store_true")
     ap.add_argument("--sem-transcricao", action="store_true")
     ap.add_argument("--flow", default=None,
-                    help="flow.json do projeto — de onde saem o template do alvo e o padrao")
+                    help="flow.json do projeto — de onde saem o template do alvo e o padrao. "
+                         "Omitido: usa o do repo deste script, se existir.")
     ap.add_argument("--mapa", default=None,
-                    help="templates/mapa.json — formato editorial -> layout")
+                    help="templates/mapa.json — formato editorial -> layout. "
+                         "Omitido: usa o do repo deste script, se existir.")
     ap.add_argument("--template", default=None, help="override do operador")
+    ap.add_argument("--sem-montar", action="store_true",
+                    help="para no manifesto, sem gerar o index.html")
     a = ap.parse_args()
+
+    # `--flow`/`--mapa` eram opcionais e o flow.json PEDIA que o agente os
+    # passasse — no A#22 nenhum dos 5 reels passou, e sem eles o template nao e
+    # resolvido e o agente volta a escolher (ou a escrever HTML na mao). Pedir
+    # nao e portao: o caminho dos dois sai do proprio __file__.
+    REPO = AQUI.parent
+    if not a.flow and (REPO / "flow.json").exists():
+        a.flow = str(REPO / "flow.json")
+    if not a.mapa:
+        _dir = (ler_json_seguro(a.flow).get("templates_dir") or "templates") if a.flow else "templates"
+        if (REPO / _dir / "mapa.json").exists():
+            a.mapa = str(REPO / _dir / "mapa.json")
 
     ws = Path(os.path.expanduser(a.ws))
     edicion, motion, imgdir = ws / "edicion", ws / "motion", ws / "motion" / "img"
@@ -265,12 +294,7 @@ def main() -> int:
                 formato = m.group(1).strip()
     man["formato"] = formato
 
-    def ler_json(p):
-        try:
-            return json.loads(Path(os.path.expanduser(p)).read_text(encoding="utf-8"))
-        except Exception:
-            return {}
-
+    ler_json = ler_json_seguro
     flow = ler_json(a.flow) if a.flow else {}
     mapa = (ler_json(a.mapa) if a.mapa else {}).get("mapa", {})
     do_alvo = ((flow.get("alvos") or {}).get(a.alvo) or {}).get("template")
@@ -409,8 +433,42 @@ def main() -> int:
                 f"escrever `headline:` em cada uma (regra 11b). Complete o "
                 f"segmentos.json antes de montar.")
 
-    (ws / "manifesto.json").write_text(json.dumps(man, ensure_ascii=False, indent=2),
-                                       encoding="utf-8")
+    # O manifesto e escrito ANTES de montar porque o montar.py o le do disco —
+    # ele e reescrito logo abaixo com o resultado do HTML.
+    def grava_manifesto():
+        (ws / "manifesto.json").write_text(json.dumps(man, ensure_ascii=False, indent=2),
+                                           encoding="utf-8")
+    grava_manifesto()
+
+    # ---- monta o index.html na mesma chamada ----
+    #
+    # Usar o montar.py era CONSELHO no `entrega` do flow.json, e conselho perde:
+    # no A#22 ele foi usado em 2 de 5 reels — nos outros 3 o agente escreveu o
+    # HTML a mao, que e de onde vinham o loop de lint e o `top:1372px-1312px`.
+    # Aqui nao ha mais caminho alternativo: quem prepara, monta.
+    if a.sem_montar:
+        man["html"] = {"pulado": True}
+    elif not man.get("segmentos"):
+        man["html"] = {"erro": "sem segmentos.json (faltou transcript ou secao IMAGENS)"}
+    elif not any((i.get("headline") or "").strip() for i in man.get("imagens", [])):
+        # Visto no primeiro teste do encadeamento: com um .md antigo (sem as
+        # linhas `headline:` da 11b) o montar.py gerava um index.html com TODAS
+        # as manchetes vazias e o preparar.py saia 0. Reel mudo de texto passando
+        # por pronto e pior do que falhar aqui.
+        man["html"] = {"erro": "nenhuma imagem tem `headline:` — o texto do publico "
+                               "e antigo (regra 11b). Complete o segmentos.json e rode "
+                               "o montar.py, ou refaca a fase de texto."}
+    elif not man.get("template_arquivo"):
+        man["html"] = {"erro": f"template nao resolvido: {man.get('template_aviso') or 'sem flow.json/mapa.json'}"}
+    else:
+        saida = motion / "index.html"
+        r = sh([sys.executable, str(AQUI / "montar.py"),
+                "--manifesto", str(ws / "manifesto.json"),
+                "--segmentos", man["segmentos"], "--out", str(saida)])
+        man["html"] = ({"caminho": str(saida)} if r.returncode == 0
+                       else {"erro": (r.stderr or r.stdout).strip()[:300]})
+
+    grava_manifesto()
 
     # ---- resumo COMPACTO (isto entra no contexto do agente; nao floode) ----
     av = man["avatar"]
@@ -443,7 +501,18 @@ def main() -> int:
         print(f"template   {man['template']}   <- {man['template_origem']}")
     if man.get("template_aviso"):
         print(f"  AVISO: {man['template_aviso']}")
+    h = man.get("html") or {}
+    if h.get("caminho"):
+        print(f"html       {h['caminho']}")
+    elif h.get("pulado"):
+        print("html       pulado (--sem-montar)")
+    else:
+        print(f"  ERRO html: {h.get('erro')}")
     print(f"manifesto  {ws/'manifesto.json'}")
+    # Falha alto se o HTML nao saiu: e o produto da chamada. Sair 0 com o
+    # index.html faltando e o convite para o agente escrever um a mao.
+    if h.get("erro"):
+        return 3
     return 1 if ruim else 0
 
 

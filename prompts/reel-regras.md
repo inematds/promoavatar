@@ -82,11 +82,29 @@ verificação por imagem levou uma tarefa de 3 min para 13 min e 13,5M tokens.
 - **Portão 1, antes de renderizar (~zero):** `lint` + `lint-timeline.py` +
   `verify-cut.py`. Renderizar para descobrir com o olho o que o lint diria de
   graça é o desperdício mais caro da fase.
-- **Portão 2, depois do render (~zero):** `ffprobe` — duração, 1080×1920, os
-  dois streams. Render truncado ou mudo se descobre aqui.
-- **Portão 3, o olho, e DIRIGIDO:** `/watch` com ~10 frames que decidem algo
-  (t=0, cada troca de imagem, o CTA, e o que o portão 1 acusou). Nunca a série
-  inteira duas vezes.
-- **Não refaça `/watch` depois do `mix-sfx.py`:** ele roda com `-c:v copy`, o
-  vídeo sai **bit a bit idêntico** ao que você já revisou. O que muda é o áudio,
-  e áudio não se confere com imagem.
+- **Portões 2 e 3, depois do render, UM comando:**
+
+  ```
+  python3 <repo>/scripts/qc-frames.py --video <ws>/motion/out.mp4 --ws <ws>
+  ```
+
+  Ele faz o portão 2 inteiro (duração, 1080×1920, os dois streams — não rode
+  `ffprobe` à parte, é a mesma checagem duas vezes), escolhe os frames a partir
+  do `segmentos.json` (t=0, cada corte depois da transição, o fecho) e verifica
+  sozinho o que não precisa de olho: **a imagem do topo trocou em cada corte**
+  (medido só na faixa do topo — no quadro inteiro o avatar se mexe e o teste
+  passa sempre), nenhum frame preto, nenhum par congelado.
+
+  Exit **0** passou · **3** alguma checagem falhou (a linha `FALHA` diz qual) ·
+  **2** erro de arquivo.
+
+- **O que sobra para o olho:** abra **`<out>/mosaico.png`** — uma imagem, não
+  dez. `<out>/headline-t0.png` só se precisar julgar legibilidade da manchete.
+  **Não use `/watch` nesta fase e não extraia frames com `ffmpeg` na mão**: são
+  os dois caminhos caros que o script substitui, e cada frame solto é relido em
+  toda mensagem seguinte até o fim do job. Três perguntas, e só elas: a imagem 1
+  provoca? a headline lê de relance? o fecho tem o CTA?
+- **Rode uma vez só, no render ANTES do `mix-sfx.py`** — ele usa `-c:v copy`, o
+  vídeo sai bit a bit idêntico e a segunda passada não vê nada novo.
+- **Não reveja imagem depois do `mix-sfx.py`:** o que muda é o áudio, e áudio
+  não se confere com imagem.

@@ -80,7 +80,11 @@ def _limpa(p: str) -> str:
     return _re.sub(r"[^a-z0-9]", "", p)
 
 
-def tempos_dos_segmentos(transcript: dict, imagens: list) -> list:
+MIN_CARD = 1.5   # segundos que um card do topo precisa ficar no ar
+
+
+def tempos_dos_segmentos(transcript: dict, imagens: list,
+                         duracao: float = 0.0) -> list:
     """Em que segundo a fala chega ao trecho citado por cada imagem.
 
     Isto NAO e trabalho de LLM. Medido em 2026-08-04, na mesma tarefa: um
@@ -129,9 +133,29 @@ def tempos_dos_segmentos(transcript: dict, imagens: list) -> list:
                          if achados[j][0] is not None), None)
             t = round((ultimo + prox) / 2, 2) if prox is not None else ultimo + 2.0
             origem = "interpolado"
-        t = max(t, ultimo + 0.05) if k else t
+        # Separacao MINIMA de verdade, nao 0,05s.
+        #
+        # O piso antigo existia so para forcar ordem crescente, e produzia
+        # cards de 50 ms: no A#25/pessoa-comum as imagens 7 e 8 sairam em
+        # 33,78s e 33,83s, e o `qc-frames.py` reprovou o reel — corretamente,
+        # porque duas imagens a 50 ms uma da outra nao sao uma troca, sao um
+        # piscar. Um card precisa ficar no ar tempo de ser visto.
+        if k:
+            t = max(t, ultimo + MIN_CARD)
         achados[k] = (round(t, 2), origem)
         ultimo = achados[k][0]
+
+    # Empurrar em cascata pode jogar o ultimo card para fora do video. Se isso
+    # acontecer, comprime de tras para frente respeitando o MIN_CARD — assim o
+    # fim continua dentro do quadro e a ordem se mantem. O primeiro card fica
+    # cravado em 0 (regra do cold-open), entao a compressao para nele.
+    limite = (duracao - MIN_CARD) if duracao else None
+    if limite and achados and achados[-1][0] > limite:
+        for k in range(len(achados) - 1, 0, -1):
+            t, origem = achados[k]
+            teto = limite - MIN_CARD * (len(achados) - 1 - k)
+            if t > teto:
+                achados[k] = (round(max(0.0, teto), 2), f"{origem} (comprimido)")
     return achados
 
 
@@ -414,7 +438,8 @@ def main() -> int:
             tr = json.loads(transcript.read_text(encoding="utf-8"))
         except Exception:
             tr = {}
-        tempos = tempos_dos_segmentos(tr, man["imagens"])
+        tempos = tempos_dos_segmentos(tr, man["imagens"],
+                                      man["avatar"].get("duracao") or 0.0)
         segs, faltando = [], []
         for it, (t, origem) in zip(man["imagens"], tempos):
             it["inicio"] = t

@@ -55,6 +55,7 @@ O caminho **não está escrito em lugar nenhum** — é sempre
         │
         ⏸️  PARA — o chat te manda cada roteiro com o TÍTULO do vídeo
         │      você grava no HeyGen com esse nome exato
+        │      (é AQUI que se troca a capa: `capa: A#<N> <publico>` + a foto)
         │      /aprovar A#<N>
         ▼
   2. baixar    acha o vídeo pelo título e baixa (janela de 90 min)
@@ -64,6 +65,43 @@ O caminho **não está escrito em lugar nenhum** — é sempre
         │
         ▼
   ✅ link do vídeo final no chat
+```
+
+## Trocar a imagem de capa por uma sua
+
+As imagens do reel são decididas na fase de texto (seção `## IMAGENS`, regra
+11b) e geradas pelo flux. Para pôr uma arte **sua** no lugar, mande a **foto no
+chat com esta legenda** — a legenda da imagem, não uma mensagem separada:
+
+| legenda | efeito |
+|---|---|
+| `capa: A#25 jovens` | IMAGEM 1 (a capa do feed) desse público |
+| `capa: A#25 *` | a mesma imagem em **todos** os públicos do fluxo |
+| `capa: A#25 jovens 3` | troca a IMAGEM 3, não a capa |
+| `capa: A#25 jovens cover` | preenche **cortando** as laterais |
+
+O bot escreve a linha `arquivo: <caminho>` na imagem certa do
+`textos/A<N>/<publico>.md`, e o `preparar.py` passa a usar a sua foto em vez de
+gerar uma.
+
+**O padrão é `contain`:** a imagem cabe INTEIRA e o resto da faixa é preenchido
+com uma cópia borrada dela mesma. Imagem enviada por você **nunca é cortada sem
+você pedir** — a gerada nasce no tamanho exato, então cortar não tira nada; a
+sua já vem composta, e se traz texto ou um rosto enquadrado, cortar destrói o
+trabalho. `cover` é para imagem de fundo, sem texto.
+
+### Quando mandar: no portão da fase de texto
+
+É a única janela em que trocar a capa é **de graça** — nenhum avatar gerado,
+nenhuma imagem paga no flux, nenhum render. Depois que o reel monta, o comando
+ainda escreve no roteiro, mas o vídeo só muda com `/refazer` — e o bot avisa
+isso na resposta.
+
+Sem foto anexada ele recusa em vez de gravar uma linha vazia. Se você já tem o
+arquivo no disco, dá para digitar o caminho:
+
+```
+capa: A#25 jovens | arquivo=/caminho/da/imagem.png
 ```
 
 ## O título é o contrato

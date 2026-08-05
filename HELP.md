@@ -20,6 +20,31 @@ FLUXO
   3. reel     monta o reel (capa de impacto com o gatilho do público) e
               entrega no canal lives daquele público
 
+TROCAR A IMAGEM DE CAPA (foto sua no lugar da gerada)
+
+Mande a FOTO no chat COM esta legenda — a legenda da imagem, não uma
+mensagem separada:
+
+  capa: A#25 jovens          IMAGEM 1 (a capa do feed) desse público
+  capa: A#25 *               a mesma imagem em TODOS os públicos do fluxo
+  capa: A#25 jovens 3        troca a IMAGEM 3, não a capa
+  capa: A#25 jovens cover    preenche CORTANDO as laterais
+
+O padrão é `contain`: a imagem cabe INTEIRA, e o resto da faixa é preenchido
+com uma cópia borrada dela mesma. Imagem sua não é cortada sem você pedir —
+se ela traz texto ou um rosto enquadrado, cortar destrói o trabalho. Use
+`cover` só quando a imagem for de fundo, sem texto.
+
+QUANDO mandar: no PORTÃO da fase de texto, ANTES do /aprovar. É a única
+janela em que trocar a capa é de graça — nenhum avatar gerado, nenhuma
+imagem paga, nenhum render. Mandar depois do reel montado ainda escreve no
+roteiro, mas o vídeo só muda com /refazer (o bot avisa).
+
+Sem foto anexada ele recusa em vez de gravar linha vazia. Se você já tem o
+caminho no disco, dá para digitar:
+
+  capa: A#25 jovens | arquivo=/caminho/da/imagem.png
+
 O TÍTULO É O CONTRATO
 
 No estúdio, nomeie cada vídeo EXATAMENTE assim:

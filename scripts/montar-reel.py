@@ -60,9 +60,42 @@ def duracao(v: str) -> float:
         return 0.0
 
 
+def _hyperframes_do_cache():
+    """O binario mais NOVO que ja esta no cache do npx. None se nao houver.
+
+    Por que isto existe (2026-08-05, A#25): `npx --no-install hyperframes`
+    resolve sempre a versao LATEST do registry. Quando o upstream publicou a
+    0.7.94, o cache tinha ate 0.7.92 — e o `--no-install` recusou, certissimo,
+    porque a regra desta maquina e nao baixar nada no meio do job. Resultado: 5
+    reels reprovados no portao 1 por um erro que nao tem nada a ver com o reel.
+
+    Chamar o binario do cache tira o pipeline da mao do registry: ele passa a
+    depender do que ESTA na maquina, que e o que a regra sempre quis dizer.
+    """
+    base = Path.home() / ".npm" / "_npx"
+    achados = []
+    for pkg in base.glob("*/node_modules/hyperframes/package.json"):
+        binario = pkg.parent.parent / ".bin" / "hyperframes"
+        if not binario.exists():
+            continue
+        try:
+            v = json.loads(pkg.read_text()).get("version", "0")
+            achados.append((tuple(int(x) for x in v.split(".")[:3]), v, binario))
+        except Exception:
+            continue
+    if not achados:
+        return None
+    return max(achados)[1:]
+
+
 def npx_hyperframes(args, cwd):
-    """A skill exige `npx --no-install` em toda invocacao (nada de baixar no meio
-    do job)."""
+    """Nada de baixar no meio do job — nem por acidente do `npx`."""
+    achado = _hyperframes_do_cache()
+    if achado:
+        versao, binario = achado
+        r = sh([str(binario)] + args, cwd=cwd)
+        r.versao_hyperframes = versao   # so para o log dizer o que rodou
+        return r
     return sh(["npx", "--no-install", "hyperframes"] + args, cwd=cwd)
 
 
@@ -106,6 +139,9 @@ def main() -> int:
     # desperdicio mais caro da fase.
     passo("2/6 portao 1 (lint + ritmo visual) — antes de gastar render")
     r = npx_hyperframes(["lint", "."], cwd=str(motion))
+    # Qual hyperframes rodou: sem isto, "o reel do A#25 saiu diferente" vira
+    # investigacao. O binario vem do cache, entao a versao NAO e a latest.
+    print(f"hyperframes {getattr(r, 'versao_hyperframes', 'via npx (latest)')}")
     print((r.stdout or r.stderr).strip()[-400:])
     if r.returncode != 0:
         print("REPROVADO no lint — nao renderizei.")

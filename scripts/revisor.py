@@ -22,7 +22,7 @@ forma de pegar audio que se perdeu, dessincronizou ou truncou na montagem.
 
 Uso:
   python3 revisor.py --video <ws>/motion/out.mp4 --ws <ws>
-  [--index <ws>/motion/index.html] [--max-sil 0.6] [--max-gap 4.0]
+  [--index <ws>/motion/index.html] [--max-sil 2.0] [--max-gap 4.0]
 
 Exit 0 = PASSA · 3 = reprovado (imprime o que falhou) · 2 = erro de arquivo.
 """
@@ -58,7 +58,13 @@ def main() -> int:
     ap.add_argument("--video", required=True, help="o render FINAL")
     ap.add_argument("--ws", default=None)
     ap.add_argument("--index", default=None, help="motion/index.html (ritmo visual)")
-    ap.add_argument("--max-sil", default="0.6")
+    # 0.6s era o default do verify-cut, pensado para BRUTO HUMANO JA CORTADO:
+    # ali silencio > 0.6s significa corte mal feito. Aqui o audio e a fala
+    # inteira do avatar, sem corte nenhum — e TTS respira. Medido no
+    # A#25/profissionais: pausas de 0,84s e 1,07s reprovaram um reel que estava
+    # perfeito. Buraco de montagem de verdade e da ordem de segundos, nao de
+    # decimos. Ver docs/decisoes-reel.md (decisao 3).
+    ap.add_argument("--max-sil", default="2.0")
     ap.add_argument("--max-gap", default="4.0")
     ap.add_argument("--tail", default="1.5", help="silencio tolerado no fim (encerramento)")
     a = ap.parse_args()

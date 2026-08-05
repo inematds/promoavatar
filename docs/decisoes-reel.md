@@ -87,7 +87,13 @@ só pode vir do **texto**, que já passou pelo portão humano da fase 1. No
 primeiro teste do `revisor.py` ele reprovou o reel por `"o professor"` repetido
 — paralelismo retórico, não defeito. Então, neste pipeline:
 
-- **silêncio longo no corpo → REPROVA** (indica montagem quebrada);
+- **silêncio longo no corpo → REPROVA** (indica montagem quebrada), mas o
+  limiar subiu de **0,6s para 2,0s** em 2026-08-05. Os 0,6s vinham do
+  `verify-cut`, pensado para bruto humano JÁ CORTADO, onde uma pausa dessas
+  significa corte mal feito. Aqui o áudio é a fala inteira do avatar, sem corte
+  nenhum — e TTS respira: no A#25/profissionais, pausas de **0,84s e 1,07s**
+  reprovaram um reel que estava perfeito. Buraco de montagem de verdade é da
+  ordem de segundos, não de décimos;
 - **repetição de n-grama → informativa**, sai no relatório e não derruba.
 
 **Isto se inverte junto com a decisão 1 e 2 se a entrada virar gravação

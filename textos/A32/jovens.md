@@ -12,6 +12,7 @@ CTA: trilha Agentic Básico, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Aprender sozinho é o caminho mais lento" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: APRENDER SOZINHO | É O CAMINHO LENTO
 hook: coragem sem {mapa} custa anos
 prompt: A lone hiker standing at the base of a huge tangled hillside of brush while a cleared stair path runs up the same hill nearby, wide shot, daylight, photorealistic

@@ -16,6 +16,7 @@ CTA: Trilha INEMA Agentes Hub V no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Marcos vira as costas pro" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: A profissão dele não morreu | mas a segunda-feira dele sim
 hook: quando o {sistema} faz o que você fazia sozinho toda semana
 A professional in business-casual clothes stands in a dim office at dawn, back turned to a glowing computer screen behind him, one hand loosening his tie, stacks of printed spreadsheets piled on the desk casting long shadows, warm amber desk lamp light contrasting cold blue monitor glow, cinematic wide shot, shallow depth of field, moody realistic photography

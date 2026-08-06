@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Marcos não perdeu a vaga" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: PERDEU A VAGA | NÃO PRO JOVEM
 hook: Quem levou o lugar não tinha {menos idade} — tinha mais fundamento
 A single office chair pushed away from a desk, name plate still on the desk reading nothing legible, a younger empty chair beside it also unused, warm afternoon light, symbolic still life, no on-screen text

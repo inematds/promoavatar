@@ -12,6 +12,7 @@ CTA: trilha Vibe Coding, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Saber usar IA já não vale mais" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: SABER USAR | NÃO VALE MAIS NADA
 hook: todo mundo da sua idade já {sabe} exatamente isso
 prompt: A crowded university hallway where dozens of young people are all looking down at their phones doing the same thing, one person standing still looking up, wide shot, daylight, photorealistic

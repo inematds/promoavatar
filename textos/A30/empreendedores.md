@@ -12,6 +12,7 @@ CTA: trilha AI Strategy Factory, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Sua empresa adotou IA e o custo" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: ADOTOU IA | O CAIXA NÃO MUDOU
 hook: a conta do mês seguiu exatamente {igual}
 prompt: A small business owner at a back office desk comparing two nearly identical monthly expense printouts side by side, flat expression, fluorescent light, photorealistic candid

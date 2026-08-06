@@ -12,6 +12,7 @@ CTA: trilha Agentes: o Novo Office, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "O erro é dar sua senha" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: O ERRO É DAR | A SUA SENHA
 hook: acesso total é o contrário de {autonomia}
 prompt: A single house key duplicated into a large pile of identical copies spilling across a kitchen table, one woman's hand hesitating above them, harsh overhead light, unsettling, photorealistic macro

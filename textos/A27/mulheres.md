@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Ninguém te deu autorização pra esperar" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: NINGUÉM TE DEU | AUTORIZAÇÃO PRA ESPERAR
 hook: A permissão pra começar não vem de {ninguém} além de você
 A closed office door with a small "back in 2027" handwritten sign hanging crooked on it, warm hallway lighting, symbolic and slightly ironic composition

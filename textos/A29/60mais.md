@@ -12,6 +12,7 @@ CTA: comece pela trilha de IA do seu perfil, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Dizem que esse mercado não é" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: DIZEM QUE NÃO É | PARA VOCÊ
 hook: e mesmo assim é a sua {cadeira} que está vazia lá dentro
 prompt: A modern glass office lobby seen from the street through the window, inside a single empty chair at a large table, an older man standing outside on the sidewalk looking in, overcast daylight, photorealistic

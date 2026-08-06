@@ -12,6 +12,7 @@ CTA: trilha Agentes: o Novo Office, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "O Marcelo perdeu nove anos aprendendo" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: NOVE ANOS | APRENDENDO NA MARRA
 hook: o que você pagou em {tempo} alguém já pagou por você
 prompt: A worn leather office chair with deep cracks beside a brand new identical chair still wrapped in plastic, empty office, hard window light, photorealistic, no lettering

@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Todo mundo da sua idade" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: SABER PEDIR PRA IA | JÁ NÃO VALE NADA
 hook: Milhões de {jovens} fazem a mesma pergunta pro mesmo robô todo dia
 A cracked smartphone screen lying face-up on a school desk, dozens of identical faint chat bubbles ghosted and overlapping across the display like an overused stamp, morning light, shallow depth of field, cinematic, no on-screen text

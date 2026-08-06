@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Você testou o modelo novo" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: TESTOU O MODELO NOVO | E PAROU AÍ
 hook: O lançamento vira {notificação} esquecida em uma semana
 A laptop screen showing a chat interface with a single test prompt typed and abandoned, notification badges piling up unread in the corner, cool blue glow, symbolic of stalled curiosity

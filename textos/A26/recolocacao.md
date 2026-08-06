@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Currículo atualizado, entrevista marcada" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: CURRÍCULO PRONTO | E MESMO ASSIM SILÊNCIO
 hook: A caixa de entrada não {responde} há semanas
 A laptop screen showing an inbox with no new messages, the cursor blinking on an unanswered job application, a printed resume beside the laptop on a quiet kitchen table, muted evening light

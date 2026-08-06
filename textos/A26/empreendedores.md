@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Você contratou gente" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: VOCÊ CONTRATOU PRA FAZER | O QUE A IA FAZ EM SEGUNDOS
 hook: A folha de pagamento cresce por uma tarefa que já é {automática}
 An empty office chair at a desk with a stack of unopened order forms piling up, a small clock on the wall showing late hours, warm office lighting, symbolic of wasted labor cost

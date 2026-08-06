@@ -12,6 +12,7 @@ CTA: trilha Prof2030 - O Profissional do Futuro, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "O gargalo do seu trabalho virou" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: O GARGALO AGORA | É A SUA ASSINATURA
 hook: tudo espera parado por {uma} caneta
 prompt: A tall stack of folders piled on an office desk waiting, a single pen resting on top, the chair behind the desk empty, late afternoon light through blinds, photorealistic, quiet tension

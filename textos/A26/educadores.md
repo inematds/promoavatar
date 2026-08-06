@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Seu aluno já usa IA" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: SEU ALUNO USA IA | E VOCÊ?
 hook: A distância entre os dois cresce a cada {dever de casa}
 A classroom desk with an open notebook and a piece of chalk resting untouched, while in the background a blurred student's tablet glows with an active AI chat interface, contrast in focus, cinematic

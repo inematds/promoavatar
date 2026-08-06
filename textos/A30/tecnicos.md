@@ -12,6 +12,7 @@ CTA: trilha FEA-IA, Engenharia de Agentes, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Você testou dez frameworks e não entregou" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: DEZ TESTADOS | ZERO ENTREGUE
 hook: a bancada cheia e nada em {produção}
 prompt: A developer's desk covered with a dozen half assembled electronics kits, none finished, one clean empty shipping box to the side, top down, cold desk lamp light, photorealistic

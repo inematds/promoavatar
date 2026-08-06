@@ -12,6 +12,7 @@ CTA: trilha O Caminho Certo da IA, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Eu queimei anos aprendendo isso do jeito" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: EU QUEIMEI ANOS | DO JEITO ERRADO
 hook: alguém já pagou essa conta para {você}
 prompt: A tall stack of burned-edge notebooks in a metal wastebasket beside a desk, thin smoke still rising, warm desk lamp, no people, photorealistic

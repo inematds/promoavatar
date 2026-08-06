@@ -12,6 +12,7 @@ CTA: trilha Profissional Liberal Experiente com IA, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Você não precisa trocar de profissão" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: NÃO TROQUE | DE PROFISSÃO
 hook: o erro é aprender no {susto}, não a carreira
 prompt: A professional jacket hanging on a chair beside a desk covered in scattered sticky notes with no legible writing, harsh office light, photorealistic

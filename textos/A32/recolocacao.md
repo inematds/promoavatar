@@ -12,6 +12,7 @@ CTA: trilha CAIP, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Eu já perdi meses estudando a coisa errada" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: MESES ESTUDANDO | A COISA ERRADA
 hook: sem rumo, esforço vira {desperdício}
 prompt: A cardboard box of personal desk belongings sitting on the back seat of a parked car, cold morning light through the window, photorealistic, no lettering

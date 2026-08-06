@@ -12,6 +12,7 @@ CTA: trilha FEA-IA, Engenharia de Agentes, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Testar ferramenta nova é ficar parado" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: TESTAR TUDO | É FICAR PARADO
 hook: sensação de avanço não é {avanço}
 prompt: An exercise treadmill belt in motion blur inside an empty room with a single window, hard side light, photorealistic, no lettering

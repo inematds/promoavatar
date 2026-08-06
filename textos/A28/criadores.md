@@ -19,6 +19,7 @@ CTA: a trilha do INEMA Agentes Hub V no inema.club
 ## IMAGENS
 
 IMAGEM 1 — "Seu editor de vídeo trabalha" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: SEU VÍDEO TERMINOU | SEM VOCÊ
 hook: enquanto você dormia o {sistema} trabalhou sozinho
 a fábrica não parou

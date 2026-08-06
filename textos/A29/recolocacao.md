@@ -12,6 +12,7 @@ CTA: trilha Profissional 2027, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Uma fila cheia. A outra, completamente" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: UMA FILA CHEIA | A OUTRA, VAZIA
 hook: a fila menor é a que quase ninguém {enxerga}
 prompt: Two adjacent office doors, one with an enormous pile of envelopes overflowing from the mail slot onto the floor, the other with a clean empty slot, wide shot, cold corridor lighting, photorealistic

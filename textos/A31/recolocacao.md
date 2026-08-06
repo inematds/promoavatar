@@ -12,6 +12,7 @@ CTA: trilha Prof2030 - O Profissional do Futuro, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "A demissão dele economizou três anos" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: A DEMISSÃO DELE | ECONOMIZOU 3 ANOS
 hook: a pior semana do ano cortou o caminho pela {metade}
 prompt: A cardboard box of personal desk items sitting on the passenger seat of a parked car, a man's hands resting calmly on the steering wheel, late afternoon light, photorealistic

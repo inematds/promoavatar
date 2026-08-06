@@ -12,6 +12,7 @@ CTA: trilha Agentic Básico, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Sua falta de experiência acabou de virar" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: CURRÍCULO VAZIO | VIROU VANTAGEM
 hook: nada para {desaprender} é o novo diferencial
 prompt: A blank sheet of paper on a clipboard held up beside a thick stack of densely filled paper sheets, plain background, dramatic side lighting, no legible text, photorealistic

@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Enquanto você entrega um relatório" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: VOCÊ ENTREGA UM | ELE ENTREGA TRÊS
 hook: A diferença não é {esforço}, é o sistema por trás
 Two office desks side by side, one with a single printed report and a tired employee, the other with three completed reports stacked and a laptop glowing quietly beside them, split lighting, cinematic contrast

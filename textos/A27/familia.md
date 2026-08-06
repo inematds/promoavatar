@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "a escola do seu filho está preparando" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: PREPARANDO PRA QUE | MUNDO, 2015 OU 2027?
 hook: O calendário da escola parou. O {mundo} não
 A school report card lying on a kitchen table next to a calendar showing an old year crossed out and a new one circled, warm evening light, symbolic still life

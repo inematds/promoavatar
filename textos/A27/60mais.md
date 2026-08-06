@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Eu quase desisti de aprender" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: QUASE DESISTI | DE APRENDER ISSO
 hook: O medo de {não conseguir} quase venceu antes de começar
 A pair of reading glasses resting closed on top of an unopened laptop on a kitchen table, warm late afternoon light through a window, quiet symbolic still life

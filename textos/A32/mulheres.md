@@ -12,6 +12,7 @@ CTA: trilha Construa seu AI OS, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Eu passei anos tentando aprender no tempo" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: NO TEMPO QUE SOBRAVA | E NUNCA SOBRAVA
 hook: o dia acaba antes da {sua} vez
 prompt: A kitchen table at night with an unopened notebook pushed aside by dishes, laundry basket and bags, single overhead light, photorealistic, no lettering

@@ -12,6 +12,7 @@ CTA: curso Construa seu AI OS, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "A parte que te prende não é" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: NÃO É A TÉCNICA | QUE TE PRENDE
 hook: o que rouba a sua semana tem outro {nome}
 prompt: A woman at a kitchen table with her phone, a notebook and a calculator all open at once, hands full, half finished coffee, late night domestic light, candid photorealistic

@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Eu mandei duzentos currículos" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: MANDEI 200 | CURRÍCULOS. NADA
 hook: O número alto não veio com {resposta} nenhuma
 A tall stack of printed resumes on a desk, an inbox on a laptop screen showing zero replies, cool muted lighting, quiet frustration scene

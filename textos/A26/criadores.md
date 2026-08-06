@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Você tem cinco assinaturas" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: 5 FERRAMENTAS DE IA | TUDO AINDA NA MÃO
 hook: Cada {assinatura} nova virou mais uma aba aberta
 A desk with a laptop showing five different app icons open in separate windows, cluttered and overlapping, a creator's hand frozen mid-scroll, cool blue screen glow, chaotic composition

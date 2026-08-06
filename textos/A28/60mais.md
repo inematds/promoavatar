@@ -24,6 +24,7 @@ CTA: Trilha INEMA Agentes Hub V — inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Diz que tecnologia não é" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: NÃO É MAIS PRA | SUA IDADE?
 hook: quem disse que {experiência} tem prazo de validade
 a sistemas que continuam rodando sozinhos

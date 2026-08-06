@@ -12,6 +12,7 @@ CTA: trilha Construa seu AI OS, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "O problema não é falta de tempo" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: NÃO É FALTA | DE TEMPO
 hook: é o pouco tempo indo para o lugar {errado}
 prompt: A single small hourglass placed on a wide table with sand spilling off the edge onto the floor, dramatic overhead light, photorealistic

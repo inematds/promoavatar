@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Vinte anos de experiência" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: 20 ANOS DE EXPERIÊNCIA | PERDENDO PRA ESTAGIÁRIO
 hook: Quem tem menos {tempo de casa} está entregando mais rápido
 Two office desks side by side, one worn and covered in thick paper folders and a rotary-style old phone, the other minimal with a single glowing laptop, split lighting, cinematic contrast

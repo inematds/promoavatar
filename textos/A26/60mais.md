@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Acham que essa história de IA" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: ACHAM QUE IA | É SÓ PRA JOVEM
 hook: A régua de {idade} está no lugar errado
 An empty chair placed conspicuously outside a bright room full of glowing laptop screens, warm light spilling from the doorway onto the empty chair, symbolic of exclusion, cinematic

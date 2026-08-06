@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Camila cortou dois funcionários" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: CORTOU DOIS | E ENTREGOU MAIS RÁPIDO
 hook: Menos gente na planilha, mais {entrega} no cliente
 An empty office desk with a chair pushed in neatly, a small dashboard glowing on a nearby screen showing tasks being completed automatically, clean modern office light

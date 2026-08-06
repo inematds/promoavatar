@@ -12,6 +12,7 @@ CTA: comece por O Caminho Certo da IA, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Existe um cliente que nunca vai" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: O CLIENTE QUE | NUNCA VAI CLICAR
 hook: ele compra, paga e some — sem tocar em {nenhum botão}
 prompt: An empty checkout counter in a small home bakery at night, a single smartphone lying face up on the counter with a paid-order notification glow, no customer anywhere, chairs untouched, warm domestic lighting, photorealistic, cinematic

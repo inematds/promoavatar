@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Bianca é advogada e achava que precisava" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: ACHAVA QUE PRECISAVA | VIRAR PROGRAMADORA
 hook: O medo de {trocar} de profissão quase a travou
 A law office desk with stacks of contracts on one side and a distant, unrelated coding book pushed aside on the other, symbolic tension, warm office light

@@ -12,6 +12,7 @@ CTA: trilha de IA do seu perfil, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Depois dos sessenta, o difícil não é" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: NÃO É A IDADE | É A FALTA DE MAPA
 hook: ela desistiu três vezes pelo motivo {errado}
 prompt: A pair of reading glasses resting on a closed laptop beside a cold cup of coffee on a lace tablecloth, soft afternoon light, photorealistic, no lettering

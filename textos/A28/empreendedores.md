@@ -26,6 +26,7 @@ CTA: trilha INEMA Agentes Hub V no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "O orçamento saiu sozinho enquanto" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: O PEDIDO CHEGOU ÀS 3H | E SAIU PRONTO
 hook: enquanto o dono dormia o {orçamento} já estava fechado
 esperando ninguém pra apertar o botão

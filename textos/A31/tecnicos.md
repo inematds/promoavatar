@@ -12,6 +12,7 @@ CTA: trilha FEA-IA - Engenharia de Agentes, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Seu histórico de testes não é experiência" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: HISTÓRICO DE TESTES | NÃO É EXPERIÊNCIA
 hook: cada ferramenta nova te devolve ao {começo}
 prompt: A shelf of dozens of half assembled electronics prototypes, none finished, thick dust on the older ones, harsh workshop lighting, photorealistic

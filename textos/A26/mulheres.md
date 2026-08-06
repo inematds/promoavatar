@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Você faz malabarismo" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: MALABARISMO ENTRE TRABALHO | CASA E MIL PENDÊNCIAS
 hook: A lista de tarefas nunca {termina}, só se acumula
 A kitchen counter at the end of a long day, phone buzzing with notifications, a laundry basket half-folded, a laptop open with unread emails, warm but exhausted evening lighting, relatable chaos

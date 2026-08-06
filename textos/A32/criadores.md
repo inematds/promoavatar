@@ -12,6 +12,7 @@ CTA: trilha Prompt Director, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Você paga assinatura para não aprender" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: VOCÊ PAGA | PARA NÃO APRENDER
 hook: a assinatura compra o resultado e cobra a {dependência}
 prompt: A credit card lying on a desk with four separate paper receipts curling out in different directions, hard overhead light, no legible print, photorealistic

@@ -12,6 +12,7 @@ CTA: comece pela trilha de IA do seu perfil, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Quem ensina alguém a atender um cliente" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: QUEM ENSINA A ATENDER | UM CLIENTE QUE É MÁQUINA
 hook: nenhum plano de aula previu esse {aluno}
 prompt: A classroom with all student desks occupied by open laptops and no students, teacher standing at the front looking at them, morning light through tall windows, photorealistic, quietly surreal

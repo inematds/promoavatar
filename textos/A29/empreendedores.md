@@ -12,6 +12,7 @@ CTA: trilha AI Strategy Factory, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Você acabou de perder uma venda" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: VOCÊ PERDEU UMA VENDA | QUE NEM APARECEU
 hook: nenhum relatório vai te mostrar o pedido que {não chegou}
 prompt: A retail stockroom shelf with one product slot conspicuously empty of dust while everything around is dusty, close shot, cold warehouse lighting, photorealistic detail

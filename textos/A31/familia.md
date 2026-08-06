@@ -12,6 +12,7 @@ CTA: trilha Prof2030 - O Profissional do Futuro, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Ninguém vai ensinar isso ao seu filho" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: NINGUÉM VAI ENSINAR | ISSO A ELE
 hook: a lacuna não aparece no {boletim}
 prompt: An empty school desk in the front row of a full classroom, all other desks occupied by students facing forward, cold daylight, photorealistic

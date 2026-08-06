@@ -12,6 +12,7 @@ CTA: trilha Profissional Liberal Experiente com IA, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Começar tarde virou vantagem" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: COMEÇAR TARDE | VIROU VANTAGEM
 hook: quem chegou depois pulou os {erros} de quem chegou antes
 prompt: Two identical hiking trails side by side, one deeply rutted and muddy with abandoned broken gear scattered along it, the other freshly cleared and smooth, morning light through trees, photorealistic wide shot

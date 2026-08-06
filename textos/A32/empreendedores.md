@@ -12,6 +12,7 @@ CTA: trilha Automação 2026, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Seu custo mais caro não está" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: O CUSTO MAIS CARO | NÃO ESTÁ NA PLANILHA
 hook: você paga em {tempo} e não lança em lugar nenhum
 prompt: A printed spreadsheet on a desk with a wall clock casting a hard shadow across it, no legible numbers, harsh office light, photorealistic

@@ -12,6 +12,7 @@ CTA: trilha O Caminho Certo da IA, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Eu passei dois anos fazendo isso da pior" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: DOIS ANOS | DO PIOR JEITO POSSÍVEL
 hook: eu paguei em anos o que você paga em {semanas}
 prompt: A kitchen wall calendar with two full years of pages torn off piling on the floor beneath it, morning light, no legible text, photorealistic

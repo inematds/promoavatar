@@ -12,6 +12,7 @@ CTA: trilha Profissional 2027, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Você está mandando currículo pra vagas que" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: CURRÍCULO ENVIADO | VAGA JÁ SUMIU
 hook: a porta que você bate já foi {fechada} por dentro
 prompt: A man in his forties dropping an envelope into a mailbox on a street where the storefront behind is shuttered and empty, overcast light, wide documentary shot, photorealistic

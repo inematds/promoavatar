@@ -12,6 +12,7 @@ CTA: trilha FEA-IA - Engenharia de Agentes, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Seu agente está usando a sua credencial" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: ELE ESTÁ USANDO | A SUA CREDENCIAL
 hook: o log vai dizer que foi {você} quem fez
 prompt: A single employee access badge left plugged into a card reader on an empty locked office door at night, corridor dark, red status light, photorealistic close up, tense

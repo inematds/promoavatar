@@ -12,6 +12,7 @@ CTA: trilha AI Strategy Factory, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Você está pagando duas vezes pela mesma" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: VOCÊ PAGA DUAS VEZES | PELA MESMA COISA
 hook: uma conta vem no {boleto}, a outra vem na madrugada
 prompt: A small shop counter at night with a stack of paid invoices on one side and a wall clock showing very late hours above, empty store behind, harsh fluorescent light, photorealistic

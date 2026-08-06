@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Todo dia alguém testa um prompt novo" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: TESTAR PROMPT | NÃO É DOMINAR IA
 hook: Testar não é o mesmo que {construir} algo que dura
 A terminal window on a monitor showing a single command being typed and immediately discarded, cluttered desk with many discarded printed prompts, cool blue lighting

@@ -24,6 +24,7 @@ CTA: trilha INEMA Agentes Hub V no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Dona Marlene não sabe nem" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: ELA NÃO SABE ABRIR | UMA PLANILHA
 hook: um sistema de {IA} trabalha sozinho por ela
 todo santo dia, sem ela tocar em nada

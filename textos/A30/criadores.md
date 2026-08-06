@@ -12,6 +12,7 @@ CTA: projeto videoprodutor, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Você paga seis assinaturas pra fazer" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: SEIS ASSINATURAS | UM VÍDEO SÓ
 hook: você já paga por um {sistema} que ainda monta na mão
 prompt: A young creator's desk covered with six different credit card statements fanned out beside a single small phone showing one finished vertical video, top down, harsh desk lamp light, photorealistic

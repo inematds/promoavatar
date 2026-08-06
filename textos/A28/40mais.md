@@ -24,6 +24,7 @@ CTA: Trilha INEMA Agentes Hub V, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Ninguém te conta o que" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: O QUE A IA | ROUBA PRIMEIRO
 hook: não é o seu {cargo} que está em risco
 é a certeza de que ele ainda vale algo

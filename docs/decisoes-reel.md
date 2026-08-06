@@ -118,3 +118,43 @@ As três decisões seguem o mesmo padrão que se repetiu nesta base o dia inteir
 ignorou regra escrita. Por isso cada decisão aqui só é considerada aplicada
 quando existe script ou quando o caminho alternativo foi removido — anotar no
 doc é memória, não garantia.
+
+---
+
+## 4. haiku na fase reel: reprovado (2026-08-06)
+
+**Decisão:** a fase reel roda em **sonnet**. `flow.json` volta a
+`reel: {perfil: {modelo: sonnet}}`.
+
+**O que foi testado:** o A#29 disparou os 12 reels com `modelo: haiku`,
+`esforco: low`, na noite de 2026-08-05 (23:38).
+
+**O que aconteceu — dois defeitos, nenhum reel entregue:**
+
+- **Job 582** (`A#29/40mais/reel`) morreu em **58 segundos**:
+  `o agente reportou erro: ** sistema bloqueou redirecionamento para
+  .../reelpromo/582.mp4.log`. O haiku escreveu um redirecionamento de shell que
+  o portão de permissão recusou. É o comando que a própria instrução da tarefa
+  manda usar (`nohup bash -c '...' > ....log 2>&1 &`) — o sonnet o executa há
+  quatro fluxos sem problema.
+- **Job 583** (`A#29/60mais/reel`) ficou **1h47 sem produzir uma linha de log
+  nem um arquivo**, e sem processo filho vivo. Contra **3,7 min de mediana** do
+  sonnet no A#28. Segurou a fila `render` (1 por vez) e travou os 11 restantes,
+  além do A#30 e do A#31 atrás dele.
+
+**Por que não é questão de preço:** medido em `inemaccbot/docs/custo-por-fase-a19-a29.md`,
+o reel em sonnet custa **US$ 0,18 por público** (US$ 2,08–2,37 por fluxo de 12) —
+11% do custo do fluxo. A navegação é 85%. Trocar o modelo da fase reel para
+economizar mira a fatia errada e comprou dois defeitos de produção.
+
+**O que a medição mostrou do haiku antes de travar** (2 jobs casados, A#29):
+saída de **4,6k tokens** contra **1,0k** do sonnet — escreve ~4× mais para
+disparar o mesmo comando. `cache_read` igual (198k contra ~180k).
+
+**Como voltar:** trocar `perfil.modelo` da fase `reel` no `flow.json`. Fluxos já
+criados têm a definição congelada no banco — para eles vale o `modelo` gravado
+na linha do job, que vence na resolução (`src/fila/skills.ts:179`).
+
+**O que invalidaria:** a fase reel virar `kind: function`. Aí não há modelo
+nenhum a escolher — e é para lá que ela está indo, já que o agente hoje só
+resolve nome de arquivo e dispara um comando.

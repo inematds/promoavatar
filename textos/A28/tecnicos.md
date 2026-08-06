@@ -16,6 +16,7 @@ CTA: monta o primeiro sistema que roda sem você
 
 ## IMAGENS
 IMAGEM 1 — "Rafael tinha 12 automações no" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: 12 automações rodando | nenhuma sozinha
 hook: doze fluxos {travados} esperando alguém clicar de novo
 Wide shot of a cluttered home office desk at night, a laptop screen showing a tangled flowchart of disconnected automation nodes with red warning icons, a young technician's hand frozen mid-air over the mouse, empty energy drink cans, blue monitor glow, shallow depth of field, cinematic realism, moody tension

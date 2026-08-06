@@ -26,6 +26,7 @@ CTA: trilha INEMA Agentes Hub V no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Marina abriu o notebook e" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: NÃO ESCREVEU | CURRÍCULO NENHUM
 hook: enquanto todo mundo manda {currículo} pro vazio
 ela abriu outra tela

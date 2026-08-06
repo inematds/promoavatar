@@ -12,6 +12,7 @@ CTA: trilha Agentes: o Novo Office, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Trocar de profissão é o pior conselho" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: TROCAR DE PROFISSÃO | É O PIOR CONSELHO
 hook: jogar fora o que você {já} sabe custa caro
 prompt: A professional's framed diploma and worn desk nameplate lying in an open cardboard box on an office floor, cold overhead light, no legible text, photorealistic

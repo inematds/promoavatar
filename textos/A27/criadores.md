@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Rafael posta todo dia" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: POSTA TODO DIA | TRAVADO NO MESMO NÚMERO
 hook: O esforço subiu. O {resultado} ficou parado
 A content calendar covered in sticky notes for every single day of the month, a phone showing a stagnant follower count graph beside it, cluttered desk, cool lighting

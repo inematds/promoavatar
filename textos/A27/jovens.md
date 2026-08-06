@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Em 2027 vai existir uma vaga" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: UMA VAGA QUE | AINDA NÃO TEM NOME
 hook: Essa profissão ainda não está em {nenhum} anúncio de emprego
 A blank job listing sign on a glass office door, reflection showing a busy modern workspace behind it, cool futuristic lighting, no readable text

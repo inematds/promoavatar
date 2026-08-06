@@ -12,6 +12,7 @@ CTA: trilha videoprodutor, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Você está aprendendo a ferramenta errada" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: A FERRAMENTA ERRADA | OUTRA VEZ
 hook: você não está atrasado, está {recomeçando} sempre
 prompt: A creator's desk covered in unplugged gadget boxes and cancelled subscription cards piled high, one small worn notebook untouched at the edge, cool ring light, photorealistic

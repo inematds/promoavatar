@@ -12,6 +12,7 @@ CTA: trilha Prof2030, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Quanto tempo seu filho vai perder" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: QUANTO TEMPO ELE | VAI PERDER
 hook: a conta que ninguém faz na {mesa} da cozinha
 prompt: A teenagers open school notebook on a kitchen table beside a much older yellowed notebook of the same kind, hard overhead light, no legible writing, photorealistic

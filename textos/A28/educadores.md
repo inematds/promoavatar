@@ -24,6 +24,7 @@ CTA: trilha INEMA Agentes Hub V — inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Tem uma aula que nenhum" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: A AULA QUE NINGUÉM | ESTÁ DANDO
 hook: enquanto você corrige provas, alguém já ensina o {sistema} inteiro
 A worn teacher's desk after hours, empty classroom in soft dim light, a red grading pen resting across a stack of paper exams, beside it a smartphone lighting up alone with an unanswered notification glow, nobody in frame, warm amber and cold blue contrast, cinematic still life, shallow depth of field

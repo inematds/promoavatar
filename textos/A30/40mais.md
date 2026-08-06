@@ -12,6 +12,7 @@ CTA: trilha Prof2030, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "O mais experiente é quem mais" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: MAIS EXPERIÊNCIA | MAIS TROPEÇO
 hook: quem mais sabe está tirando o {menor} proveito
 prompt: A man in his late forties in a small office, sleeves rolled up, staring at a closed laptop while a thick worn folder of old client work sits open beside him, late afternoon window light, candid photorealistic, quiet frustration

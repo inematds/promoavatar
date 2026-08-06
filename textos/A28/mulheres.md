@@ -32,6 +32,7 @@ CTA: entra na trilha agora — inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Enquanto ela dormia, o sistema" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: ELA DORMIU | O SISTEMA NÃO
 hook: enquanto você {descansa} o pedido já virou entrega
 A softly lit bedroom at night, a smartphone lying on the nightstand glowing faintly with a notification, a woman asleep in soft focus in the background, warm lamp off, cool blue screen light casting a sharp contrast across the room, cinematic, shallow depth of field, no visible text on any surface

@@ -12,6 +12,7 @@ CTA: trilha FEP - Engenharia de Prompts, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Seu aluno não sabe usar IA" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785989305-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: ELE NÃO SABE USAR | ELE SABE PEDIR
 hook: pedir é fácil, {conferir} é que não
 prompt: A flawlessly typed school assignment sheet lying on a teacher's desk with a red pen resting untouched beside it, classroom window light, no legible text on the page, photorealistic

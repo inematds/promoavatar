@@ -12,6 +12,7 @@ CTA: trilha Agentes, o Novo Office, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "A resposta estava convincente. E estava errada." [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: CONVINCENTE | E ERRADA
 hook: soou {certa} até alguém realmente olhar
 prompt: A professional in a white coat holding a printed page and pausing mid step in a clinic corridor, brow furrowed, natural hospital daylight, documentary photorealistic

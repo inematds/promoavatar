@@ -12,6 +12,7 @@ CTA: trilha Agentic Básico, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Seu primeiro cliente pode não ser" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: SEU PRIMEIRO CLIENTE | PODE NÃO SER HUMANO
 hook: a cadeira do outro lado da mesa vai continuar {vazia}
 prompt: A small freelance meeting table with two chairs, one occupied by a young woman with a notebook, the other chair empty but with a laptop open facing her mid-conversation, cafe daylight, candid photorealistic

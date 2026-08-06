@@ -12,6 +12,7 @@ CTA: comece pela trilha de IA do seu perfil, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Seu filho vai trabalhar para um cliente" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: O CLIENTE DELE | NÃO VAI SER GENTE
 hook: o primeiro chefe pode ser um {sistema}
 prompt: A teenager sitting across a desk in a job interview setting, the interviewer chair empty with only a laptop propped open facing him, office daylight, photorealistic, quietly unsettling

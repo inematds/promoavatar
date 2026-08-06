@@ -12,6 +12,7 @@ CTA: trilha Construa seu AI OS, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Seu próximo assinante pode ser um software" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: SEU PRÓXIMO ASSINANTE | PODE SER UM SOFTWARE
 hook: alguém pagou pelo seu trabalho sem nunca {assistir} ele
 prompt: A creator's studio at night with the ring light off, phone on a tripod showing a payment received notification, no one in the chair, moody blue and amber, photorealistic

@@ -16,6 +16,7 @@ CTA: trilha INEMA Agentes Hub V — inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Meu filho de 11 anos me perguntou" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: A PERGUNTA QUE | TRAVOU ESTE PAI
 hook: um filho de 11 anos perguntando sobre o {futuro} e um pai sem resposta pronta
 Photo-real, warm kitchen table at night, a father sitting across from his 11-year-old son, the boy's hand resting on a closed school notebook that looks suddenly small and outdated next to his father's laptop glowing beside it, father's face caught mid-thought with visible unease, single warm lamp light, shallow depth of field, cinematic documentary style, no visible text or screens with legible words

@@ -12,6 +12,7 @@ CTA: trilha FEP, Engenharia de Prompts, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Professor comete um erro caro com IA" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785997728-ChatGPT-Image-6-de-ago.-de-2026-00_49_57.png
 headline: O ERRO MAIS CARO | DO PROFESSOR COM IA
 hook: aprender o {botão} antes de aprender o porquê
 prompt: A stack of printed course certificates on a teachers desk beside a completely empty lesson planner, harsh classroom light, no legible text, photorealistic

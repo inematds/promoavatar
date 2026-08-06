@@ -16,6 +16,7 @@ CTA (fecho): "Entra agora no inema.club"
 
 ## IMAGENS
 IMAGEM 1 — "Você usa a primeira resposta" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785919537-ChatGPT_Image_16_de_jun_de_2026-_01_48_11_Copia_Copia_Copia.png
 headline: USA A PRIMEIRA | RESPOSTA E PRONTO
 hook: A resposta certa quase nunca é a {primeira} tentativa
 A smartphone screen glowing with a chat interface, a hand about to tap "copy" on the very first message without scrolling further, close-up, cool blue light

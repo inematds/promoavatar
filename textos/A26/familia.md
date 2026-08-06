@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Boletim cheio de nota boa" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: NOTA BOA E MESMO | ASSIM PRA TRÁS
 hook: O boletim perfeito não garante mais {lugar nenhum}
 A school report card with straight A grades lying on a kitchen table, next to it a smartphone glowing with an unrelated AI news headline, contrast between old measure and new reality, warm home lighting

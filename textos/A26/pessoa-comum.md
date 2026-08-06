@@ -16,6 +16,7 @@ CTA (fecho): "Entra em eventos.inema.pro agora"
 
 ## IMAGENS
 IMAGEM 1 — "Você pergunta pra IA, ela responde" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785918637-vczero.png
 headline: VOCÊ PERGUNTA, ELA | RESPONDE, E ACABOU
 hook: O mesmo {ciclo} se repete todo dia, sem sair do lugar
 A phone screen showing a single chat question and answer, the same chat window repeated faintly in the background like a loop, cool blue light, symbolic of a stuck routine

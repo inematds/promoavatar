@@ -12,6 +12,7 @@ CTA: trilha de Engenharia de Contexto, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "A professora que usa IA não corrige" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: USOU IA | E A PILHA CONTINUA
 hook: a tecnologia entrou e a {pilha} não diminuiu
 prompt: A tall stack of handwritten student essays on a teacher's kitchen table late at night, red pen resting on top, only two pages marked, warm lamp light, photorealistic

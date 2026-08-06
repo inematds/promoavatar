@@ -12,6 +12,7 @@ CTA: trilha Profissional Liberal Experiente com IA, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Quem sabe mexer na ferramenta vai perder" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785966679-ChatGPT-Image-5-de-ago.-de-2026-18_36_31.png
 headline: SABER MEXER | NÃO É MAIS A VANTAGEM
 hook: a ferramenta muda de nome a cada {seis meses}
 prompt: A drawer full of obsolete gadgets and chargers being closed by an older man's hand, one worn leather notebook sitting on top of the closed drawer, warm home office light, photorealistic

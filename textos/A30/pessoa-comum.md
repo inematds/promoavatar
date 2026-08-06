@@ -12,6 +12,7 @@ CTA: trilha O Caminho Certo da IA, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Eu usei IA errado por dois" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: DOIS ANOS | USANDO ERRADO
 hook: parecia que estava {funcionando} esse tempo todo
 prompt: A man sitting back from a closed laptop with a resigned half smile, a calendar with two years of pages torn off piled beside him, home desk, warm evening light, photorealistic

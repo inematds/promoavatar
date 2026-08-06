@@ -12,6 +12,7 @@ CTA: curso Criando Agent Skills, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Seu filho sabe usar IA. E só isso." [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: ELE SABE USAR | E SÓ ISSO
 hook: rápido no {atalho} e perdido no caminho
 prompt: A teenager handing a finished homework page to a parent at a kitchen table while shrugging, the parent looking at it puzzled, evening home lighting, candid photorealistic

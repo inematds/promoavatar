@@ -12,6 +12,7 @@ CTA: trilha Profissional Liberal Experiente com IA, no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Sua vida inteira cabe num caderno" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785988341-ChatGPT-Image-5-de-ago.-de-2026-23_58_41.png
 headline: UMA VIDA INTEIRA | NUM CADERNO FECHADO
 hook: tudo que você aprendeu está guardado onde ninguém {alcança}
 prompt: A very old worn notebook closed with a rubber band sitting alone on a dining table in an empty quiet house, afternoon light through lace curtains, photorealistic, melancholic stillness

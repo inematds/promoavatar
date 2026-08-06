@@ -16,6 +16,7 @@ CTA: trilha INEMA Agentes Hub V no inema.club
 
 ## IMAGENS
 IMAGEM 1 — "Essa profissão nem tem nome" [ATENÇÃO]
+arquivo: /home/nmaldaner/projetos/inemaccbot/state/midia/1785920313-inemaagenteshubv.jpg
 headline: A PROFISSÃO | QUE AINDA NÃO TEM NOME
 hook: {construtor} de sistemas — a vaga que ainda nem existe no anúncio de emprego
 prompt: A close, slightly unsettling shot of a blank white nametag pinned to a young man's hoodie, no text on it at all, standing in a dim server room lit by faint blue rack lights, shallow depth of field, cinematic, photorealistic

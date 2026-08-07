@@ -108,6 +108,7 @@
     <a class="sec" href="#templates">Templates</a>
     <a class="sec" href="#guia">Guia de uso</a>
     <a class="sec" href="#onde">Onde mudar</a>
+    <a class="sec" href="#alterar">Como alterar</a>
     <a class="sec" href="#naoedaqui">Não é daqui</a>
     <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
     <a class="btn" href="https://github.com/inematds/promoavatar" target="_blank" rel="noopener">GitHub</a>
@@ -303,6 +304,57 @@ inemaccbot/config/skills.json</pre>
   <div class="grid g2" style="margin-top:10px">
     <div class="card"><h3>Para quem, e onde fica</h3><p>O domínio diz <strong>para quem</strong> (<code>mulheres</code> tem <code>"canal": "lives4"</code>); o bot sabe <strong>onde</strong> — sempre <code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code>. Nunca ponha caminho no <code>flow.json</code>.</p></div>
     <div class="card"><h3>Legenda: o que é nosso e o que não é</h3><p>Quem decide a legenda do avatar é o <strong>estúdio</strong>: o download pega a versão legendada quando ela existe, e a limpa quando não. A opção <code>| legenda</code> é outra — é a que o nosso editor desenha. Ligar as duas faz sair <strong>duas</strong>; e legenda queimada vem enquadrada para 16:9, sem remoção possível depois.</p></div>
+  </div>
+</div></section>
+
+<section id="alterar"><div class="wrap">
+  <span class="chip">Como alterar</span>
+  <h2>Prompts, templates, alvos e destino</h2>
+  <p class="sub">As quatro coisas que você mais vai querer mexer. Todas seguem a mesma trava: <strong>o que vale é o que existia quando o fluxo nasceu</strong> — editar vale para os PRÓXIMOS, e nem <code>/refazer</code> pega a mudança.</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>1 · O prompt <span style="opacity:.6;font-weight:400">(como os roteiros são escritos)</span></h3>
+      <p>Arquivo: <code>prompts/fase1-texto.md</code>. É o documento inteiro que a fase 1 entrega ao agente — CONTEXTO FIXO, PASSO ZERO, OFICINA DE GANCHO, as 16 REGRAS DE ESCRITA e o contrato de saída.</p>
+      <p><strong>Duas armadilhas:</strong> os 11 formatos do PASSO ZERO são <em>chaves</em> do <code>templates/mapa.json</code> — renomeou aqui, renomeie lá. E as cinco variáveis injetadas pelo bot não podem sumir:</p>
+<pre>{{input}}    <span class="c"># o assunto</span>
+{{publicos}} <span class="c"># os alvos REAIS do fluxo</span>
+{{pasta}}    <span class="c"># onde gravar (absoluto)</span>
+{{ref}} {{saida}}</pre>
+      <p>A skill <code>inemaclub-textos</code> dá a <strong>estrutura</strong> do arquivo; este prompt dá as <strong>regras</strong> e sobrescreve a skill. Mudar a estrutura é na skill — e vale para todo mundo.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · Os templates <span style="opacity:.6;font-weight:400">(o layout do reel)</span></h3>
+      <p><strong>a) mudar como um layout se parece</strong> → edite <code>templates/&lt;nome&gt;.json</code>. Três regras:</p>
+      <p><code>y</code> + <code>altura</code> das faixas têm que <strong>fechar 1920</strong> (<code>y</code> é posição absoluta, elas não se empilham sozinhas — faixa faltando é faixa preta). A <code>fonte</code> é o que alimenta a faixa: <code>imagens</code> · <code>avatar</code> · <code>texto</code> (o <code>hook</code>) · <code>explicativo</code>. E <code>escurecer</code> é o véu sob a headline: baixo demais, o texto some no claro da foto.</p>
+      <p><strong>b) mudar qual formato cai em qual layout</strong> → <code>templates/mapa.json</code>. As chaves existem <strong>com e sem acento</strong>, de propósito:</p>
+<pre>"mito versus realidade": "diptico",
+"comparação": "diptico",
+"comparacao": "diptico"</pre>
+      <p>Formato fora do mapa cai no padrão da raiz — não inventa layout. <strong>c)</strong> Para fixar o layout de um público, use o campo <code>template</code> dentro do alvo.</p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Os alvos <span style="opacity:.6;font-weight:400">(os públicos)</span></h3>
+      <p>Arquivo: <code>flow.json</code>, chave <code>alvos</code>.</p>
+<pre>"empreendedores": {
+  "canal": "lives1",
+  "gatilho": "Transforme IA em redução de custos…",
+  "template": "diptico"   <span class="c"># opcional</span>
+}</pre>
+      <p>O <code>gatilho</code> é a dor daquele público (a regra 2 do prompt manda usá-lo). Adicionar = mais uma entrada; remover = apague. Para rodar só alguns sem mexer em nada, use <code>--alvo=</code> na criação.</p>
+      <p><strong>A chave é contrato, não rótulo:</strong> ela vira o arquivo <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>, o título <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>, o <code>--alvo</code> do reel e o <code>seed-key</code> das imagens. Minúsculas, sem acento, sem espaço e <strong>sem hífen</strong> — foi por isso que <code>pessoa-comum</code> virou <code>pessoacomum</code>.</p>
+    </div>
+
+    <div class="card">
+      <h3>4 · O destino <span style="opacity:.6;font-weight:400">(onde o reel é entregue)</span></h3>
+      <p>Não existe caminho escrito em lugar nenhum: o destino é <strong>derivado do <code>canal</code></strong> do público.</p>
+<pre>&lt;canal&gt; → ~/projetos/yt-pub-&lt;canal&gt;/imports/videos</pre>
+      <p>Trocar o canal = editar <code>alvos.&lt;publico&gt;.canal</code>. Criar canal novo = criar a pasta, só isso:</p>
+<pre><span class="k">mkdir -p</span> <span class="s">~/projetos/yt-pub-lives33/imports/videos</span></pre>
+      <p>Dois públicos podem dividir o mesmo canal. Mudar a <strong>regra</strong> (a pasta base, o <code>imports/videos</code>) <strong>não é aqui</strong> — é o <code>destinos.ts</code> do bot, e muda todos os fluxos. Para um reel avulso fora do fluxo, use <code>montar-reel.py --saida &lt;caminho&gt;</code>.</p>
+    </div>
   </div>
 </div></section>
 

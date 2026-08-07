@@ -243,7 +243,7 @@ TODO reel, inclusive os disparados direto no chat.
 | o canal de um público | `flow.json` → `alvos.<publico>.canal` | domínio |
 | o gancho de um público | `flow.json` → `alvos.<publico>.gatilho` | domínio |
 | **como os roteiros são escritos** | `prompts/fase1-texto.md` | domínio |
-| **o que este fluxo pede ao reel** | `flow.json` → fase `reel`, campo `entrega` | domínio |
+| **o que este fluxo pede ao reel** | `prompts/reel-regras.md` + `templates/*.json` | domínio |
 | **o clipe de CTA do fim** | `cta/cta-9x16.mp4` — troque o arquivo | domínio |
 | a ajuda do chat | `HELP.md` | domínio |
 | **como o reel é MONTADO** (cores, fontes, posições, SFX, modos) | `~/.claude/skills/reel-edita-inema/SKILL.md` | skill (global) |
@@ -302,16 +302,16 @@ gerar avatar nenhum — `/refazer` custa um texto, não um render.
 
 ### O estilo do reel — duas camadas
 
-O `entrega` da fase `reel` no `flow.json` é o que ESTE pipeline pede: os quatro
-gatilhos, a headline a partir do `{gatilho}` do público, e os dois marcadores
-que a criação resolve — `{legenda}` e `{cta}`.
+O que ESTE pipeline pede ao reel mora em `prompts/reel-regras.md` e nos
+`templates/*.json`: os quatro gatilhos, a headline a partir do `{gatilho}` do
+público, e as faixas de cada layout.
 
 A skill `reel-edita-inema` é quem sabe montar: composição empilhada 9:16, cores,
 fontes, corte de silêncio, legenda palavra-a-palavra, SFX. Mudar ali muda a
 marca inteira.
 
 **Melhorar o reel, na ordem do mais barato:** trocar o clipe de `cta/`; ajustar
-o `entrega` do `flow.json`; e só então mexer na skill.
+`prompts/reel-regras.md` ou o `templates/*.json`; e só então mexer na skill.
 
 ## O que NÃO é deste repo (é do inemaccbot)
 
@@ -361,6 +361,161 @@ pessoacomum · jovens · profissionais · mulheres · empreendedores · tecnicos
 Adicionar um público = mais uma entrada com `canal` e `gatilho`. A chave vira o
 `<publico>` do título `A<N>-<publico>-v1`, então **nada de acento, espaço ou
 hífen**.
+
+## Como alterar: prompts, templates e alvos
+
+As três coisas que você mais vai querer mexer. Vale para todas a mesma trava:
+**tudo é congelado quando o fluxo nasce** — editar vale para os PRÓXIMOS, e nem
+`/refazer` pega a mudança. Um fluxo em andamento não muda de regra no meio.
+
+### 1. Alterar o PROMPT (como os roteiros são escritos)
+
+Arquivo: **`prompts/fase1-texto.md`**. É o documento inteiro que a fase 1
+entrega ao agente. As partes, e o que acontece se você mexer em cada uma:
+
+| bloco | mexa aqui para… | cuidado |
+|---|---|---|
+| CONTEXTO FIXO | mudar quem o agente "já conhece" (hoje: Nei e Tiza como gestores) | nome sem função vira enfeite — o bloco existe para evitar isso |
+| PASSO ZERO | mudar a lista dos 11 formatos, ou o que é tese/prova | **os formatos são chaves do `templates/mapa.json`** — mudou o nome aqui, mude lá |
+| OFICINA DE GANCHO | mudar o critério do gancho (hoje: teste da lacuna, teto de 9 palavras) | é o bloco que mais move alcance |
+| REGRAS DE ESCRITA (as 16) | mudar tom, CTA, o que é proibido | a 11b define o formato da seção `## IMAGENS` que o reel LÊ |
+| contrato de saída | mudar onde grava, o `RESULT:`/`ERRO:` | quebrar isso quebra a fase inteira |
+
+Cinco variáveis são injetadas pelo bot e **não devem sumir**: `{{input}}` (o
+assunto), `{{publicos}}` (os alvos reais do fluxo), `{{pasta}}` (onde gravar,
+absoluto), `{{ref}}` e `{{saida}}`.
+
+Regra de convivência com a skill: `inemaclub-textos` dá a **estrutura** do
+arquivo (FALA / SOBREPOSIÇÕES / IMAGENS / ESTRUTURA); este prompt dá as
+**regras**, e sobrescreve a skill onde discordarem. Mudou a estrutura do arquivo?
+É na skill, e vale para todo mundo — não só para o promoavatar.
+
+Os outros dois prompts do repo seguem a mesma lógica:
+`prompts/fase-navega-avatar.md` (a rota navegador da fase 2) e
+`prompts/reel-regras.md` (o que este fluxo pede ao reel).
+
+### 2. Alterar os TEMPLATES (o layout do reel)
+
+Dois arquivos diferentes, e a confusão entre eles é comum:
+
+**a) mudar como um layout se parece** → edite o `templates/<nome>.json`.
+O esquema é sempre o mesmo:
+
+```jsonc
+{
+  "nome": "empilhado-capa",
+  "descricao": "…",                       // texto livre, ajuda quem escolhe
+  "canvas": { "largura": 1080, "altura": 1920 },
+  "cores":  { "fundo": "#0E1116", "texto": "#FFFFFF", "acento": "#F5A623" },
+  "faixas": {
+    "topo": { "y": 0,    "altura": 704, "fonte": "imagens",
+              "escurecer": 0.62,
+              "headline": { "tamanho": 76, "peso": 900, "entrelinha": 1.04,
+                            "margem_lateral": 48, "base_em": 56,
+                            "maiusculas": true } },
+    "meio": { "y": 704,  "altura": 608, "fonte": "avatar", "audio": true },
+    "base": { "y": 1312, "altura": 608, "fonte": "texto", "painel": true,
+              "hook": { "tamanho": 56, "peso": 800, "entrelinha": 1.16,
+                        "margem_lateral": 56 } }
+  },
+  "transicao": { "flash": true, "duracao": 0.42,
+                 "escala_entrada": 1.08, "pulso_max_s": 3.6 }
+}
+```
+
+Três regras ao mexer:
+
+- **`y` + `altura` das faixas têm que fechar 1920.** Elas não se empilham
+  sozinhas — `y` é posição absoluta. Faixa faltando = faixa preta.
+- **`fonte` é o que alimenta a faixa**: `imagens` · `avatar` · `texto` (o `hook`)
+  · `explicativo` (clipe mudo em loop). Mudar a `fonte` muda o contrato com a
+  fase de texto.
+- **`escurecer`** é o véu sobre a imagem para a headline ficar legível. Baixar
+  demais e o texto some no claro da foto.
+
+Criar um layout novo = mais um `.json` em `templates/`, com `"nome"` igual ao
+nome do arquivo. Ele passa a existir para `--template` na hora; para entrar no
+automático, precisa do passo (b).
+
+**b) mudar qual formato cai em qual layout** → edite o `templates/mapa.json`.
+As chaves são os formatos do PASSO ZERO, **com e sem acento** (o `preparar.py`
+casa pelo texto que a fase de texto escreveu, então as duas grafias existem de
+propósito):
+
+```json
+"mito versus realidade": "diptico",
+"comparação": "diptico",
+"comparacao": "diptico",
+```
+
+Formato que não estiver no mapa **cai no padrão da raiz do `flow.json`** — não
+inventa layout. Então, ao criar um formato novo no prompt, mapeie-o aqui nas
+duas grafias, senão ele nunca vai usar o layout que você quis.
+
+**c) fixar o layout de um público**, ignorando o mapa → campo `template` dentro
+do alvo, no `flow.json` (exemplo na seção de parâmetros). Vence o mapa, perde
+para `--template`.
+
+### 3. Alterar os ALVOS (os públicos)
+
+Arquivo: **`flow.json`**, chave `alvos`. Cada entrada tem duas chaves
+obrigatórias e uma opcional:
+
+```json
+"empreendedores": {
+  "canal": "lives1",
+  "gatilho": "Transforme IA em redução de custos, vendas e novos negócios.",
+  "template": "diptico"
+}
+```
+
+| o que quero | onde |
+|---|---|
+| mudar a **dor/ângulo** de um público | `gatilho` — é o que a regra 2 do prompt manda usar |
+| mudar **para onde vai** o reel | `canal` — vira `~/projetos/yt-pub-<canal>/imports/videos` |
+| fixar o **layout** daquele público | `template` (opcional) |
+| **adicionar** um público | mais uma entrada; a chave é o slug |
+| **remover** um público | apague a entrada |
+| rodar **só alguns** sem mexer em nada | `--alvo=jovens` ou `\| alvos=a,b` na criação |
+
+**A chave é um contrato, não um rótulo.** Ela vira:
+o nome do arquivo `textos/A<N>/<publico>.md` · o título do vídeo no estúdio
+`A<N>-<publico>-v1` · o `--alvo` do reel · o `seed-key` das imagens. Por isso:
+**minúsculas, sem acento, sem espaço e sem hífen** (foi por isso que
+`pessoa-comum` virou `pessoacomum`).
+
+### 4. Alterar o DESTINO (onde o reel é entregue)
+
+O destino não é um caminho escrito em lugar nenhum — ele é **derivado do `canal`
+do público**, sempre pela mesma regra:
+
+```
+<canal>  →  ~/projetos/yt-pub-<canal>/imports/videos
+```
+
+A separação é proposital: o domínio (este repo) diz só o **nome** do canal; a
+tradução para pasta é do bot (`src/dominio/destinos.ts`), num lugar só. Se o
+`flow.json` guardasse o caminho completo, viraria uma segunda cópia da lista de
+canais — e cópias divergem.
+
+| quero… | como |
+|---|---|
+| **trocar o canal** de um público | edite `alvos.<publico>.canal` no `flow.json` |
+| **criar um canal novo** | `mkdir -p ~/projetos/yt-pub-lives33/imports/videos` — só isso, o bot não precisa saber |
+| **dois públicos no mesmo canal** | ponha o mesmo `canal` nos dois; nada impede |
+| **mudar a REGRA** (a pasta base, o `imports/videos`) | não é aqui — é o `destinos.ts` do bot, e muda TODOS os fluxos |
+| **entregar num reel avulso**, fora do fluxo | rode `scripts/montar-reel.py --saida <caminho>` na mão |
+
+Mapa atual dos 12 (de `docs/canais-e-destinos.md`, remapeado em 2026-07-31):
+
+```
+empreendedores lives1   pessoacomum lives2   recolocacao lives3   mulheres  lives4
+tecnicos       lives6   40mais      lives7   60mais      lives8   educadores lives9
+criadores      lives11  jovens      lives22  profissionais lives23  familia  lives32
+```
+
+Como tudo aqui, **vale no PRÓXIMO fluxo**: um fluxo em andamento não muda de
+destino no meio do caminho.
 
 ## Os templates do reel
 

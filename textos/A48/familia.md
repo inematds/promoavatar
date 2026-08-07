@@ -2,7 +2,7 @@ Formato escolhido: desmontagem passo a passo
 Ganchos descartados: "Seu filho precisa aprender IA" (todo pai já ouviu, fecha em si) · "A escola não prepara para o futuro" (crítica genérica, sem tensão nova) · "As profissões vão mudar" (previsão vaga) · "Não proíba o celular, ensine" (conselho de rede social, não é o assunto)
 
 ### FALA
-Ela abriu o caderno do filho e não reconheceu nada. Não a matéria. O mundo em volta dela. Você tem medo de pagar uma formação que vai estar velha quando ele se formar. Esse medo é justo — para ferramenta. Não para fundamento. Quem constrói de tudo com IA domina quatro coisas: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém ensina. Estruturar é saber quebrar um problema grande em passos — a habilidade que serve em qualquer profissão que ele escolher. Isso não sai de moda com a próxima ferramenta. Entre agora no inema.club com ele e comecem juntos pela trilha de IA. Ferramenta expira. Fundamento acompanha o seu filho.
+Ela abriu o caderno do filho e não reconheceu nada. Não a matéria. O mundo em volta dela. Você tem medo de pagar uma formação que vai estar velha quando ele se formar. Esse medo é justo para ferramenta. Não para fundamento. Quem constrói com IA domina quatro coisas: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém ensina. Estruturar é quebrar um problema grande em passos — a habilidade que serve em qualquer profissão que ele escolher, e que não sai de moda com a próxima ferramenta. Entre agora no inema.club com ele e comecem juntos pela trilha de IA. Ferramenta expira. Fundamento acompanha o seu filho.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
 - **ATENÇÃO (0–2s)** — ABRIU O CADERNO | NÃO RECONHECEU NADA
@@ -10,7 +10,7 @@ Ela abriu o caderno do filho e não reconheceu nada. Não a matéria. O mundo em
 - **ENGAJAMENTO** — "Marca o pai ou a mãe que está com essa dúvida agora"
 - **CTA (fecho)** — ENTREM JUNTOS | INEMA.CLUB
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "Ela abriu o caderno do filho" [ATENÇÃO]
 headline: ABRIU O CADERNO | NÃO RECONHECEU NADA
 hook: O susto não era a {matéria}. Era o mundo em volta

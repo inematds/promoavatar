@@ -2,7 +2,7 @@ Formato escolhido: desmontagem passo a passo
 Ganchos descartados: "Você pode entrar numa profissão que está nascendo" (promessa boa, mas fecha em si) · "IA vai acabar com os empregos de entrada" (medo já batido) · "Experiência não é mais barreira" (afirmação, sem lacuna) · "Aprenda a ferramenta que está bombando" (é exatamente o contrário da tese)
 
 ### FALA
-Ele não tinha experiência. Foi ele quem entregou. Você olha vaga que pede anos de prática, e vê gente dizendo que a IA vai fechar até essas portas. Só que quem constrói de tudo com IA não decorou ferramenta nenhuma. Domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é quebrar o pedido em passos, dizer o que entra e o que conta como pronto. É por isso que dois usam a mesma IA e um entrega projeto e o outro entrega texto solto. Aqui você não compete por tempo de casa. Compete por resultado. Entre agora no inema.club e comece pela FEP, Engenharia de Prompts. Ferramenta muda. Fundamento fica.
+Ele não tinha experiência. Foi ele quem entregou. Você olha vaga que pede anos de prática, e vê gente dizendo que a IA vai fechar até essas portas. Só que quem constrói de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é quebrar o pedido em passos e dizer o que conta como pronto. É por isso que dois usam a mesma IA e um entrega projeto, o outro entrega texto solto. Aqui você não compete por tempo de casa. Compete por resultado. Entre agora no inema.club e comece pela FEP, Engenharia de Prompts. Ferramenta muda. Fundamento fica.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
 - **ATENÇÃO (0–2s)** — SEM EXPERIÊNCIA | FOI ELE QUEM ENTREGOU
@@ -10,7 +10,7 @@ Ele não tinha experiência. Foi ele quem entregou. Você olha vaga que pede ano
 - **ENGAJAMENTO** — "Marca quem está travado na vaga que pede experiência"
 - **CTA (fecho)** — INEMA.CLUB | COMECE PELA FEP
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "Ele não tinha experiência. Foi ele quem entregou" [ATENÇÃO]
 headline: SEM EXPERIÊNCIA | FOI ELE QUEM ENTREGOU
 hook: Ninguém perguntou quantos {anos} ele tinha de casa
@@ -34,7 +34,7 @@ Four skateboard trucks lined up on a concrete floor, each worn differently, hars
 IMAGEM 5 — "E o terceiro é o que quase ninguém faz" [RETENÇÃO]
 headline: O TERCEIRO É O QUE | QUASE NINGUÉM FAZ
 hook: A mesma IA, dois {pedidos}, dois mundos
-Two laptops open side by side on a shared table, one screen showing a single short block of content and the other a long organized document, seen over the shoulder at an angle, cafe light, documentary photography, text not legible
+Two closed laptops side by side on a shared cafe table, one with a single loose sheet on top and the other with a thick clipped stack of printed pages, seen at an angle, cafe daylight, documentary still life
 
 IMAGEM 6 — "Aqui você não compete por tempo de casa" [ENGAJAMENTO]
 headline: NÃO SE COMPETE POR TEMPO | SE COMPETE POR RESULTADO

@@ -2,7 +2,7 @@ Formato escolhido: desmontagem passo a passo
 Ganchos descartados: "Nunca é tarde para aprender IA" (frase de calendário, fecha em si) · "A IA pode dar renda na aposentadoria" (promessa sem lacuna) · "Sua experiência de vida vale ouro" (elogio, não gancho) · "Aposentado também usa IA" (óbvio, não abre nada)
 
 ### FALA
-O neto instalou. O avô é quem usou. Você abre uma dessas ferramentas de IA e sente que o mundo aprendeu uma língua sem te avisar. Só que quem faz de tudo com IA não decorou ferramenta nenhuma. São quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é dizer o que vem primeiro, o que vem depois e onde termina. Você fez isso a vida toda — em obra, em cozinha, em família. Não é a ferramenta que te deixou pra trás. É que ninguém te contou o essencial. Entre agora no inema.club e comece pela trilha de IA do seu perfil. Ferramenta muda. Fundamento fica.
+O neto instalou. O avô é quem usou. Você abre uma dessas ferramentas e sente que o mundo aprendeu uma língua sem te avisar. Só que quem faz de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é dizer o que vem primeiro, o que vem depois e onde termina. Você fez isso a vida toda — em obra, em cozinha, em família. Não é a ferramenta que te deixou pra trás. É que ninguém te contou o essencial. Entre agora no inema.club e comece pela trilha de IA do seu perfil. Ferramenta muda. Fundamento fica.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
 - **ATENÇÃO (0–2s)** — O NETO INSTALOU | O AVÔ É QUEM USOU
@@ -10,7 +10,7 @@ O neto instalou. O avô é quem usou. Você abre uma dessas ferramentas de IA e 
 - **ENGAJAMENTO** — "Comenta: qual ferramenta te deu vontade de desistir?"
 - **CTA (fecho)** — ENTRE NO INEMA.CLUB | É DE GRAÇA
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "O neto instalou. O avô é quem usou" [ATENÇÃO]
 headline: O NETO INSTALOU | O AVÔ É QUEM USOU
 hook: A idade não era o {problema}

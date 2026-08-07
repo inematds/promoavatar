@@ -10,11 +10,11 @@ Você paga por três ferramentas que fazem a mesma coisa. E toda vez que sai uma
 - **ENGAJAMENTO** — "Salva isto antes de assinar mais uma ferramenta"
 - **CTA (fecho)** — INEMA.CLUB | COMECE PELA FEP
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "Você paga por três ferramentas" [ATENÇÃO]
 headline: TRÊS ASSINATURAS | UM RESULTADO SÓ
 hook: Você paga três vezes pelo {mesmo} trabalho
-A phone lying face up on a messy creator desk showing a bank app payment list, three nearly identical charge rows highlighted only by their identical amounts, ring light reflection on the screen edge, documentary photography, no legible text
+Three nearly identical payment receipt slips fanned out on a messy creator desk, one circled with a marker pen, a ring light stand and a camera cap beside them, close overhead view, documentary still life
 
 IMAGEM 2 — "E toda vez que sai uma nova"
 headline: SAIU UMA NOVA | LÁ VAI A SEMANA

@@ -2,7 +2,7 @@ Formato escolhido: desmontagem passo a passo
 Ganchos descartados: "Sua experiência vale mais com IA" (fecha em si, não abre lacuna) · "A IA não vai te substituir" (consolo genérico, já ouvido) · "Você não está atrasado na IA" (afirmação, nenhuma tensão) · "Aprender ferramenta na sua idade é perda de tempo" (ataca o público em vez do problema)
 
 ### FALA
-Ele nunca tinha aberto aquele programa. Entregou na mesma tarde. Você passou a carreira inteira aprendendo o sistema da empresa, e agora sente que precisa recomeçar do zero a cada ferramenta nova de IA. Não precisa. Quem faz de tudo com IA não decorou ferramenta. Domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é onde quase todo mundo trava. Estruturar a tarefa é quebrar o trabalho em passos claros — exatamente o que você já faz há anos com equipe. Sua experiência não é atraso. É a parte difícil, e você já tem. Entre agora no inema.club e comece pela trilha de IA do seu perfil. Ferramenta você aprende numa tarde. Fundamento você usa a vida inteira.
+Ele nunca tinha aberto aquele programa. Entregou na mesma tarde. Você passou a carreira inteira aprendendo o sistema da empresa, e agora recomeça do zero a cada ferramenta nova de IA. Não precisa. Quem faz de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é onde quase todo mundo trava. Estruturar é quebrar o trabalho em passos claros — o que você já faz há anos com equipe. Sua experiência não é atraso. É a parte difícil, e você já tem. Entre agora no inema.club e comece pela trilha de IA do seu perfil. Ferramenta você aprende numa tarde. Fundamento você usa a vida inteira.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
 - **ATENÇÃO (0–2s)** — NUNCA TINHA ABERTO | ENTREGOU NA MESMA TARDE
@@ -10,7 +10,7 @@ Ele nunca tinha aberto aquele programa. Entregou na mesma tarde. Você passou a 
 - **ENGAJAMENTO** — "Marca alguém que acha que começou tarde na IA"
 - **CTA (fecho)** — ENTRE NO INEMA.CLUB | COMECE PELOS FUNDAMENTOS
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "Ele nunca tinha aberto aquele programa" [ATENÇÃO]
 headline: NUNCA TINHA ABERTO | ENTREGOU NA MESMA TARDE
 hook: A ferramenta era nova. O {método} não era

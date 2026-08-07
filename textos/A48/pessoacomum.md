@@ -2,7 +2,7 @@ Formato escolhido: desmontagem passo a passo
 Ganchos descartados: "Você usa IA do jeito preguiçoso" (acusa sem abrir lacuna) · "Existe um jeito certo de usar IA" (vago demais) · "A IA pode fazer muito mais do que você pede" (afirmação, fecha em si) · "Você sabia que a IA entende contexto?" (proibido começar com 'você sabia')
 
 ### FALA
-Mesma pergunta. Mesma IA. Resposta completamente diferente. Você digita, recebe algo morno e conclui que a ferramenta é fraca. Não é a ferramenta. Quem faz de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é dizer o que você quer, para quem, e como sabe que ficou pronto. Sem isso, a IA responde no escuro — e o escuro sempre sai genérico. Aprendeu isso, você abre qualquer ferramenta nova e já sabe usar. Não precisa recomeçar. Entre agora no inema.club e comece pela trilha de IA do seu perfil. A ferramenta é o botão. O fundamento é a mão.
+Mesma pergunta. Mesma IA. Resposta completamente diferente. Você digita, recebe algo morno e conclui que a ferramenta é fraca. Não é a ferramenta. Quem faz de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é dizer o que você quer, para quem, e como sabe que ficou pronto. Sem isso, a IA responde no escuro — e o escuro sai genérico. Aprendeu isso, você abre qualquer ferramenta nova e já sabe usar. Entre agora no inema.club e comece pela trilha de IA do seu perfil. A ferramenta é o botão. O fundamento é a mão.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
 - **ATENÇÃO (0–2s)** — MESMA PERGUNTA | RESPOSTA DIFERENTE
@@ -10,11 +10,11 @@ Mesma pergunta. Mesma IA. Resposta completamente diferente. Você digita, recebe
 - **ENGAJAMENTO** — "Comenta 'genérico' se a IA já te respondeu qualquer coisa"
 - **CTA (fecho)** — INEMA.CLUB | TRILHA DE IA GRATUITA
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "Mesma pergunta. Mesma IA" [ATENÇÃO]
 headline: MESMA PERGUNTA | OUTRA RESPOSTA
 hook: A diferença não estava na {máquina}
-Two identical phones lying side by side on a plain table, both screens on and clearly showing very different amounts of content, one nearly empty and one dense, overhead view, hard daylight, documentary photography, text not legible
+Two identical phones lying side by side on a plain table, each face down on top of a printout, one printout a single thin sheet and the other a thick stack held by a clip, overhead view, hard daylight, documentary still life
 
 IMAGEM 2 — "Você digita, recebe algo morno"
 headline: RECEBEU ALGO MORNO | CULPOU A FERRAMENTA

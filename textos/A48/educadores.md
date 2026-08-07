@@ -2,7 +2,7 @@ Formato escolhido: desmontagem passo a passo
 Ganchos descartados: "A IA não vai substituir o professor" (verdade consoladora, fecha em si) · "Seu aluno já usa IA" (todo mundo já disse) · "Aprenda a ensinar com IA" (título de curso, não gancho) · "Proibir IA na sala não funciona" (debate lateral, tira o foco do fundamento)
 
 ### FALA
-A professora nunca tinha visto aquele programa. Ela orientou a IA melhor que o aluno. Você já perdeu noite refazendo plano de aula, e agora sente que precisa virar especialista em cada ferramenta que aparece. Não precisa. Quem faz de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é definir objetivo, etapas e critério de pronto. Isso tem outro nome na sua profissão: é planejamento. Você já é a pessoa mais treinada da sala nisso. Entre agora no inema.club e comece pela trilha de IA do seu perfil. Ferramenta muda todo mês. Fundamento você usa a carreira inteira.
+A professora nunca tinha visto aquele programa. Ela orientou a IA melhor que o aluno. Você já perdeu noite refazendo plano de aula, e agora acha que precisa virar especialista em cada ferramenta nova. Não precisa. Quem faz de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é definir objetivo, etapas e critério de pronto. Isso tem outro nome na sua profissão: é planejamento. Você já é a pessoa mais treinada da sala nisso. Entre agora no inema.club e comece pela trilha de IA do seu perfil. Ferramenta muda todo mês. Fundamento você usa a carreira inteira.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
 - **ATENÇÃO (0–2s)** — ELA NUNCA TINHA VISTO | ORIENTOU MELHOR QUE O ALUNO
@@ -10,7 +10,7 @@ A professora nunca tinha visto aquele programa. Ela orientou a IA melhor que o a
 - **ENGAJAMENTO** — "Marca um colega da escola que ainda acha que IA é cola"
 - **CTA (fecho)** — INEMA.CLUB | TRILHA DE IA GRATUITA
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "A professora nunca tinha visto aquele programa" [ATENÇÃO]
 headline: NUNCA TINHA VISTO | ORIENTOU MELHOR QUE O ALUNO
 hook: Quem sabe {planejar} chega primeiro

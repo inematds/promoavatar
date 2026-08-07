@@ -10,7 +10,7 @@ O concorrente entregou no mesmo dia. Sem equipe nova. Você contratou ferramenta
 - **ENGAJAMENTO** — "Comenta: quantas ferramentas você já assinou e abandonou?"
 - **CTA (fecho)** — INEMA.CLUB | TRILHA DE IA GRATUITA
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "O concorrente entregou no mesmo dia" [ATENÇÃO]
 headline: ENTREGOU NO MESMO DIA | SEM EQUIPE NOVA
 hook: Mesmo mercado, mesma verba, outro {resultado}

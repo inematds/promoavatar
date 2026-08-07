@@ -2,7 +2,7 @@ Formato escolhido: desmontagem passo a passo
 Ganchos descartados: "A IA te dá autonomia" (promessa abstrata, fecha em si) · "Você faz o trabalho de três pessoas" (constatação, não abre lacuna) · "Mulheres estão liderando a IA" (elogio de painel, não muda nada hoje) · "Aprenda IA no seu tempo livre" (o tempo livre é justamente o que não existe)
 
 ### FALA
-Ela tinha vinte minutos entre uma coisa e outra. Saiu pronto. Você não tem tempo de assistir tutorial de cada ferramenta nova que aparece — e é isso que te faz sentir de fora. Não é falta de tempo. É que ninguém te ensinou o essencial. Quem faz de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é dizer o objetivo, o que a IA precisa saber e como termina. Aprendeu uma vez, funciona em qualquer ferramenta que sair depois. É por isso que ela não recomeça do zero. Entre agora no inema.club e comece pela trilha de IA do seu perfil. Ferramenta consome seu tempo. Fundamento devolve.
+Ela tinha vinte minutos entre uma coisa e outra. Saiu pronto. Você não tem tempo de assistir tutorial de cada ferramenta nova, e é isso que te faz sentir de fora. Não é falta de tempo. É que ninguém te ensinou o essencial. Quem faz de tudo com IA domina quatro fundamentos: conversar com a IA, dar contexto, estruturar a tarefa e transformar ideia em resultado. E o terceiro é o que quase ninguém faz. Estruturar é dizer o objetivo, o que a IA precisa saber e como termina. Aprendeu uma vez, vale em qualquer ferramenta que sair depois. Entre agora no inema.club e comece pela trilha de IA do seu perfil. Ferramenta consome seu tempo. Fundamento devolve.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
 - **ATENÇÃO (0–2s)** — VINTE MINUTOS | SAIU PRONTO
@@ -10,7 +10,7 @@ Ela tinha vinte minutos entre uma coisa e outra. Saiu pronto. Você não tem tem
 - **ENGAJAMENTO** — "Comenta: quanto tempo por dia você realmente tem pra aprender?"
 - **CTA (fecho)** — INEMA.CLUB | TRILHA DE IA GRATUITA
 
-### IMAGENS
+## IMAGENS
 IMAGEM 1 — "Ela tinha vinte minutos entre uma coisa e outra" [ATENÇÃO]
 headline: VINTE MINUTOS | SAIU PRONTO
 hook: Ela não tinha mais {tempo} que você

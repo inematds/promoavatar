@@ -106,6 +106,15 @@ def main() -> int:
     ap.add_argument("--alvo", default="reel")
     ap.add_argument("--textos", default=None)
     ap.add_argument("--qualidade", default="high", choices=["high", "standard", "draft"])
+    # `--flow` existe para o MOTOR SER COMPARTILHADO entre domínios. Sem ele o
+    # `preparar.py` deriva o repo da pasta-pai DESTE script — o que faz um job do
+    # promoavatar3 ler o `flow.json` do promoavatar (templates e padrão errados).
+    # Passe o `flow.json` do domínio do job; `--mapa` acompanha, para o caso de o
+    # domínio guardar os templates em outro lugar.
+    ap.add_argument("--flow", default=None,
+                    help="flow.json do DOMÍNIO do job (repassado ao preparar.py)")
+    ap.add_argument("--mapa", default=None,
+                    help="templates/mapa.json do domínio (repassado ao preparar.py)")
     ap.add_argument("--cta", default=str(REPO / "cta" / "cta-9x16.mp4"))
     ap.add_argument("--sem-cta", action="store_true")
     ap.add_argument("--pular-preparo", action="store_true",
@@ -114,6 +123,14 @@ def main() -> int:
                     help="copia o entregavel para ESTE caminho no fim (contrato da "
                          "fase do bot: o servico vigia esse arquivo)")
     a = ap.parse_args()
+
+    # CTA padrão segue o DOMÍNIO, não o repo do motor: com `--flow` de outro
+    # projeto, `<repo do motor>/cta/cta-9x16.mp4` seria o clipe errado no fecho.
+    if a.flow and a.cta == str(REPO / "cta" / "cta-9x16.mp4"):
+        dominio = Path(os.path.expanduser(a.flow)).parent
+        cand = dominio / "cta" / "cta-9x16.mp4"
+        if cand.exists():
+            a.cta = str(cand)
 
     ws = Path(os.path.expanduser(a.ws))
     motion, final = ws / "motion", ws / "final"
@@ -126,6 +143,12 @@ def main() -> int:
                os.path.expanduser(a.avatar), "--ws", str(ws), "--alvo", a.alvo]
         if a.textos:
             cmd += ["--textos", os.path.expanduser(a.textos)]
+        # Repassar é o que faz o motor servir a outro domínio: sem isto o
+        # `preparar.py` cai no fallback `REPO = <pasta do script>.parent`.
+        if a.flow:
+            cmd += ["--flow", os.path.expanduser(a.flow)]
+        if a.mapa:
+            cmd += ["--mapa", os.path.expanduser(a.mapa)]
         r = sh(cmd)
         print(r.stdout.rstrip() or r.stderr.rstrip())
         if r.returncode != 0:

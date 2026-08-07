@@ -342,6 +342,10 @@ def main() -> int:
         if a.flow:
             raiz = Path(os.path.expanduser(a.flow)).parent
             cands.append(raiz / (flow.get("templates_dir") or "templates") / f"{escolha}.json")
+        # Fallback para o repo do MOTOR: um dominio que usa os scripts daqui
+        # (`motor_repo` no flow.json dele) herda os layouts sem manter copia.
+        # O do dominio VENCE — quem quiser layout proprio e so criar o arquivo.
+        cands.append(REPO / (flow.get("templates_dir") or "templates") / f"{escolha}.json")
         achado = next((c for c in cands if c.exists()), None)
         man["template_arquivo"] = str(achado) if achado else None
         if not achado:

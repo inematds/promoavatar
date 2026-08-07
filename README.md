@@ -208,21 +208,39 @@ não vem (`escolherUrl`, `inemaccbot/src/fila/tarefas/heygen.ts`). Ou seja:
 gravou com legenda no estúdio, o reel sai com ela; gravou sem, sai sem.
 
 **Não dá para escolher nada na hora de baixar.** O download é um `GET` numa URL
-pronta — não há `?estilo=`, `?formato=`, `?idioma=`. Seis endpoints de legenda
+pronta — não há `?estilo=`, `?formato=`, `?idioma=`. Cinco endpoints de legenda
 foram sondados (`v1/video.caption`, `v2/video/caption`, `v1/video.subtitle`,
-`v1/caption.list`, `v2/caption_styles`, `v2/video/<id>`) e deram **404 nos
-seis**. Estilo, fonte e posição da legenda queimada se decidem **no estúdio,
-antes de renderizar**; depois disso estão nos pixels, e só regravando.
+`v1/caption.list`, `v2/caption_styles`) e deram **404**. Estilo, fonte e posição
+da legenda queimada se decidem **no estúdio, antes de renderizar**; depois disso
+estão nos pixels, e só regravando.
 
 **O que foi medido (2026-08-01, chave real da conta):** os 25 vídeos completos
 mais recentes — `video_url_caption` nulo e `caption_url` vazio em **todos**.
-Nenhum vídeo da conta tem legenda hoje.
 
-**O que NÃO foi medido:** o comportamento com a legenda **ligada** no estúdio.
-Os nomes dos campos sugerem que `video_url` continuaria limpo e o
-`video_url_caption` passaria a vir preenchido — mas não há observação que prove
-isso. O teste custa um vídeo: renderize um com legenda ligada e olhe os dois
-campos.
+**O que foi medido (2026-08-07, no `A35-tecnicos-v1`, `901cc529…`):** o vídeo
+**tem** legenda quando baixado pela UI, e mesmo assim:
+
+- `GET /v3/videos/{id}` responde **200** (a linha anterior dizia 404 — era o
+  legado `v2/video/{id}`, que segue 404). A resposta inteira é `id`, `title`,
+  `status`, `duration`, `created_at`, `completed_at`, `video_url`,
+  `thumbnail_url`, `gif_url`, `video_page_url`. **Não existe
+  `captioned_video_url` nem `subtitle_url`** — os campos que a doc pública
+  descreve não vieram;
+- `v1/video_status.get` no mesmo vídeo: `caption_url` vazio, `video_url_caption`
+  nulo.
+
+Ou seja: **legenda ligada no estúdio não chega à API**, nem como MP4 legendado
+nem como arquivo. O MP4 com legenda que a UI baixa é um render sob demanda,
+inalcançável por API. Isso fecha a hipótese anterior de que `video_url_caption`
+passaria a vir preenchido.
+
+**O que continua NÃO medido:** o comportamento de um vídeo criado pelo
+`POST /v3/videos` **com `caption`** — esse é outro caminho, e pode muito bem
+devolver os campos da doc. Irrelevante aqui enquanto a fase 2 for humana: o bot
+nunca chama o create.
+
+**Consequência para o pipeline:** legenda de vídeo já renderizado só sai do
+arquivo local (ASR). Ver `docs/legenda.md`.
 
 Consequências práticas de gravar com legenda queimada:
 

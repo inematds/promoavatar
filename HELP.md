@@ -12,13 +12,18 @@ COMO USAR
   /promoavatar Assunto | legenda                  COM legenda (padrão é sem)
   /promoavatar Assunto | de=baixar                você já fez texto E avatar
 
-FLUXO
+FLUXO — 4 fases, 2 portões
 
   1. texto    o bot escreve UM roteiro por público
-     ⏸️  PARA — você revisa os textos e gera os avatares no estúdio
-  2. baixar   /aprovar A#N → o bot acha os vídeos pelo TÍTULO e baixa
+     ⏸️  PORTÃO 1 — você revisa os textos e gera os avatares no estúdio
+  2. avatar   normalmente VOCÊ, na mão (ver "OS AVATARES" abaixo)
+  2.5 baixar  /aprovar A#N → o bot acha os vídeos pelo TÍTULO e baixa
+     ⏸️  PORTÃO 2 — você confere os avatares antes de gastar render
   3. reel     monta o reel (capa de impacto com o gatilho do público) e
-              entrega no canal lives daquele público
+              ENTREGA no canal lives daquele público
+
+Não há fase separada de publicação: a entrega é o fim da fase reel, e o
+destino é o `canal` do público.
 
 TROCAR A IMAGEM DE CAPA (foto sua no lugar da gerada)
 
@@ -80,7 +85,7 @@ ACOMPANHAR
 
 PÚBLICOS
 
-  pessoa-comum jovens profissionais mulheres empreendedores tecnicos
+  pessoacomum jovens profissionais mulheres empreendedores tecnicos
   40mais 60mais educadores criadores recolocacao familia
 
 Cada um tem canal (livesN) e gatilho próprios — a lista mora no flow.json
@@ -90,7 +95,7 @@ ONDE O REEL É ENTREGUE
 
 O canal do público vira pasta pela regra:
 
-  lives24  ->  ~/projetos/yt-pub-lives24/imports/videos
+  lives4  ->  ~/projetos/yt-pub-lives4/imports/videos
 
 O caminho não está escrito em lugar nenhum: é derivado. Trocar o canal de um
 público = editar o flow.json. Criar canal novo = criar a pasta, só isso.
@@ -109,3 +114,25 @@ gastar. Para a esteira inteira sem parar, peça as duas flags.
 
 Confira antes com `| sombra`: a fase `gerar` só aparece no plano quando a
 opção `| api` está ligada.
+
+A fase 2 tem 5 rotas, e só uma roda por fluxo:
+
+  manual      nenhuma flag — o padrão; você grava e o bot só espera
+  | estudio   o bot abre/prepara o estúdio, você conclui
+  | api       o bot gera pela API (carteira pré-paga)
+  creditos    fase `gerar-creditos` no flow.json — flag não documentada aqui
+  navega      fase `navega-avatar` (agente no navegador) — cara: ~17,8k
+              tokens por público, ~214k nos 12; flag não documentada aqui
+
+Qualquer rota que você use, o TÍTULO continua sendo o contrato.
+
+O QUE NÃO É DESTE REPO
+
+Este repo é só a DEFINIÇÃO do pipeline. Quem executa é o inemaccbot: os
+comandos do chat, as filas e timeouts, as tarefas heygen.*, o estado em
+state/artefatos/fluxos/A<N>/ e as pastas ~/projetos/yt-pub-<canal>/. E
+COMO o reel é montado (cores, fontes, SFX) é da skill global
+reel-edita-inema — mexer nela muda todo reel da marca.
+
+Regra de bolso: se muda TODOS os fluxos, não é daqui; se muda só o
+promoavatar, é daqui.

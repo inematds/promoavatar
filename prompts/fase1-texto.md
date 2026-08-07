@@ -299,7 +299,7 @@ O que fazer, de forma AUTÔNOMA, sem pedir confirmação:
 2. Grave cada uma em `{{pasta}}/<publico>.md`. Este caminho é ABSOLUTO e é
    contrato: não escolha outra pasta, outro repo nem outro slug. `<publico>` é
    exatamente o nome do público no pipeline (`mulheres`, `40mais`,
-   `pessoa-comum`…), em minúsculas e sem acento.
+   `pessoacomum`…), em minúsculas, sem acento e sem hífen.
 3. Cada arquivo tem as seções FALA / SOBREPOSIÇÕES / IMAGENS / ESTRUTURA
    exatamente como a skill manda (IMAGENS é a da regra 11b, e vem logo depois
    das SOBREPOSIÇÕES — as duas juntas são o roteiro visual que a fase do reel

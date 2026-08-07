@@ -14,7 +14,7 @@ Quantas ferramentas de IA você aprendeu esse ano pra continuar postando o mesmo
 IMAGEM 1 — "Quantas ferramentas de IA você aprendeu" [ATENÇÃO]
 headline: QUANTAS FERRAMENTAS | PRO MESMO RESULTADO
 hook: Você aprendeu {três}. O resultado é um só
-A phone screen face up on a kitchen counter surrounded by a dozen scattered app store style icons drawn in flour dust on the surface, overhead view, daylight, documentary photography, no legible text
+Three different phones propped up on a floured kitchen counter, each one framing the exact same finished cake from the exact same angle, the real cake sitting untouched between them, overhead daylight, documentary photography
 
 IMAGEM 2 — "A Paula faz bolo por encomenda"
 headline: BOLO | POR ENCOMENDA

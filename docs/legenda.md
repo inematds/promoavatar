@@ -33,10 +33,8 @@ O que foi descartado, e por quê:
 
 ## Onde mudar cor e formato
 
-Tudo num nó só, `legenda`, em `templates/empilhado-capa.json` — ao lado das
-coordenadas das três faixas, que já moram lá:
-
-O nó fica dentro de `faixas.meio`, ao lado das coordenadas da faixa do avatar:
+Tudo num nó só, `legenda`, em `templates/empilhado-capa.json`, dentro de
+`faixas.meio` — ao lado das coordenadas da faixa do avatar:
 
 ```jsonc
 "legenda": {

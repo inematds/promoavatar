@@ -9,7 +9,7 @@ COMO USAR
   /promoavatar Assunto | alvos=mulheres           só um público (barato p/ testar)
   /promoavatar Assunto --alvo=jovens --alvo=40mais   mesma coisa, forma curta
   /promoavatar Assunto | sombra                   mostra o plano, não enfileira
-  /promoavatar Assunto | legenda                  COM legenda (padrão é sem)
+  /promoavatar Assunto | legenda=nao              SEM legenda (padrão é COM)
   /promoavatar Assunto | de=baixar                você já fez texto E avatar
 
 FLUXO — 4 fases, 2 portões
@@ -66,11 +66,12 @@ Gravou com legenda no HeyGen, o download traz o vídeo legendado; gravou sem,
 traz o limpo. O bot não escolhe — ele pega a versão legendada quando ela
 existe.
 
-A opção `| legenda` acima é OUTRA coisa: é a legenda que o NOSSO editor
-desenha. Ligar as duas faz sair DUAS legendas. Escolha uma:
+A legenda do reel é OUTRA coisa: é a que o NOSSO editor desenha, e desde
+2026-08-07 ela vem LIGADA por padrão. Ligar as duas faz sair DUAS legendas —
+e como o padrão mudou, agora a escolha é ativa:
 
-  legenda no estúdio   ->  crie o fluxo SEM `| legenda`
-  reel com `| legenda` ->  grave SEM legenda no estúdio
+  NÃO ligue legenda no estúdio  ->  e deixe o padrão (reel legendado)
+  quer a do estúdio             ->  crie o fluxo com `| legenda=nao`
 
 E lembre: legenda queimada vem enquadrada para 16:9 — no 9:16 ela pode ser
 cortada ou colidir com a base, e não há como removê-la depois. Detalhe e o

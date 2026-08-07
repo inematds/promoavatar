@@ -175,17 +175,27 @@ de cada roteiro, justamente para não ser digitado de memória.
 | opção | padrão | o que faz |
 |---|---|---|
 | `--alvo=jovens` (repetível) ou `\| alvos=a,b` | todos os 12 | só esses públicos |
-| `\| legenda` ou `\| legenda=sim` | **SEM legenda** | legenda palavra-a-palavra no reel, com a caixa encostada na borda INFERIOR |
+| `\| legenda=nao` | **COM legenda** | desliga a legenda palavra a palavra do reel |
 | `\| versao=N` | 1 | muda o `-vN` do título do estúdio |
 | `\| de=<fase>` | — | começa no meio (você já fez texto e/ou avatar) |
 | `\| sombra` | — | mostra o plano, não enfileira nada |
 
 ```
-/promoavatar <assunto> --alvo=jovens --legenda
+/promoavatar <assunto> --alvo=jovens | legenda=nao
 ```
 
-Legenda é decisão de quem publica, por isso o padrão é não ter. Ligar é
-explícito, na criação — e vale para o fluxo inteiro.
+**O padrão inverteu (2026-08-07): legenda é LIGADA.** Uma palavra por vez, caixa
+alta, branca, com a palavra-chave em âmbar, na base da faixa do avatar. O
+desenho, as decisões e o lugar de mudar cor e formato estão em
+`docs/legenda.md`.
+
+> **Atenção — meia implantação.** O **motor** já está pronto e verificado neste
+> repo (`scripts/legendas.py`, camada no `montar.py`, nó no template,
+> `--sem-legenda` no `preparar.py`/`montar-reel.py`). A **flag do bot ainda
+> não**: `| legenda=nao` só passa a valer depois da mudança em
+> `inemaccbot/src/gateway/comandos-fluxo.ts` (`:282`, `:182-186`, `:336`) e do
+> restart — que exige fila vazia. Até lá, quem roda pela linha de comando já sai
+> com legenda; pelo bot, ainda não.
 
 ### Legenda: o que vem da HeyGen e o que é nosso
 

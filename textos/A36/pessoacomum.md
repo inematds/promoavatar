@@ -14,7 +14,7 @@ CTA: trilha Vibe Coding - Da Ideia ao Produto, no inema.club
 IMAGEM 1 — "Você pede resposta. Podia estar pedindo o programa" [ATENÇÃO]
 headline: VOCÊ PEDE RESPOSTA | PODIA PEDIR O PROGRAMA
 hook: pergunta acaba, {sistema} fica
-prompt: A man's hands holding a phone showing a plain chat bubble, while behind him on the kitchen wall a full working shop dashboard glows on a large screen he is not looking at, evening, photorealistic editorial
+prompt: An old shop counter buried under an overflowing avalanche of curled paper receipt rolls spilling onto the floor, a small closed laptop half swallowed by the pile, warm shop light, photorealistic editorial
 
 IMAGEM 2 — "O Jorge, quarenta e um anos, vendedor"
 headline: 41 ANOS | NUNCA PROGRAMOU

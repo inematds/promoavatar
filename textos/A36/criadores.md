@@ -1,4 +1,4 @@
-Formato escolhido: custo escondido
+Formato escolhido: afirmação provocativa
 Ganchos descartados: "Pare de pagar ferramenta cara." (slogan do público, fecha em si); "Você é refém das assinaturas." (acusação sem cena); "A IA vai mudar a criação de conteúdo." (categoria); "Sua ferramenta favorita vai aumentar o preço." (previsão inventada — regra 9).
 
 ### FALA

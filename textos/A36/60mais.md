@@ -2,7 +2,7 @@ Formato escolhido: confissão
 Ganchos descartados: "Nunca é tarde para aprender tecnologia." (clichê, fecha em si); "A IA pode dar propósito à sua aposentadoria." (slogan do público); "Aos 60 você tem mais tempo que qualquer um." (verdade morna); "Seus netos sabem mais que você." (humilha em vez de abrir lacuna).
 
 ### FALA
-O seu Antônio, sessenta e oito anos, achou por dois anos que aquilo não era pra ele. Aposentado, marceneiro a vida inteira. Um dia a neta sentou do lado e ele descreveu, falando em português normal, o que queria: um caderno na tela com a medida de cada móvel que ele já fez, pra achar em segundos. E nasceu funcionando. Isso se chama vibe code: você fala, o computador constrói. Primeira versão em cinco dias, sem digitar uma linha de programação. Hoje ele vende projeto de móvel pela internet. Quem só aprende a apertar botão recomeça a cada novidade. Quem aprende a construir não perde mais nada. Entre agora no inema.club e comece pela trilha O Caminho Certo da IA. Cinquenta anos de ofício cabem numa tela. Se alguém colocar lá.
+Dois anos achando que aquilo não era pra ele. O seu Antônio tem sessenta e oito anos, marceneiro a vida inteira. Um dia a neta sentou do lado e ele descreveu, falando em português normal, o que queria: um caderno na tela com a medida de cada móvel que já fez. E nasceu funcionando. Isso se chama vibe code: você fala, o computador constrói. Primeira versão em cinco dias, sem digitar uma linha de programação. Hoje ele vende projeto de móvel pela internet. Quem só aprende a apertar botão recomeça a cada novidade. Quem aprende a construir não perde mais nada. Entre agora no inema.club e comece pela trilha O Caminho Certo da IA. Cinquenta anos de ofício cabem numa tela. Se alguém colocar lá.
 
 ## SOBREPOSIÇÕES
 ATENÇÃO: dois anos achando que aquilo não era pra ele
@@ -16,7 +16,7 @@ headline: DOIS ANOS ACHANDO | QUE NÃO ERA PRA ELE
 hook: o que ficou parado não foi a {tecnologia}
 prompt: An untouched tablet still in its box on a shelf in a sawdust-covered woodworking shop, hand tools worn and in daily use all around it, warm light, photorealistic
 
-IMAGEM 2 — "sessenta e oito anos, marceneiro a vida inteira"
+IMAGEM 2 — "O seu Antônio tem sessenta e oito anos"
 headline: 68 ANOS | UMA VIDA DE OFÍCIO
 hook: mãos que sabem o que nenhuma {máquina} sabe
 prompt: Close portrait of a Brazilian man in his late sixties in a woodworking apron, thick scarred hands resting on a workbench, warm workshop light, photorealistic

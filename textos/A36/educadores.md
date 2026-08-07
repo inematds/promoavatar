@@ -2,7 +2,7 @@ Formato escolhido: o que ninguém te conta
 Ganchos descartados: "Você não vai ser substituído pela IA." (slogan do público, e alívio não segura ninguém); "A IA chegou na sala de aula." (categoria); "Seus alunos usam IA pra fazer o trabalho." (todo mundo já sabe, sem tensão); "Professor precisa se atualizar." (sermão, sem lacuna).
 
 ### FALA
-Ninguém te contou que dá pra mandar fazer a ferramenta que a escola nunca comprou. A professora Marli, vinte e dois anos de sala, corrigia redação até meia-noite. Ela não sabe programar. Só descreveu em português o que queria: uma tela que recebe as redações da turma, separa por critério e devolve o que cada aluno errou. E o sistema nasceu. Isso se chama vibe code. Primeira versão funcionando em cinco dias. Não corrige por ela — organiza pra ela chegar mais rápido no aluno. Quem só aprende a usar espera a próxima ferramenta. Quem aprende a construir faz a que falta. Entre agora no inema.club e comece pela trilha Vibe Coding - Da Ideia ao Produto. Não é a IA que substitui professor. É o professor que constrói.
+Dá pra mandar fazer a ferramenta que falta. Aquela que a escola nunca comprou. A professora Marli, vinte e dois anos de sala, corrigia redação até meia-noite. Ela não sabe programar. Só descreveu em português o que queria: uma tela que recebe as redações da turma, separa por critério e devolve o erro de cada aluno. E nasceu. Isso se chama vibe code. Primeira versão funcionando em cinco dias. Não corrige por ela — organiza pra ela chegar mais rápido no aluno. Quem só aprende a usar espera a próxima ferramenta. Quem aprende a construir faz a que falta. Entre agora no inema.club e comece pela trilha Vibe Coding - Da Ideia ao Produto. Não é a IA que substitui professor. É o professor que constrói.
 
 ## SOBREPOSIÇÕES
 ATENÇÃO: dá pra mandar fazer a ferramenta que a escola nunca comprou
@@ -11,7 +11,7 @@ ENGAJAMENTO: comenta qual ferramenta a sua escola nunca comprou
 CTA: trilha Vibe Coding - Da Ideia ao Produto, no inema.club
 
 ## IMAGENS
-IMAGEM 1 — "mandar fazer a ferramenta que a escola nunca comprou" [ATENÇÃO]
+IMAGEM 1 — "Dá pra mandar fazer a ferramenta que falta" [ATENÇÃO]
 headline: A FERRAMENTA QUE A ESCOLA | NUNCA COMPROU
 hook: esperar orçamento virou {escolha}, não destino
 prompt: An empty computer lab in a Brazilian public school with dusty covered monitors, while through the door a single classroom glows with one laptop open on a teacher's desk, photorealistic editorial

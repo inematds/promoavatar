@@ -14,7 +14,7 @@ CTA: trilha Vibe Coding - Da Ideia ao Produto, no inema.club
 IMAGEM 1 — "Dizem que os jovens aprendem IA mais rápido" [ATENÇÃO]
 headline: ELES APRENDEM O BOTÃO | VOCÊ TEM O RESTO
 hook: velocidade sem {experiência} anda em círculo
-prompt: A young man tapping fast on a laptop in an empty office while a woman in her late forties stands at a warehouse window behind him seeing the actual trucks, split depth of field, photorealistic editorial
+prompt: A young man in a hoodie standing frozen in the middle of a vast warehouse aisle, phone in hand, towering pallets on both sides, industrial daylight, photorealistic editorial
 
 IMAGEM 2 — "A Cláudia, quarenta e sete anos, gerente de logística"
 headline: 47 ANOS | 20 DE OPERAÇÃO

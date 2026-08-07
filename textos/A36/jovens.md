@@ -2,7 +2,7 @@ Formato escolhido: previsão
 Ganchos descartados: "Você pode começar uma profissão que está nascendo." (slogan do público, fecha em si); "A IA vai mudar o mercado de trabalho." (categoria, e todo mundo já ouviu); "Estude enquanto é tempo." (sermão, sem lacuna); "Seu estágio paga oitocentos reais." (número inventado — proibido pela regra 9).
 
 ### FALA
-Daqui a três anos ninguém vai te contratar pelo que você sabe usar. Vão contratar pelo que você já construiu. O Léo, vinte anos, mandava trabalho da facul pro chat e achava que dominava IA. Aí descobriu que dava pra descrever em português um sistema inteiro e ele nascer funcionando. Isso se chama vibe code. Ele montou um app que organiza a escala dos entregadores do bairro. Primeira versão em cinco dias. Hoje ele mostra isso numa entrevista, e ninguém pergunta o período da faculdade. Quem só aprende a usar refaz tudo a cada modelo novo. Quem aprende a construir só acumula. Entre agora no inema.club e comece pela trilha Vibe Coding - Da Ideia ao Produto. Currículo se lê. Sistema se abre.
+Em três anos ninguém contrata pelo que você usa. Contratam pelo que você já construiu. O Léo, vinte anos, mandava trabalho da facul pro chat e achava que dominava IA. Aí descobriu que dava pra descrever em português um sistema inteiro e ele nascer funcionando. Isso se chama vibe code. Ele montou um app que organiza a escala dos entregadores do bairro. Primeira versão em cinco dias. Hoje ele mostra isso numa entrevista, e ninguém pergunta o período da faculdade. Quem só aprende a usar refaz tudo a cada modelo novo. Quem aprende a construir só acumula. Entre agora no inema.club e comece pela trilha Vibe Coding - Da Ideia ao Produto. Currículo se lê. Sistema se abre.
 
 ## SOBREPOSIÇÕES
 ATENÇÃO: em três anos ninguém contrata pelo que você sabe usar
@@ -11,7 +11,7 @@ ENGAJAMENTO: marca alguém que ainda acha que basta saber usar o chat
 CTA: trilha Vibe Coding - Da Ideia ao Produto, no inema.club
 
 ## IMAGENS
-IMAGEM 1 — "Daqui a três anos ninguém vai te contratar" [ATENÇÃO]
+IMAGEM 1 — "Em três anos ninguém contrata pelo que você usa" [ATENÇÃO]
 headline: EM 3 ANOS | NINGUÉM PERGUNTA ISSO
 hook: usar vira {commodity}, construir vira vaga
 prompt: A young man sitting alone in a corporate waiting room holding a single sheet of paper, while the empty chair beside him holds an open laptop running a live app, cold daylight, photorealistic editorial

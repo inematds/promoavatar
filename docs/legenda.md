@@ -1,8 +1,11 @@
 # Legenda do reel
 
-Legenda palavra a palavra na faixa do avatar, **ligada por default**. Este
-documento é o desenho aprovado; enquanto não houver código, ele descreve o que
-será construído, não o que já existe.
+Legenda palavra a palavra na faixa do avatar, **ligada por default**.
+
+**Estado: o motor está implementado e verificado neste repo** (`legendas.py`,
+camada no `montar.py`, nó no template, `--sem-legenda` em `preparar.py` e
+`montar-reel.py`). Falta só a peça do `inemaccbot` — a flag `| legenda=nao` —
+que é a única que exige restart do bot; ver "Ordem de aplicação".
 
 ## Decisões
 
@@ -33,20 +36,38 @@ O que foi descartado, e por quê:
 Tudo num nó só, `legenda`, em `templates/empilhado-capa.json` — ao lado das
 coordenadas das três faixas, que já moram lá:
 
+O nó fica dentro de `faixas.meio`, ao lado das coordenadas da faixa do avatar:
+
 ```jsonc
 "legenda": {
-  "fonte": "Montserrat Black",
-  "corpo": 86,
-  "cor": "#FFFFFF",          // palavra comum
-  "acento": "#F5A623",       // palavra-chave
-  "contorno": "#000000",
-  "contorno_px": 8,
+  "fonte": "Montserrat Black, Inter, system-ui, sans-serif",
+  "fonte_arquivo": "~/.local/share/fonts/Montserrat-Black.ttf",
+  "tamanho": 86, "peso": 900,
+  "contorno": "#000000", "contorno_px": 8,
   "respiro": 28              // px acima da base da faixa do avatar
 }
 ```
 
-`scripts/montar.py` **lê** esses valores e injeta no CSS. Nenhuma cor de legenda
-pode ser escrita direto no `montar.py` — se estiver lá, é bug.
+As **cores não estão aí de propósito**: a palavra comum usa `cores.texto` e a
+palavra-chave usa `cores.acento` — as mesmas do reel inteiro, no mesmo template.
+Mudar o acento muda headline, hook e legenda juntos, que é o comportamento
+certo: são a mesma marca. `scripts/montar.py` só lê e injeta no CSS; nenhuma cor
+de legenda pode estar escrita nele — se estiver, é bug.
+
+### `fonte_arquivo` não é enfeite
+
+Descoberto no primeiro render: o lint acusa `font_family_without_font_face` e o
+renderer **cai calado numa fonte genérica** para qualquer família que ele não
+resolva sozinho — Montserrat Black é uma delas. O `montar.py` copia o arquivo
+apontado por `fonte_arquivo` para `motion/fonts/` e emite o `@font-face`. Sem
+essa chave a legenda sai com a tipografia errada e **nada falha** — só fica
+feio, e ninguém percebe até assistir.
+
+### Templates com avatar em PiP
+
+Quando o template põe o avatar como selo flutuante (`meio.forma == "pip"`,
+468x264 sobre a imagem), a legenda é **ignorada** com aviso: naquele tamanho ela
+sairia ilegível e taparia o próprio rosto.
 
 ## Como funciona
 
@@ -117,7 +138,26 @@ remoção, máscara nem inpaint no pipeline. Ligar as duas é ficar com duas.
 E não dá para recuperá-la como texto: a API não entrega legenda de vídeo já
 renderizado — medido em 2026-08-07, ver `README.md`.
 
-## Verificação
+## Verificação (feita)
+
+- `tests/test_legendas.py` — 19 testes sobre `legendas.py`: keywords só das
+  SOBREPOSIÇÕES, rótulos e palavras de função fora, caixa alta sem pontuação,
+  ausência de lacuna entre palavras, `.md` sem SOBREPOSIÇÕES não quebra. Rode
+  com `python3 -m pytest tests/ -q`;
+- **três transcripts reais** (a16-criadores, c15-jovens, o-google-jovens): 104 a
+  129 palavras, **zero lacuna ou sobreposição**. O primeiro rodou com 1
+  sobreposição de 10ms, causada por um piso de duração de 0,05s em cima de uma
+  palavra de 40ms do ASR — o piso saiu, e o teste
+  `test_palavra_curtissima_nao_invade_a_proxima` guarda a regressão;
+- **lint de ritmo:** 20 beats com legenda e 20 sem, no mesmo reel. As 234
+  operações de legenda são ignoradas, como a nomenclatura `#cb<N>` promete;
+- **render draft de ponta a ponta** (A34-pessoacomum, 34,8s, 117 palavras): a
+  legenda aparece palavra a palavra, branca, com `HORAS` em âmbar, na base da
+  faixa do avatar, sem invadir o painel;
+- **os dois caminhos do `preparar.py`:** com legenda (117 palavras no HTML,
+  `@font-face` presente) e `--sem-legenda` (zero).
+
+## Verificação (o que ainda não foi feito)
 
 - **`legendas.py` sobre o `transcript.json` real do A#35:** contagem de palavras
   bate, nenhuma lacuna temporal entre palavras consecutivas, e as marcadas `kw`

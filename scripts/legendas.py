@@ -36,8 +36,18 @@ VAZIAS = {
 }
 MIN_LETRAS = 4
 
-# Rotulos das linhas de SOBREPOSICOES — sao estrutura, nao conteudo.
-ROTULO = re.compile(r"^\s*[A-ZÀ-Ú][A-ZÀ-Ú\s]{2,}:\s*")
+# Rotulos das linhas de SOBREPOSICOES — sao estrutura, nao conteudo. A fase de
+# texto ja escreveu isto de duas formas:
+#   ATENCAO: o nivel mais perigoso...            (A#35 e anteriores)
+#   - **ATENÇÃO (0–2s)** — ELE ACHOU A IA...     (A#49 em diante)
+# Os dois precisam ser aparados, senao "atencao"/"engajamento" viram acento.
+MARCADOR = re.compile(r"^\s*[-*+•]\s*")
+ROTULO = re.compile(
+    r"^\s*(?:\*\*)?[A-ZÀ-Ú][A-ZÀ-Ú\s]{2,}(?:\s*\([^)]*\))?(?:\*\*)?\s*(?::|[—–-])\s*"
+)
+# Mesmo aparados, os nomes dos gatilhos aparecem soltos no meio do texto.
+ESTRUTURA = {"atencao", "retencao", "engajamento", "cta", "gancho", "fecho",
+             "miolo", "reel", "tela", "falar", "fase"}
 
 
 def norm(s: str) -> str:
@@ -65,10 +75,10 @@ def keywords_do_md(texto: str) -> set:
             continue
         if not dentro or not linha.strip():
             continue
-        conteudo = ROTULO.sub("", linha)
+        conteudo = ROTULO.sub("", MARCADOR.sub("", linha))
         for bruto in re.split(r"[\s—–-]+", conteudo):
             p = norm(bruto)
-            if len(p) >= MIN_LETRAS and p not in VAZIAS:
+            if len(p) >= MIN_LETRAS and p not in VAZIAS and p not in ESTRUTURA:
                 kws.add(p)
     return kws
 

@@ -148,3 +148,50 @@ def test_cli_grava_json(tmp_path):
     dados = json.loads(out.read_text())
     assert [p["palavra"] for p in dados] == ["PRODUÇÃO", "IMPORTA"]
     assert dados[0]["kw"] is True
+
+
+# Formato NOVO das sobreposicoes (visto em A#49-A#52): lista com negrito e o
+# rotulo entre asteriscos, com faixa de tempo. O parser antigo so tirava rotulo
+# no formato "ATENCAO: texto", entao "atencao"/"engajamento" vazavam como
+# keyword e o ambar acendia em meio texto.
+MD_LISTA = """### FALA
+tanto faz
+
+### SOBREPOSICOES DE TELA (fase do reel — NAO falar)
+- **ATENCAO (0-2s)** — ELE ACHOU A IA | QUE DAVA DINHEIRO
+- **RETENCAO (miolo)** — o erro nao foi a ferramenta, foi confundir ferramenta com ativo
+- **ENGAJAMENTO** — "Comenta quantos anos voce tem de profissao"
+- **CTA (fecho)** — INEMA.CLUB | O CAMINHO CERTO DA IA
+
+### IMAGENS
+IMAGEM 1 — "algo"
+headline: NAO ENTRA
+"""
+
+
+def test_lista_com_negrito_tambem_da_keywords():
+    kws = legendas.keywords_do_md(MD_LISTA)
+    assert "ferramenta" in kws
+    assert "ativo" in kws
+
+
+def test_rotulos_do_formato_lista_nao_viram_keyword():
+    kws = legendas.keywords_do_md(MD_LISTA)
+    for rotulo in ("atencao", "retencao", "engajamento", "cta"):
+        assert rotulo not in kws, f"{rotulo!r} e estrutura, nao conteudo"
+
+
+def test_marcacao_de_negrito_nao_gruda_na_palavra():
+    kws = legendas.keywords_do_md(MD_LISTA)
+    assert not any("*" in k for k in kws)
+
+
+def test_secao_com_titulo_longo_ainda_e_reconhecida():
+    """`### SOBREPOSICOES DE TELA (fase do reel — NAO falar)` conta."""
+    assert legendas.keywords_do_md(MD_LISTA)
+
+
+def test_acento_fica_escasso():
+    """O ambar precisa ser raro para significar algo."""
+    kws = legendas.keywords_do_md(MD_LISTA)
+    assert len(kws) <= 18, f"{len(kws)} keywords e acento demais: {sorted(kws)}"

@@ -177,7 +177,12 @@ def ler_imagens(md: Path) -> list:
     if not md or not md.exists():
         return []
     txt = md.read_text(encoding="utf-8", errors="replace")
-    m = re.search(r"^##\s*IMAGENS\s*$(.*?)(?=^##\s|\Z)", txt, re.M | re.S)
+    # `#{1,3}` e nao `##`: em 2026-08-08 os 48 textos de A#49 a A#52 sairam com
+    # `### IMAGENS`, e TODOS os reels dos quatro fluxos morreram com "sem
+    # segmentos.json". O transcript estava la — faltava o parser aceitar tres
+    # `#`. Como o texto e escrito por LLM, o nivel do cabecalho volta a variar:
+    # quem se adapta e o parser, nao os arquivos.
+    m = re.search(r"^#{1,3}\s*IMAGENS\s*$(.*?)(?=^#{1,3}\s|\Z)", txt, re.M | re.S)
     if not m:
         return []
     itens, atual = [], None

@@ -3,24 +3,27 @@
 Repo de **domínio** do fluxo `/promoavatar` do inemaccbot: reels de divulgação
 para 12 públicos, com portão humano no meio.
 
-> ## ⚠️ CONGELADO desde 2026-08-06
+> ## Descongelado em 2026-08-09
 >
-> Decisão do dono, nestas palavras: *"o promoavatar aqui fica intocável de agora
-> em diante"*. Ele continua **de pé e funcionando** — mas não recebe mudança de
-> comportamento. O sucessor **não é uma evolução deste**, é um sistema separado:
-> [`promoavatar3`](https://github.com/inematds/promoavatar3), com motor de reel,
-> layouts e skill próprios.
+> Entre 2026-08-06 e 2026-08-09 este repo esteve **congelado** ("intocável"), e o
+> trabalho todo ia para o [`promoavatar3`](https://github.com/inematds/promoavatar3).
+> O dono liberou: **os dois voltam a evoluir**.
 >
-> **Se você veio fazer uma mudança, ela provavelmente vai no promoavatar3.**
+> Isso **não** os torna um só. Eles continuam sistemas separados — cada um com seu
+> motor de reel (`scripts/`), seus layouts (`templates/`), seus alvos e seu prompt.
+> Mexer aqui não afeta lá, e vice-versa. A diferença de propósito continua: aqui é
+> **um vídeo por público** (12 públicos); lá são **três** (alcance, autoridade,
+> promocional).
 >
-> Duas exceções foram abertas desde então, as duas de portabilidade e nenhuma de
-> lógica: o CTA passou a ser versionado (`3e0da37`) e os caminhos de máquina
-> viraram variável de ambiente (`4f10c84`). Sem elas o repo nascia quebrado em
-> qualquer máquina que não fosse a de casa.
+> **Uma coisa existe só aqui:** a rota `| navega` — o agente pilotando o estúdio,
+> que é o caminho de volta caso o DOM do HeyGen mude e o script do `| estudio`
+> quebre. O promoavatar3 não tem esse plano B.
 >
-> Uma coisa só existe aqui e **não** foi portada: a rota `| navega` (o agente
-> pilotando o estúdio), que era o caminho de volta caso o DOM do HeyGen mudasse
-> e o script do `| estudio` quebrasse. No promoavatar3 esse plano B não existe.
+> **Custo da divergência dos três dias:** o que este repo recebeu no congelamento
+> foi só o mínimo para não nascer quebrado fora desta máquina — CTA versionado
+> (`3e0da37`), caminhos como variável de ambiente (`4f10c84`) e o adaptador de
+> imagem. O que **não** veio junto foi tudo que o promoavatar3 ganhou de novo no
+> período, e portar isso caso a caso é decisão sua, não automática.
 
 ## 📖 Guia de uso
 

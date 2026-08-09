@@ -3,6 +3,25 @@
 Repo de **domínio** do fluxo `/promoavatar` do inemaccbot: reels de divulgação
 para 12 públicos, com portão humano no meio.
 
+> ## ⚠️ CONGELADO desde 2026-08-06
+>
+> Decisão do dono, nestas palavras: *"o promoavatar aqui fica intocável de agora
+> em diante"*. Ele continua **de pé e funcionando** — mas não recebe mudança de
+> comportamento. O sucessor **não é uma evolução deste**, é um sistema separado:
+> [`promoavatar3`](https://github.com/inematds/promoavatar3), com motor de reel,
+> layouts e skill próprios.
+>
+> **Se você veio fazer uma mudança, ela provavelmente vai no promoavatar3.**
+>
+> Duas exceções foram abertas desde então, as duas de portabilidade e nenhuma de
+> lógica: o CTA passou a ser versionado (`3e0da37`) e os caminhos de máquina
+> viraram variável de ambiente (`4f10c84`). Sem elas o repo nascia quebrado em
+> qualquer máquina que não fosse a de casa.
+>
+> Uma coisa só existe aqui e **não** foi portada: a rota `| navega` (o agente
+> pilotando o estúdio), que era o caminho de volta caso o DOM do HeyGen mudasse
+> e o script do `| estudio` quebrasse. No promoavatar3 esse plano B não existe.
+
 ## 📖 Guia de uso
 
 Guia completo (landing + passo a passo): **https://inematds.github.io/promoavatar/guia/**
@@ -10,8 +29,10 @@ Guia completo (landing + passo a passo): **https://inematds.github.io/promoavata
 O bot escreve os roteiros e PARA. Você grava os avatares no HeyGen; quando
 terminar, libera e ele baixa, monta os reels e entrega em cada canal.
 
-Aqui não há código — só a **definição** do pipeline. Um fluxo novo é uma entrada
-no registry do bot mais um repo como este, sem uma linha de TypeScript.
+Aqui não há **TypeScript** — a definição do pipeline (`flow.json`, prompts) é o
+coração do repo, e um fluxo novo é uma entrada no registry do bot mais um repo
+como este. Mas há código Python em `scripts/` (8 arquivos): é o motor do reel,
+que roda como função disparada pela fase `reel.montar`.
 
 ## O que tem aqui
 

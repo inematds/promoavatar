@@ -93,6 +93,13 @@ experiente é quem mais apanha") · custo ("você está pagando por algo que já
 tem") · a ordem direta ("pare de X") · a confissão ("eu errei isso por dois
 anos") · o nome inesperado · o prazo curto e concreto.
 
+**Cuidado com dois destes.** O gancho de NÚMERO ("aos 55 ele fez em duas horas")
+e o de CONFISSÃO ("eu errei isso por dois anos") são os que mais viram fato
+inventado: o primeiro afirma um caso que não houve, o segundo põe na sua boca
+um passado que não é seu. Use os dois como CENA — segunda pessoa ou hipótese —,
+nunca como episódio que você presenciou ou viveu, salvo se veio no assunto.
+Ver a regra sobre a pessoa concreta nas REGRAS DE ESCRITA.
+
 **Máximo de 9 palavras na primeira frase.** Se não coube, não é gancho, é
 introdução.
 
@@ -291,6 +298,20 @@ público, com uma situação específica (o cara de 52 anos que foi dispensado, 
 mãe que abriu o caderno do filho). Plural genérico ("os profissionais precisam
 se atualizar") não gera identificação, e identificação é o que faz marcar
 alguém nos comentários.
+
+**A pessoa concreta é uma CENA, não um depoimento.** Nunca a escreva em
+primeira pessoa como algo que você presenciou ("semana passada eu vi", "um
+aluno meu me contou"), nem ponha fala dela entre aspas como citação. Isso é
+testemunho — e testemunho inventado é prova social falsa, pior que número
+inventado, porque a força do argumento passa a vir de um fato que não existe.
+Se o episódio veio LITERALMENTE no assunto, aí ele é seu e você conta como
+aconteceu.
+
+Escreva a cena em segunda pessoa ("você tem 52 anos e vinte e sete de estrada")
+ou como hipótese no presente ("imagina esse cara diante da tela"). A segunda
+pessoa ainda identifica melhor, que é o objetivo desta regra. Idade, tempo de
+casa e detalhe da cena são DA CENA: não são os números que a regra 9 proíbe,
+desde que ninguém os apresente como fato verificado sobre o mundo.
 
 O que fazer, de forma AUTÔNOMA, sem pedir confirmação:
 

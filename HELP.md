@@ -6,24 +6,24 @@ terminar, /aprovar libera o download e os reels.
 COMO USAR
 
   /promoavatar Não comece aprendendo ferramentas
-  /promoavatar Assunto | alvos=mulheres           só um público (barato p/ testar)
-  /promoavatar Assunto --alvo=jovens --alvo=40mais   mesma coisa, forma curta
-  /promoavatar Assunto | sombra                   mostra o plano, não enfileira
-  /promoavatar Assunto | legenda=nao              SEM legenda (padrão é COM)
-  /promoavatar Assunto | de=baixar                você já fez texto E avatar
+  /promoavatar Assunto | alvos=mulheres       um público só (p/ testar)
+  /promoavatar Assunto --alvo=jovens --alvo=40mais    a mesma coisa, curto
+  /promoavatar Assunto | sombra               mostra o plano, não enfileira
+  /promoavatar Assunto | legenda=nao          SEM legenda (padrão é COM)
+  /promoavatar Assunto | de=baixar            você já fez texto E avatar
 
 FLUXO — 4 fases, 2 portões
 
   1. texto    o bot escreve UM roteiro por público
-     ⏸️  PORTÃO 1 — você revisa os textos e gera os avatares no estúdio
+     PORTÃO 1 — você revisa os textos e gera os avatares no estúdio
   2. avatar   normalmente VOCÊ, na mão (ver "OS AVATARES" abaixo)
   2.5 baixar  /aprovar A#N → o bot acha os vídeos pelo TÍTULO e baixa
-     ⏸️  PORTÃO 2 — você confere os avatares antes de gastar render
+     PORTÃO 2 — você confere os avatares antes de gastar render
   3. reel     monta o reel (capa de impacto com o gatilho do público) e
               ENTREGA no canal lives daquele público
 
 Não há fase separada de publicação: a entrega é o fim da fase reel, e o
-destino é o `canal` do público.
+destino é o canal do público.
 
 TROCAR A IMAGEM DE CAPA (foto sua no lugar da gerada)
 
@@ -35,10 +35,10 @@ mensagem separada:
   capa: A#25 jovens 3        troca a IMAGEM 3, não a capa
   capa: A#25 jovens cover    preenche CORTANDO as laterais
 
-O padrão é `contain`: a imagem cabe INTEIRA, e o resto da faixa é preenchido
+O padrão é contain: a imagem cabe INTEIRA, e o resto da faixa é preenchido
 com uma cópia borrada dela mesma. Imagem sua não é cortada sem você pedir —
 se ela traz texto ou um rosto enquadrado, cortar destrói o trabalho. Use
-`cover` só quando a imagem for de fundo, sem texto.
+cover só quando a imagem for de fundo, sem texto.
 
 QUANDO mandar: no PORTÃO da fase de texto, ANTES do /aprovar. É a única
 janela em que trocar a capa é de graça — nenhum avatar gerado, nenhuma
@@ -56,9 +56,10 @@ No estúdio, nomeie cada vídeo EXATAMENTE assim:
 
   A<N>-<publico>-v1        ex.: A7-mulheres-v1
 
-O <N> é o número do fluxo, que aparece quando você cria (`criado: A#7`). É por
-esse nome que o download encontra o vídeo — nome diferente, vídeo não
-encontrado, e a fase expira em 90 minutos. O /status A#7 mostra os títulos.
+O <N> é o número do fluxo, que aparece quando você cria (criado: A#7).
+É por esse nome que o download encontra o vídeo — nome diferente, vídeo
+não encontrado, e a fase expira em 90 minutos. O /status A#7 mostra os
+títulos.
 
 A LEGENDA DO AVATAR SE DECIDE NO ESTÚDIO
 
@@ -71,7 +72,7 @@ A legenda do reel é OUTRA coisa: é a que o NOSSO editor desenha, e desde
 e como o padrão mudou, agora a escolha é ativa:
 
   NÃO ligue legenda no estúdio  ->  e deixe o padrão (reel legendado)
-  quer a do estúdio             ->  crie o fluxo com `| legenda=nao`
+  quer a do estúdio             ->  crie o fluxo com | legenda=nao
 
 E lembre: legenda queimada vem enquadrada para 16:9 — no 9:16 ela pode ser
 cortada ou colidir com a base, e não há como removê-la depois. Detalhe e o
@@ -82,7 +83,7 @@ ACOMPANHAR
   /status A#7              fase × público, e o que está esperando você
   /aprovar A#7             libera o portão (= "terminei os avatares")
   /refazer A#7 mulheres    só o público que falhou, tentativas zeradas
-  /cancelar A#7 [publico]  cancela; o que já foi criado no estúdio continua lá
+  /cancelar A#7 [publico]  cancela; o que já está no estúdio continua lá
 
 PÚBLICOS
 
@@ -90,7 +91,8 @@ PÚBLICOS
   40mais 60mais educadores criadores recolocacao familia
 
 Cada um tem canal (livesN) e gatilho próprios — a lista mora no flow.json
-deste repo, e é ele que o bot lê. Mudou um público? Muda ali, sem tocar no bot.
+deste repo, e é ele que o bot lê. Mudou um público? Muda ali, sem tocar
+no bot.
 
 ONDE O REEL É ENTREGUE
 
@@ -104,25 +106,25 @@ Detalhe em docs/canais-e-destinos.md.
 
 OS AVATARES: SUA MÃO OU A API
 
-Por padrão você grava no HeyGen (é o de sempre). Com `| api`, o BOT gera —
+Por padrão você grava no HeyGen (é o de sempre). Com | api, o BOT gera —
 e isso gasta da carteira pré-paga da HeyGen (~US$ 1 por minuto de vídeo).
 
   /promoavatar <assunto> | api
   /promoavatar <assunto> | api | sem-portao   gera E não para para aprovar
 
-`| api` NÃO tira o portão: você ainda revisa os textos e dá /aprovar antes de
-gastar. Para a esteira inteira sem parar, peça as duas flags.
+O | api NÃO tira o portão: você ainda revisa os textos e dá /aprovar antes
+de gastar. Para a esteira inteira sem parar, peça as duas flags.
 
-Confira antes com `| sombra`: a fase `gerar` só aparece no plano quando a
-opção `| api` está ligada.
+Confira antes com | sombra: a fase gerar só aparece no plano quando a
+opção | api está ligada.
 
 A fase 2 tem 5 rotas, e só uma roda por fluxo:
 
   manual      nenhuma flag — o padrão; você grava e o bot só espera
   | estudio   o bot abre/prepara o estúdio, você conclui
   | api       o bot gera pela API (carteira pré-paga)
-  creditos    fase `gerar-creditos` no flow.json — flag não documentada aqui
-  navega      fase `navega-avatar` (agente no navegador) — cara: ~17,8k
+  creditos    fase gerar-creditos no flow.json — flag não documentada aqui
+  navega      fase navega-avatar (agente no navegador) — cara: ~17,8k
               tokens por público, ~214k nos 12; flag não documentada aqui
 
 Qualquer rota que você use, o TÍTULO continua sendo o contrato.

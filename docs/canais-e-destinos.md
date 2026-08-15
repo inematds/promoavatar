@@ -21,7 +21,7 @@ Do `flow.json` deste repo:
 
 | público | canal | pasta de entrega |
 |---|---|---|
-| empreendedores | `lives1` | `~/projetos/yt-pub-lives1/imports/videos` |
+| empreendedores | `lives24` | `~/projetos/yt-pub-lives24/imports/videos` |
 | pessoacomum | `lives2` | `~/projetos/yt-pub-lives2/imports/videos` |
 | recolocacao | `lives3` | `~/projetos/yt-pub-lives3/imports/videos` |
 | mulheres | `lives4` | `~/projetos/yt-pub-lives4/imports/videos` |

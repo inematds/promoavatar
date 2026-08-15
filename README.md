@@ -515,7 +515,7 @@ obrigatórias e uma opcional:
 
 ```json
 "empreendedores": {
-  "canal": "lives1",
+  "canal": "lives24",
   "gatilho": "Transforme IA em redução de custos, vendas e novos negócios.",
   "template": "diptico"
 }
@@ -561,7 +561,7 @@ canais — e cópias divergem.
 Mapa atual dos 12 (de `docs/canais-e-destinos.md`, remapeado em 2026-07-31):
 
 ```
-empreendedores lives1   pessoacomum lives2   recolocacao lives3   mulheres  lives4
+empreendedores lives24  pessoacomum lives2   recolocacao lives3   mulheres  lives4
 tecnicos       lives6   40mais      lives7   60mais      lives8   educadores lives9
 criadores      lives11  jovens      lives22  profissionais lives23  familia  lives32
 ```
@@ -680,7 +680,7 @@ Fixar o layout de um público direto no `flow.json` (vence o mapa, perde para
 
 ```json
 "empreendedores": {
-  "canal": "lives1",
+  "canal": "lives24",
   "gatilho": "Transforme IA em redução de custos...",
   "template": "diptico"
 }

@@ -563,7 +563,7 @@ Mapa atual dos 12 (de `docs/canais-e-destinos.md`, remapeado em 2026-07-31):
 ```
 empreendedores lives24  pessoacomum lives2   recolocacao lives3   mulheres  lives4
 tecnicos       lives6   40mais      lives7   60mais      lives8   educadores lives9
-criadores      lives11  jovens      lives22  profissionais lives23  familia  lives32
+criadores      lives11  jovens      lives22  profissionais lives23  familia  lives31
 ```
 
 Como tudo aqui, **vale no PRÓXIMO fluxo**: um fluxo em andamento não muda de

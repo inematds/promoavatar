@@ -12,7 +12,7 @@ atração que segura quem está rolando o feed nos primeiros 2 segundos.
 Comparando as aberturas do A#1 (12 públicos), dá para ver que algumas já
 tropeçam no gancho por acidente e outras não:
 
-- `pessoa-comum`: "Você usa a IA do jeito preguiçoso" — tem tensão, funciona
+- `pessoacomum`: "Você usa a IA do jeito preguiçoso" — tem tensão, funciona
 - `40mais`: "Sua experiência vale mais quando é multiplicada pela IA" — é uma
   afirmação boa, mas não é gancho: não cria pergunta na cabeça de ninguém
 - `mulheres` (A#4): "Você já pensou em ter seu próprio sistema de IA

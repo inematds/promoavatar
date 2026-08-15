@@ -32,7 +32,7 @@ Do `flow.json` deste repo:
 | criadores | `lives11` | `~/projetos/yt-pub-lives11/imports/videos` |
 | jovens | `lives22` | `~/projetos/yt-pub-lives22/imports/videos` |
 | profissionais | `lives23` | `~/projetos/yt-pub-lives23/imports/videos` |
-| familia | `lives32` | `~/projetos/yt-pub-lives32/imports/videos` |
+| familia | `lives31` | `~/projetos/yt-pub-lives31/imports/videos` |
 
 *Remapeado em 2026-07-31 (21→2, 24→4, 25→1, 26→6, 27→7, 28→8, 29→9, 30→11,
 31→3). `jovens`, `profissionais` e `familia` seguem nos canais originais. O

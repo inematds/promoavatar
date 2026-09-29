@@ -1,5 +1,7 @@
 # promoavatar
 
+**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+
 Repo de **domínio** do fluxo `/promoavatar` do inemaccbot: reels de divulgação
 para 12 públicos, com portão humano no meio.
 

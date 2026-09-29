@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>promoavatar — un reel por público, con control humano</title>
+<meta content="Repo de dominio del flujo /promoavatar de inemaccbot: un guion para cada uno de los 12 públicos, tú grabas los avatares en HeyGen, el bot arma los reels y los entrega en cada canal." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;display:block}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;margin-bottom:26px}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style>
+<link href="https://inematds.github.io/promoavatar/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/promoavatar/guia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/promoavatar/guia/es/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav><div class="wrap">
+<a class="brand" href="#top"><span class="emoji">🎬</span> promoavatar</a>
+<span class="sep">|</span>
+<span class="clubpro">
+<a class="inema" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+<span class="sep">-</span>
+<a class="pro" href="https://inema.pro" rel="noopener" target="_blank">PRO</a>
+</span>
+<div class="links">
+<a class="sec" href="#oque">Qué es</a>
+<a class="sec" href="#fluxo">Cómo funciona</a>
+<a class="sec" href="#pre">Requisitos previos</a>
+<a class="sec" href="#templates">Plantillas</a>
+<a class="sec" href="#guia">Guía de uso</a>
+<a class="sec" href="#onde">Dónde cambiar</a>
+<a class="sec" href="#alterar">Cómo modificar</a>
+<a class="sec" href="#naoedaqui">No es de aquí</a>
+<button aria-label="Cambiar tema" class="tgl" id="themeToggle" title="Cambiar tema">🌙</button>
+<a class="btn" href="https://github.com/inematds/promoavatar" rel="noopener" target="_blank">GitHub</a>
+</div>
+</div></nav>
+<header class="hero" id="top">
+<div class="glow"></div>
+<div class="wrap">
+<div>
+<span class="chip">Flujo A# · 12 públicos · puerta humana</span>
+<h1>Un tema se convierte en <span class="amb">12 reels</span>, uno para cada público.</h1>
+<p class="lead">El bot escribe los guiones y SE DETIENE. Grabas los avatares en HeyGen; cuando termines, autorizas y él descarga, arma los reels 9:16 y los entrega en cada canal.</p>
+<div class="cta">
+<a class="btn" href="#guia">Comenzar la guía</a>
+<a class="btn ghost" href="https://github.com/inematds/promoavatar" rel="noopener" target="_blank">Ver en GitHub</a>
+</div>
+</div>
+<figure><img alt="promoavatar — reels de difusión por público" src="../assets/hero.png"/></figure>
+</div>
+</header>
+<section id="oque"><div class="wrap">
+<span class="chip">Qué es</span>
+<h2>Definición del pipeline, no código</h2>
+<p class="sub">Este es el repo de <strong>dominio</strong> del flujo <code>/promoavatar</code> del <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. Aquí no hay ni una línea de TypeScript — solo el <code>flow.json</code>, los prompts y la ayuda del chat. Un flujo nuevo es una entrada en el registry del bot más un repo como este.</p>
+<div class="grid g3">
+<div class="card"><h3>👥 Un guion por público</h3><p>Son 12: pessoacomum · jóvenes · profesionales · mujeres · emprendedores · tecnicos · 40mais · 60mais · educadores · creadores · recolocacao · familia. Cada uno con su propio canal y gancho.</p></div>
+<div class="card"><h3>⏸️ Dos puertas, en los lugares correctos</h3><p>El bot se detiene después del <strong>texto</strong> (antes de gastar avatar) y después del <strong>descargar</strong> (antes de gastar el render). Discrepar de un guion en el filtro cuesta rehacer un texto, no grabar 12 avatares a mano.</p></div>
+<div class="card"><h3>🧊 Congelado al crear</h3><p><code>flow.json</code>, los prompts y las opciones quedan congelados cuando nace el flujo. Editar sirve para los PRÓXIMOS — ni <code>/refazer</code> toma el cambio.</p></div>
+</div>
+</div></section>
+<section id="fluxo"><div class="wrap">
+<span class="chip">Cómo funciona</span>
+<h2>El ciclo, en una pantalla</h2>
+<p class="sub"><strong>Cuatro fases y dos puertas.</strong> Las puertas son el <code>"pausa_apos": true</code> de las fases <code>texto</code> e <code>baixar</code> en el <code>flow.json</code> — el pipeline se detiene solo ahí y solo avanza cuando lo autorizas.</p>
+<div class="flow">
+<span>1. texto</span><span class="arr">→</span>
+<span>⏸️ /aprovar A#N</span><span class="arr">→</span>
+<span>2. avatar</span><span class="arr">→</span>
+<span>2.5 descargar</span><span class="arr">→</span>
+<span>⏸️ tú revisas</span><span class="arr">→</span>
+<span>3. reel</span><span class="arr">→</span>
+<span>entregado en el canal</span>
+</div>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><h3>1 · texto</h3><p>Un guion por público, grabado en <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>. El chat te envía cada guion junto con el TÍTULO exacto del video. <strong>Puerta 1</strong> justo después.</p></div>
+<div class="card"><h3>2 · avatar</h3><p>Normalmente <strong>tú</strong>, en el estudio de HeyGen. Hay 5 rutas para esta fase — la tabla de abajo.</p></div>
+<div class="card"><h3>2.5 · descargar</h3><p>Busca el video en HeyGen por el título y descarga el MP4 — <strong>con</strong> el subtítulo incrustado si el estudio lo grabó con él; limpio si no. Ventana de 90 minutos. <strong>Puerta 2</strong> después.</p></div>
+<div class="card"><h3>3 · reel</h3><p>Arma el reel 9:16 (portada impactante con el gancho del público) y <strong>entrega</strong> directamente en la carpeta del canal de ese público. No existe una fase separada de publicación.</p></div>
+</div>
+<h3 style="margin-top:38px">La fase 2 tiene 5 rutas; solo una se ejecuta por flujo</h3>
+<p class="sub">Las cuatro automáticas son fases con la clave <code>opcional</code> en el <code>flow.json</code>. La quinta es la ausencia de todas ellas.</p>
+<div class="grid g3">
+<div class="card"><h3>✋ manual <span style="opacity:.6;font-weight:400">(predeterminado)</span></h3><p>No hay ninguna flag activada. Grabas en HeyGen y el bot ni se entera; solo espera el <code>/aprovar</code>.</p></div>
+<div class="card"><h3>🖥️ estudio</h3><p>Fase <code>estudio</code> (<code>opcional: estudio</code>). El bot abre/prepara el estudio; tú terminas.</p></div>
+<div class="card"><h3>🔌 api</h3><p>Fase <code>gerar</code> (<code>opcional: api</code>). El BOT genera — consume de la billetera prepaga de HeyGen, ~US$ 1 por minuto.</p></div>
+<div class="card"><h3>🎟️ créditos</h3><p>Fase <code>gerar-creditos</code> (<code>opcional: creditos</code>). La misma generación, consumiendo créditos.</p></div>
+<div class="card"><h3>🤖 navegador</h3><p>Fase <code>navega-avatar</code> (<code>opcional: navega</code>). Agente LLM clonando el <code>TEMPLATE-AVATAR</code>. La ruta más cara: <strong>~17,8k tokens por público</strong>, ~214k en el flujo de 12.</p></div>
+<div class="card"><h3>🔑 lo que conecta las 5</h3><p>O <strong>título</strong>. En cualquier ruta, el video debe llamarse <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. En la ruta manual eso es 100% tu responsabilidad.</p></div>
+</div>
+<p class="sub" style="margin-top:18px">Documentadas en el chat: <code>| api</code> e <code>| estudio</code>. Los flags de <code>creditos</code> e <code>navega</code> existen como fase en el <code>flow.json</code> pero <strong>no están en el <code>HELP.md</code></strong> — confirma antes de usar.</p>
+</div></section>
+<section id="templates"><div class="wrap">
+<span class="chip">Plantillas del reel</span>
+<h2>Cuatro diseños, y nadie elige al renderizar</h2>
+<p class="sub">Están en <code>templates/</code>. Todos en 1080×1920, fondo <code>#0E1116</code>, acento ámbar <code>#F5A623</code>.</p>
+<div class="grid g4">
+<div class="card"><h3>empilhado-capa <span style="opacity:.6;font-weight:400">(predeterminado)</span></h3><p>Parte superior: imagen de 704px + <code>headline</code>. Medio: avatar 608px (audio). Base: panel de texto 608px (<code>hook</code>). La portada de impacto — el formato original.</p></div>
+<div class="card"><h3>empilhado-explicativo</h3><p>Igual, pero la base pasa a ser el <strong>video explicativo</strong> de esa intervención, sin sonido y en bucle. Úsalo cuando el explicativo existe en video.</p></div>
+<div class="card"><h3>díptico</h3><p>Mitad y mitad: imagen de 960px arriba, avatar de 960px abajo. <strong>Sin tercera franja.</strong> Bueno para mito frente a realidad y comparaciones, donde la imagen transmite el contraste.</p></div>
+<div class="card"><h3>imagem-plena</h3><p>La imagen ocupa todo el cuadro; el avatar entra en un recorte en el <strong>parte superior derecha</strong>. El pie de página está prohibido: la interfaz de la red cubre la esquina inferior y el avatar no se vería.</p></div>
+</div>
+<div class="grid g2" style="margin-top:22px">
+<div class="card">
+<h3>El diseño se deriva del texto que aprobaste</h3>
+<p>La fase 1 registra la línea <code>Formato escolhido:</code> en cada <code>&lt;publico&gt;.md</code> (el PASSO ZERO del prompt), y el <code>templates/mapa.json</code> traduce. En el A#19 real eso dio <strong>9 formatos diferentes para 12 públicos</strong> — una variación real, sin que nadie decida nada durante el render.</p>
+<pre><span class="c"># precedencia (resuelta por preparar.py)</span>
+--template explícito
+  › template do ALVO no flow.json
+    › mapa.json
+      › template da raiz do flow.json</pre>
+</div>
+<div class="card">
+<h3>el headline y el hook son obligatorios</h3>
+<p>Cada franja declara una <code>fonte</code>: <code>imagens</code>, <code>avatar</code>, <code>texto</code> o <code>explicativo</code>. A <code>headline</code> ve a la parte superior; el <code>hook</code> ve al panel de base. <strong>Diseño con base y <code>hook</code> si falta = base negra</strong> — fue el A#23, con <code>hook</code> en 0 de 8 imágenes. Por eso el prompt indica que escribas <code>hook</code> siempre, incluso en los diseños sin base.</p>
+</div>
+</div>
+</div></section>
+<section id="pre"><div class="wrap">
+<span class="chip">Requisitos previos</span>
+<h2>Qué debe estar en línea</h2>
+<p class="sub">Este repo por sí solo no ejecuta nada: el bot lo lee. Lo que necesitas es el bot en funcionamiento, una cuenta de HeyGen y las carpetas de canal.</p>
+<div class="grid g3">
+<div class="card"><h3>inemaccbot en ejecución</h3><p>El bot ejecuta el flujo, con este repo declarado en <code>config/fluxos.json</code>.</p><pre><span class="c"># en el chat autorizado</span>
+<span class="k">/fluxos</span>
+<span class="k">/promoavatar help</span></pre></div>
+<div class="card"><h3>Cuenta de HeyGen</h3><p>Es donde grabas los avatares, en la pausa entre las fases 1 y 2. La descarga coincide por el nombre exacto del video.</p><pre><span class="c"># el título es el contrato</span>
+A&lt;N&gt;-&lt;publico&gt;-v1
+<span class="c"># ej.:</span> <span class="s">A8-mulheres-v1</span></pre></div>
+<div class="card"><h3>Carpeta del canal</h3><p>El canal del público se convierte en una carpeta según una regla derivada; la ruta no está escrita en ningún lado.</p><pre><span class="c"># crear un canal nuevo</span>
+<span class="k">mkdir -p</span> <span class="s">~/projetos/yt-pub-lives33/imports/videos</span></pre></div>
+</div>
+</div></section>
+<section id="guia"><div class="wrap">
+<span class="chip">Guía de uso · paso a paso</span>
+<h2>Del tema al reel entregado</h2>
+<p class="sub">Todos los comandos se escriben en el chat de Telegram, en el bot autorizado.</p>
+<div class="step"><div class="b">1</div><div>
+<h3>Comprueba en modo sombra antes de gastar</h3>
+<p><code>| sombra</code> imprime fase × público × fila × tarea y <strong>no pone nada en la cola</strong>. Ejecutar los 12 públicos significa grabar 12 avatares a mano — lo normal es filtrar.</p>
+<pre><span class="k">/promoavatar Não comece aprendendo ferramentas | sombra</span></pre>
+</div></div>
+<div class="step"><div class="b">2</div><div>
+<h3>Crea el flujo</h3>
+<p>Sin filtro van los 12. Para probar a bajo costo, un solo público. El <code>|</code> e o <code>--</code> conviven — pero un campo escrito sin uno de los dos se RECHAZA; no se convierte en un tema sin avisar.</p>
+<pre><span class="k">/promoavatar &lt;assunto&gt;</span>                        <span class="c"># los 12 públicos</span>
+<span class="k">/promoavatar &lt;assunto&gt; | alvos=mulheres</span>       <span class="c"># barato para probar</span>
+<span class="k">/promoavatar &lt;assunto&gt; --alvo=jovens --alvo=40mais</span>
+<span class="k">/promoavatar &lt;assunto&gt; | legenda</span>              <span class="c"># el valor predeterminado es SIN subtítulos</span></pre>
+</div></div>
+<div class="step"><div class="b">3</div><div>
+<h3>Escribe tu postura sobre el tema</h3>
+<p>Un tema abierto («¿esto es bueno o malo?») hacía que el agente explicara ambos lados y terminara con una conclusión tibia; nadie comenta con un equilibrista. Ahora el prompt indica que se decante por un lado y diga en el resumen cuál eligió. <strong>La posición que indiques prevalece sobre la suya</strong>, así que escribir la tuya sigue siendo el mejor camino.</p>
+<pre><span class="c"># mejor: tu postura + un hecho concreto + la pregunta</span>
+<span class="c"># que quieres en los comentarios</span></pre>
+</div></div>
+<div class="step"><div class="b">4</div><div>
+<h3>Revisa los guiones en la puerta</h3>
+<p>El bot envía cada guion al chat y SE DETIENE. Aquí es barato discrepar: <code>/refazer</code> cuesta un texto, no un render.</p>
+<pre><span class="k">/status A#7</span>              <span class="c"># fase × público, y los títulos</span>
+<span class="k">/refazer A#7 mulheres</span>    <span class="c"># solo el público que no quedó bien</span></pre>
+</div></div>
+<div class="step"><div class="b">5</div><div>
+<h3>Graba los avatares con el título exacto</h3>
+<p>En el estudio, el video debe llamarse exactamente <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. La descarga coincide por igualdad exacta de cadenas: nombre distinto = video nunca encontrado, y la fase vence en 90 minutos. El chat te envía el título listo justamente para que no tengas que escribirlo de memoria.</p>
+<pre><span class="s">A7-mulheres-v1</span>
+<span class="s">A7-jovens-v1</span>
+<span class="c"># el subtítulo del avatar se decide AQUÍ: si grabaste con él, el reel</span>
+<span class="c"># sale con ella — y después no hay forma de quitarla. En ese caso,</span>
+<span class="c"># crea el flujo SIN | subtítulo, si no, aparecen dos.</span></pre>
+</div></div>
+<div class="step"><div class="b">6</div><div>
+<h3>Abre la puerta</h3>
+<p>"Ya terminé mi parte." El bot entonces descarga los videos, arma los reels y los entrega en cada canal.</p>
+<pre><span class="k">/aprovar A#7</span>     <span class="c"># sinónimos: /pronto, /aprovado, /ok</span></pre>
+</div></div>
+<div class="step"><div class="b">7</div><div>
+<h3>Sigue hasta el enlace final</h3>
+<p>Si falla un público, rehace solo ese: sus intentos se reinician. Cancelar se refiere al pipeline: lo que ya se creó en el estudio sigue ahí.</p>
+<pre><span class="k">/status A#7</span>
+<span class="k">/refazer A#7 mulheres</span>
+<span class="k">/cancelar A#7 [publico]</span></pre>
+</div></div>
+</div></section>
+<section id="onde"><div class="wrap">
+<span class="chip">Dónde cambiar qué</span>
+<h2>El dominio, el bot y la skill son capas diferentes</h2>
+<p class="sub">La regla: lo que sea una decisión de público o de campaña va en este repo; lo que sea identidad visual de la marca va en la skill. La skill es global: modificarla cambia TODOS los reels, incluso los que se lanzan directamente desde el chat.</p>
+<div class="grid g2">
+<div class="card">
+<h3>Está aquí (dominio)</h3>
+<p>El canal y el gancho de cada público, cómo se escriben los guiones, qué le pide este pipeline al reel, el clip de CTA final y la ayuda del chat.</p>
+<pre><span class="k">flow.json</span>              <span class="c"># alvos.&lt;publico&gt;.canal / .gatilho</span>
+<span class="k">prompts/fase1-texto.md</span> <span class="c"># cómo se escriben los guiones</span>
+<span class="k">cta/cta-9x16.mp4</span>       <span class="c"># cambia el archivo</span>
+<span class="k">HELP.md</span>                <span class="c"># /promoavatar help</span></pre>
+</div>
+<div class="card">
+<h3>Está fuera</h3>
+<p>Cómo se ARMA el reel (colores, fuentes, posiciones, SFX) corresponde a la skill global; las colas, los tiempos de espera, el modelo y el esfuerzo corresponden al bot.</p>
+<pre><span class="c"># skill (global — cambia toda la marca)</span>
+~/.claude/skills/reel-edita-inema/SKILL.md
+<span class="c"># bot</span>
+inemaccbot/prompts/reel.md
+inemaccbot/config/skills.json</pre>
+</div>
+</div>
+<p class="sub" style="margin-top:22px"><strong>Mejora el reel, empezando por lo más barato:</strong> cambiar el clip de <code>cta/</code> → ajustar el <code>entrega</code> del <code>flow.json</code> → y solo entonces modificar la skill.</p>
+<div class="grid g2" style="margin-top:10px">
+<div class="card"><h3>Para quién y dónde está</h3><p>El dominio indica <strong>para quién</strong> (<code>mulheres</code> tiene <code>"canal": "lives4"</code>); el bot sabe <strong>dónde</strong> — siempre <code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code>. Nunca pongas una ruta en <code>flow.json</code>.</p></div>
+<div class="card"><h3>Leyenda: qué es nuestro y qué no</h3><p>Quien decide el subtítulo del avatar es el <strong>estudio</strong>: la descarga obtiene la versión subtitulada cuando existe y la limpia cuando no. La opción <code>| legenda</code> es otra: es la que dibuja nuestro editor. Activar las dos hace que salga <strong>dos</strong>; y los subtítulos incrustados quedan encuadrados para 16:9, sin posibilidad de quitarlos después.</p></div>
+</div>
+</div></section>
+<section id="alterar"><div class="wrap">
+<span class="chip">Cómo modificar</span>
+<h2>Prompts, plantillas, públicos y destino</h2>
+<p class="sub">Las cuatro cosas que más querrás cambiar. Todas siguen la misma restricción: <strong>lo que cuenta es lo que existía cuando nació el flujo</strong> — editar vale para los PRÓXIMOS, y ni <code>/refazer</code> toma el cambio.</p>
+<div class="grid g2">
+<div class="card">
+<h3>1 · El prompt <span style="opacity:.6;font-weight:400">(cómo se escriben los guiones)</span></h3>
+<p>Archivo: <code>prompts/fase1-texto.md</code>. Es el documento completo que la fase 1 entrega al agente — CONTEXTO FIJO, PASO CERO, TALLER DE GANCHO, las 16 REGLAS DE ESCRITURA y el contrato de salida.</p>
+<p><strong>Dos trampas:</strong> los 11 formatos del PASSO ZERO son <em>claves</em> del <code>templates/mapa.json</code> — si lo renombraste aquí, renómbralo allá. Y las cinco variables inyectadas por el bot no pueden desaparecer:</p>
+<pre>{{input}}    <span class="c"># el tema</span>
+{{publicos}} <span class="c"># los objetivos REALES del flujo</span>
+{{pasta}}    <span class="c"># dónde grabar (absoluto)</span>
+{{ref}} {{saida}}</pre>
+<p>La skill <code>inemaclub-textos</code> da la <strong>estructura</strong> del archivo; este prompt da las <strong>reglas</strong> y sobrescribe la skill. Cambia la estructura en la skill — y se aplica a todos.</p>
+</div>
+<div class="card">
+<h3>2 · Las plantillas <span style="opacity:.6;font-weight:400">(el diseño del reel)</span></h3>
+<p><strong>a) cambiar el aspecto de un diseño</strong> → edita <code>templates/&lt;nome&gt;.json</code>. Tres reglas:</p>
+<p><code>y</code> + <code>altura</code> de las franjas tienen que <strong>cerrar 1920</strong> (<code>y</code> es posición absoluta, no se apilan solas — la franja que falta queda negra). La <code>fonte</code> es lo que alimenta la franja: <code>imagens</code> · <code>avatar</code> · <code>texto</code> (o <code>hook</code>) · <code>explicativo</code>. E <code>escurecer</code> es el velo bajo el titular: demasiado bajo, el texto desaparece en las zonas claras de la foto.</p>
+<p><strong>b) cambiar qué formato corresponde a cada diseño</strong> → <code>templates/mapa.json</code>. Las claves existen <strong>con y sin acento</strong>, a propósito:</p>
+<pre>"mito versus realidade": "diptico",
+"comparação": "diptico",
+"comparacao": "diptico"</pre>
+<p>El formato que no esté en el mapa usa el predeterminado de la raíz; no inventes un diseño. <strong>c)</strong> Para fijar el diseño de un público, usa el campo <code>template</code> dentro del público.</p>
+</div>
+<div class="card">
+<h3>3 · Los objetivos <span style="opacity:.6;font-weight:400">(los públicos)</span></h3>
+<p>Archivo: <code>flow.json</code>, clave <code>alvos</code>.</p>
+<pre>"empreendedores": {
+  "canal": "lives1",
+  "gatilho": "Transforme IA em redução de custos…",
+  "template": "diptico"   <span class="c"># opcional</span>
+}</pre>
+<p>O <code>gatilho</code> es el dolor de ese público (la regla 2 del prompt indica que debes usarlo). Agregar = una entrada más; eliminar = bórralo. Para ejecutar solo algunos sin cambiar nada, usa <code>--alvo=</code> en la creación.</p>
+<p><strong>La clave es el contrato, no la etiqueta:</strong> se convierte en el archivo <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>, el título <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>, o <code>--alvo</code> del reel y el <code>seed-key</code> de las imágenes. En minúsculas, sin acento, sin espacios y <strong>sin guion</strong> — fue por eso que <code>pessoa-comum</code> se convirtió <code>pessoacomum</code>.</p>
+</div>
+<div class="card">
+<h3>4 · El destino <span style="opacity:.6;font-weight:400">(dónde se entrega el reel)</span></h3>
+<p>No hay ninguna ruta escrita en ningún lado: el destino es <strong>derivado del <code>canal</code></strong> del público.</p>
+<pre>&lt;canal&gt; → ~/projetos/yt-pub-&lt;canal&gt;/imports/videos</pre>
+<p>Cambiar el canal = editar <code>alvos.&lt;publico&gt;.canal</code>. Crear un canal nuevo = crear la carpeta, nada más:</p>
+<pre><span class="k">mkdir -p</span> <span class="s">~/projetos/yt-pub-lives33/imports/videos</span></pre>
+<p>Dos públicos pueden compartir el mismo canal. Cambiar la <strong>regla</strong> (la carpeta base, el <code>imports/videos</code>) <strong>no es aquí</strong> — é o <code>destinos.ts</code> del bot, y cambia todos los flujos. Para un reel suelto fuera del flujo, usa <code>montar-reel.py --saida &lt;caminho&gt;</code>.</p>
+</div>
+</div>
+</div></section>
+<section id="naoedaqui"><div class="wrap">
+<span class="chip">No es de este repo</span>
+<h2>Qué pertenece a inemaccbot y no está aquí</h2>
+<p class="sub">Este repo es <strong>dominio</strong>: él declara el pipeline. Quien <em>ejecuta</em> é o <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. Buscar aquí algo que está allá es la pérdida de tiempo más común — la lista de abajo es justamente lo que <strong>no</strong> está en este repo.</p>
+<div class="grid g3">
+<div class="card"><h3>Los comandos del chat</h3><p><code>/promoavatar</code>, <code>/status</code>, <code>/aprovar</code>, <code>/refazer</code>, <code>/cancelar</code> y el parser de <code>|</code> e <code>--</code> son del bot. Aquí solo existe el <code>HELP.md</code>, que es el TEXTO de la ayuda — no su código.</p></div>
+<div class="card"><h3>El motor de fases</h3><p>Colas (<code>texto</code>, <code>io</code>, <code>navegador</code>, <code>render</code>), intentos, tiempos de espera, el bloqueo durante la creación y el propio concepto de compuerta. El <code>flow.json</code> solo <em>declara</em>; quien obedece es el bot (<code>inemaccbot/config/skills.json</code>).</p></div>
+<div class="card"><h3>Las tareas <code>heygen.*</code></h3><p><code>heygen.gerar</code>, <code>heygen.estudio</code>, <code>heygen.baixar</code> son nombres de funciones que viven en el bot (<code>inemaccbot/src/fila/tarefas/heygen.ts</code>) — incluso el <code>escolherUrl</code>, que decide entre el MP4 con subtítulos y el limpio.</p></div>
+<div class="card"><h3>El estado de los flujos</h3><p><code>state/artefatos/fluxos/A&lt;N&gt;/</code> se queda en el repo del BOT, no aquí. Es allí donde aterrizan los avatares descargados.</p></div>
+<div class="card"><h3>Las carpetas de canal</h3><p><code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code> es una regla derivada por el bot. La ruta no está escrita en ningún lado: aquí solo existe el nombre del canal.</p></div>
+<div class="card"><h3>Cómo se ARMA el reel</h3><p>Los colores, las fuentes, las posiciones, el recorte de silencios y los SFX corresponden a la skill global <code>~/.claude/skills/reel-edita-inema/SKILL.md</code>. Cambiar eso modifica TODO reel de la marca, incluidos los que se activan directamente en el chat.</p></div>
+</div>
+<p class="sub" style="margin-top:22px"><strong>La regla práctica:</strong> si la respuesta cambia el comportamiento de <em>todos</em> los flujos, no es de aquí. Si solo cambia promoavatar, es de aquí.</p>
+</div></section>
+<section id="params"><div class="wrap">
+<span class="chip">Parámetros</span>
+<h2>Los motores del reel, en tus manos</h2>
+<p class="sub">La fase 3 llama a <code>scripts/montar-reel.py</code>. Se puede ejecutar directamente, fuera del bot — útil para rehacer un reel sin gastar flujo.</p>
+<div class="grid g2">
+<div class="card">
+<h3>montar-reel.py</h3>
+<pre><span class="k">--avatar</span>        <span class="c"># obligatorio: el MP4 de HeyGen</span>
+<span class="k">--ws</span>            <span class="c"># obligatorio: workspace del reel</span>
+<span class="k">--alvo</span>          <span class="c"># público; se convierte en la seed-key de las imágenes</span>
+<span class="k">--textos</span>        <span class="c"># el &lt;publico&gt;.md (sección ## IMAGENS)</span>
+<span class="k">--template</span>      <span class="c"># override de diseño (prevalece sobre todo)</span>
+<span class="k">--flow --mapa</span>   <span class="c"># dónde buscar la plantilla y el mapa</span>
+<span class="k">--qualidade</span>     <span class="c"># high (predeterminado) · standard · draft</span>
+<span class="k">--cta --sem-cta</span> <span class="c"># el clip de cierre</span>
+<span class="k">--pular-preparo</span> <span class="c"># reutiliza la preparación de --ws</span>
+<span class="k">--saida</span>         <span class="c"># destino del MP4</span></pre>
+<p><code>preparar.py</code> tiene las mismas, más <code>--explicativo</code>, <code>--sem-imagens</code>, <code>--sem-transcricao</code> e <code>--sem-montar</code>.</p>
+</div>
+<div class="card">
+<h3>Ejemplos</h3>
+<pre><span class="c"># reel predeterminado — el diseño sale del mapa</span>
+<span class="k">python3 scripts/montar-reel.py</span> \
+  --avatar A34-jovens-v1.mp4 \
+  --ws /tmp/ws-A34-jovens --alvo jovens \
+  --textos textos/A34/jovens.md --flow flow.json
+
+<span class="c"># borrador económico, solo para ver el encuadre</span>
+... <span class="k">--qualidade draft --sem-cta</span>
+
+<span class="c"># forzar el diseño, ignorando el mapa</span>
+... <span class="k">--template imagem-plena</span>
+
+<span class="c"># cambiar el CTA sin regenerar la imagen</span>
+... <span class="k">--pular-preparo --saida saida/A34-jovens.mp4</span></pre>
+</div>
+</div>
+</div></section>
+<footer>
+<div class="wrap">
+<div class="pill">flow.json</div><div class="pill">prompts</div><div class="pill">HeyGen</div><div class="pill">inemaccbot</div><div class="pill">reel-edita-inema</div>
+<p style="margin-top:18px">promoavatar · repo de dominio del flujo <code>A#</code> ·
+      <a href="https://github.com/inematds/promoavatar">inematds/promoavatar</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+  (function(){
+    var KEY='promoavatar-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>

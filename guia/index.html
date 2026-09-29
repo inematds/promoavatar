@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>promoavatar — um reel por público, com portão humano</title>
-<meta name="description" content="Repo de domínio do fluxo /promoavatar do inemaccbot: um roteiro para cada um dos 12 públicos, você grava os avatares no HeyGen, o bot monta os reels e entrega em cada canal.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<meta content="Repo de domínio do fluxo /promoavatar do inemaccbot: um roteiro para cada um dos 12 públicos, você grava os avatares no HeyGen, o bot monta os reels e entrega em cada canal." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
     --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
@@ -90,296 +91,273 @@
   footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
 </style>
-</head>
-<body>
-
+<link href="https://inematds.github.io/promoavatar/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/promoavatar/guia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/promoavatar/guia/es/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <nav><div class="wrap">
-  <a class="brand" href="#top"><span class="emoji">🎬</span> promoavatar</a>
-  <span class="sep">|</span>
-  <span class="clubpro">
-    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
-    <span class="sep">-</span>
-    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
-  </span>
-  <div class="links">
-    <a class="sec" href="#oque">O que é</a>
-    <a class="sec" href="#fluxo">Como funciona</a>
-    <a class="sec" href="#pre">Pré-requisitos</a>
-    <a class="sec" href="#templates">Templates</a>
-    <a class="sec" href="#guia">Guia de uso</a>
-    <a class="sec" href="#onde">Onde mudar</a>
-    <a class="sec" href="#alterar">Como alterar</a>
-    <a class="sec" href="#naoedaqui">Não é daqui</a>
-    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
-    <a class="btn" href="https://github.com/inematds/promoavatar" target="_blank" rel="noopener">GitHub</a>
-  </div>
+<a class="brand" href="#top"><span class="emoji">🎬</span> promoavatar</a>
+<span class="sep">|</span>
+<span class="clubpro">
+<a class="inema" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+<span class="sep">-</span>
+<a class="pro" href="https://inema.pro" rel="noopener" target="_blank">PRO</a>
+</span>
+<div class="links">
+<a class="sec" href="#oque">O que é</a>
+<a class="sec" href="#fluxo">Como funciona</a>
+<a class="sec" href="#pre">Pré-requisitos</a>
+<a class="sec" href="#templates">Templates</a>
+<a class="sec" href="#guia">Guia de uso</a>
+<a class="sec" href="#onde">Onde mudar</a>
+<a class="sec" href="#alterar">Como alterar</a>
+<a class="sec" href="#naoedaqui">Não é daqui</a>
+<button aria-label="Alternar tema" class="tgl" id="themeToggle" title="Alternar tema">🌙</button>
+<a class="btn" href="https://github.com/inematds/promoavatar" rel="noopener" target="_blank">GitHub</a>
+</div>
 </div></nav>
-
 <header class="hero" id="top">
-  <div class="glow"></div>
-  <div class="wrap">
-    <div>
-      <span class="chip">Fluxo A# · 12 públicos · portão humano</span>
-      <h1>Um assunto vira <span class="amb">12 reels</span>, um para cada público.</h1>
-      <p class="lead">O bot escreve os roteiros e PARA. Você grava os avatares no HeyGen; quando terminar, libera e ele baixa, monta os reels 9:16 e entrega em cada canal.</p>
-      <div class="cta">
-        <a class="btn" href="#guia">Começar o guia</a>
-        <a class="btn ghost" href="https://github.com/inematds/promoavatar" target="_blank" rel="noopener">Ver no GitHub</a>
-      </div>
-    </div>
-    <figure><img src="assets/hero.png" alt="promoavatar — reels de divulgação por público"></figure>
-  </div>
+<div class="glow"></div>
+<div class="wrap">
+<div>
+<span class="chip">Fluxo A# · 12 públicos · portão humano</span>
+<h1>Um assunto vira <span class="amb">12 reels</span>, um para cada público.</h1>
+<p class="lead">O bot escreve os roteiros e PARA. Você grava os avatares no HeyGen; quando terminar, libera e ele baixa, monta os reels 9:16 e entrega em cada canal.</p>
+<div class="cta">
+<a class="btn" href="#guia">Começar o guia</a>
+<a class="btn ghost" href="https://github.com/inematds/promoavatar" rel="noopener" target="_blank">Ver no GitHub</a>
+</div>
+</div>
+<figure><img alt="promoavatar — reels de divulgação por público" src="assets/hero.png"/></figure>
+</div>
 </header>
-
 <section id="oque"><div class="wrap">
-  <span class="chip">O que é</span>
-  <h2>Definição de pipeline, não código</h2>
-  <p class="sub">Este é o repo de <strong>domínio</strong> do fluxo <code>/promoavatar</code> do <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. Aqui não há uma linha de TypeScript — só o <code>flow.json</code>, os prompts e a ajuda do chat. Um fluxo novo é uma entrada no registry do bot mais um repo como este.</p>
-  <div class="grid g3">
-    <div class="card"><h3>👥 Um roteiro por público</h3><p>São 12: pessoacomum · jovens · profissionais · mulheres · empreendedores · tecnicos · 40mais · 60mais · educadores · criadores · recolocacao · familia. Cada um com canal e gancho próprios.</p></div>
-    <div class="card"><h3>⏸️ Dois portões, nos lugares certos</h3><p>O bot para depois do <strong>texto</strong> (antes de gastar avatar) e depois do <strong>baixar</strong> (antes de gastar render). Discordar de um roteiro no portão custa um texto refeito, não 12 avatares gravados na mão.</p></div>
-    <div class="card"><h3>🧊 Congelado na criação</h3><p><code>flow.json</code>, prompts e opções são congelados quando o fluxo nasce. Editar vale para os PRÓXIMOS — nem <code>/refazer</code> pega a mudança.</p></div>
-  </div>
+<span class="chip">O que é</span>
+<h2>Definição de pipeline, não código</h2>
+<p class="sub">Este é o repo de <strong>domínio</strong> do fluxo <code>/promoavatar</code> do <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. Aqui não há uma linha de TypeScript — só o <code>flow.json</code>, os prompts e a ajuda do chat. Um fluxo novo é uma entrada no registry do bot mais um repo como este.</p>
+<div class="grid g3">
+<div class="card"><h3>👥 Um roteiro por público</h3><p>São 12: pessoacomum · jovens · profissionais · mulheres · empreendedores · tecnicos · 40mais · 60mais · educadores · criadores · recolocacao · familia. Cada um com canal e gancho próprios.</p></div>
+<div class="card"><h3>⏸️ Dois portões, nos lugares certos</h3><p>O bot para depois do <strong>texto</strong> (antes de gastar avatar) e depois do <strong>baixar</strong> (antes de gastar render). Discordar de um roteiro no portão custa um texto refeito, não 12 avatares gravados na mão.</p></div>
+<div class="card"><h3>🧊 Congelado na criação</h3><p><code>flow.json</code>, prompts e opções são congelados quando o fluxo nasce. Editar vale para os PRÓXIMOS — nem <code>/refazer</code> pega a mudança.</p></div>
+</div>
 </div></section>
-
 <section id="fluxo"><div class="wrap">
-  <span class="chip">Como funciona</span>
-  <h2>O ciclo, em uma tela</h2>
-  <p class="sub"><strong>Quatro fases e dois portões.</strong> Os portões são o <code>"pausa_apos": true</code> das fases <code>texto</code> e <code>baixar</code> no <code>flow.json</code> — o pipeline para sozinho ali e só anda quando você libera.</p>
-  <div class="flow">
-    <span>1. texto</span><span class="arr">→</span>
-    <span>⏸️ /aprovar A#N</span><span class="arr">→</span>
-    <span>2. avatar</span><span class="arr">→</span>
-    <span>2.5 baixar</span><span class="arr">→</span>
-    <span>⏸️ você confere</span><span class="arr">→</span>
-    <span>3. reel</span><span class="arr">→</span>
-    <span>entregue no canal</span>
-  </div>
-  <div class="grid g4" style="margin-top:28px">
-    <div class="card"><h3>1 · texto</h3><p>Um roteiro por público, gravado em <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>. O chat te manda cada roteiro junto com o TÍTULO exato do vídeo. <strong>Portão 1</strong> logo depois.</p></div>
-    <div class="card"><h3>2 · avatar</h3><p>Normalmente <strong>você</strong>, no estúdio do HeyGen. Existem 5 rotas para esta fase — a tabela abaixo.</p></div>
-    <div class="card"><h3>2.5 · baixar</h3><p>Acha o vídeo no HeyGen pelo título e baixa o MP4 — <strong>com</strong> a legenda queimada se o estúdio gravou com ela, limpo se não. Janela de 90 minutos. <strong>Portão 2</strong> depois.</p></div>
-    <div class="card"><h3>3 · reel</h3><p>Monta o reel 9:16 (capa de impacto com o gatilho do público) e <strong>entrega</strong> direto na pasta do canal daquele público. Não existe fase separada de publicação.</p></div>
-  </div>
-
-  <h3 style="margin-top:38px">A fase 2 tem 5 rotas — só uma roda por fluxo</h3>
-  <p class="sub">As quatro automáticas são fases com a chave <code>opcional</code> no <code>flow.json</code>. A quinta é a ausência de todas elas.</p>
-  <div class="grid g3">
-    <div class="card"><h3>✋ manual <span style="opacity:.6;font-weight:400">(padrão)</span></h3><p>Nenhuma flag ligada. Você grava no HeyGen e o bot nem sabe como — só espera o <code>/aprovar</code>.</p></div>
-    <div class="card"><h3>🖥️ estúdio</h3><p>Fase <code>estudio</code> (<code>opcional: estudio</code>). O bot abre/prepara o estúdio, você conclui.</p></div>
-    <div class="card"><h3>🔌 api</h3><p>Fase <code>gerar</code> (<code>opcional: api</code>). O BOT gera — gasta da carteira pré-paga da HeyGen, ~US$ 1 por minuto.</p></div>
-    <div class="card"><h3>🎟️ créditos</h3><p>Fase <code>gerar-creditos</code> (<code>opcional: creditos</code>). Mesma geração, consumindo créditos.</p></div>
-    <div class="card"><h3>🤖 navegador</h3><p>Fase <code>navega-avatar</code> (<code>opcional: navega</code>). Agente LLM clonando o <code>TEMPLATE-AVATAR</code>. A rota mais cara: <strong>~17,8k tokens por público</strong>, ~214k no fluxo de 12.</p></div>
-    <div class="card"><h3>🔑 o que amarra as 5</h3><p>O <strong>título</strong>. Em qualquer rota o vídeo tem que se chamar <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. Na rota manual isso é 100% responsabilidade sua.</p></div>
-  </div>
-  <p class="sub" style="margin-top:18px">Documentadas no chat: <code>| api</code> e <code>| estudio</code>. As flags de <code>creditos</code> e <code>navega</code> existem como fase no <code>flow.json</code> mas <strong>não estão no <code>HELP.md</code></strong> — confirme antes de usar.</p>
+<span class="chip">Como funciona</span>
+<h2>O ciclo, em uma tela</h2>
+<p class="sub"><strong>Quatro fases e dois portões.</strong> Os portões são o <code>"pausa_apos": true</code> das fases <code>texto</code> e <code>baixar</code> no <code>flow.json</code> — o pipeline para sozinho ali e só anda quando você libera.</p>
+<div class="flow">
+<span>1. texto</span><span class="arr">→</span>
+<span>⏸️ /aprovar A#N</span><span class="arr">→</span>
+<span>2. avatar</span><span class="arr">→</span>
+<span>2.5 baixar</span><span class="arr">→</span>
+<span>⏸️ você confere</span><span class="arr">→</span>
+<span>3. reel</span><span class="arr">→</span>
+<span>entregue no canal</span>
+</div>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><h3>1 · texto</h3><p>Um roteiro por público, gravado em <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>. O chat te manda cada roteiro junto com o TÍTULO exato do vídeo. <strong>Portão 1</strong> logo depois.</p></div>
+<div class="card"><h3>2 · avatar</h3><p>Normalmente <strong>você</strong>, no estúdio do HeyGen. Existem 5 rotas para esta fase — a tabela abaixo.</p></div>
+<div class="card"><h3>2.5 · baixar</h3><p>Acha o vídeo no HeyGen pelo título e baixa o MP4 — <strong>com</strong> a legenda queimada se o estúdio gravou com ela, limpo se não. Janela de 90 minutos. <strong>Portão 2</strong> depois.</p></div>
+<div class="card"><h3>3 · reel</h3><p>Monta o reel 9:16 (capa de impacto com o gatilho do público) e <strong>entrega</strong> direto na pasta do canal daquele público. Não existe fase separada de publicação.</p></div>
+</div>
+<h3 style="margin-top:38px">A fase 2 tem 5 rotas — só uma roda por fluxo</h3>
+<p class="sub">As quatro automáticas são fases com a chave <code>opcional</code> no <code>flow.json</code>. A quinta é a ausência de todas elas.</p>
+<div class="grid g3">
+<div class="card"><h3>✋ manual <span style="opacity:.6;font-weight:400">(padrão)</span></h3><p>Nenhuma flag ligada. Você grava no HeyGen e o bot nem sabe como — só espera o <code>/aprovar</code>.</p></div>
+<div class="card"><h3>🖥️ estúdio</h3><p>Fase <code>estudio</code> (<code>opcional: estudio</code>). O bot abre/prepara o estúdio, você conclui.</p></div>
+<div class="card"><h3>🔌 api</h3><p>Fase <code>gerar</code> (<code>opcional: api</code>). O BOT gera — gasta da carteira pré-paga da HeyGen, ~US$ 1 por minuto.</p></div>
+<div class="card"><h3>🎟️ créditos</h3><p>Fase <code>gerar-creditos</code> (<code>opcional: creditos</code>). Mesma geração, consumindo créditos.</p></div>
+<div class="card"><h3>🤖 navegador</h3><p>Fase <code>navega-avatar</code> (<code>opcional: navega</code>). Agente LLM clonando o <code>TEMPLATE-AVATAR</code>. A rota mais cara: <strong>~17,8k tokens por público</strong>, ~214k no fluxo de 12.</p></div>
+<div class="card"><h3>🔑 o que amarra as 5</h3><p>O <strong>título</strong>. Em qualquer rota o vídeo tem que se chamar <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. Na rota manual isso é 100% responsabilidade sua.</p></div>
+</div>
+<p class="sub" style="margin-top:18px">Documentadas no chat: <code>| api</code> e <code>| estudio</code>. As flags de <code>creditos</code> e <code>navega</code> existem como fase no <code>flow.json</code> mas <strong>não estão no <code>HELP.md</code></strong> — confirme antes de usar.</p>
 </div></section>
-
 <section id="templates"><div class="wrap">
-  <span class="chip">Templates do reel</span>
-  <h2>Quatro layouts, e ninguém escolhe na hora do render</h2>
-  <p class="sub">Ficam em <code>templates/</code>. Todos 1080×1920, fundo <code>#0E1116</code>, acento âmbar <code>#F5A623</code>.</p>
-  <div class="grid g4">
-    <div class="card"><h3>empilhado-capa <span style="opacity:.6;font-weight:400">(padrão)</span></h3><p>Topo: imagem 704px + <code>headline</code>. Meio: avatar 608px (áudio). Base: painel de texto 608px (<code>hook</code>). A capa de impacto — o formato original.</p></div>
-    <div class="card"><h3>empilhado-explicativo</h3><p>Igual, mas a base vira o <strong>vídeo explicativo</strong> daquela fala, mudo e em loop. Use quando o explicativo existe em vídeo.</p></div>
-    <div class="card"><h3>diptico</h3><p>Metade e metade: imagem 960px em cima, avatar 960px embaixo. <strong>Sem terceira faixa.</strong> Bom para mito×realidade e comparação, onde a imagem carrega o contraste.</p></div>
-    <div class="card"><h3>imagem-plena</h3><p>A imagem ocupa o quadro inteiro; o avatar entra num recorte no <strong>topo-direita</strong>. O rodapé é proibido: a interface da rede cobre o canto inferior e o avatar não apareceria.</p></div>
-  </div>
-  <div class="grid g2" style="margin-top:22px">
-    <div class="card">
-      <h3>O layout decorre do texto que você aprovou</h3>
-      <p>A fase 1 grava a linha <code>Formato escolhido:</code> em cada <code>&lt;publico&gt;.md</code> (o PASSO ZERO do prompt), e o <code>templates/mapa.json</code> traduz. No A#19 real isso deu <strong>9 formatos diferentes para 12 públicos</strong> — variação de verdade, sem ninguém decidir nada em tempo de render.</p>
+<span class="chip">Templates do reel</span>
+<h2>Quatro layouts, e ninguém escolhe na hora do render</h2>
+<p class="sub">Ficam em <code>templates/</code>. Todos 1080×1920, fundo <code>#0E1116</code>, acento âmbar <code>#F5A623</code>.</p>
+<div class="grid g4">
+<div class="card"><h3>empilhado-capa <span style="opacity:.6;font-weight:400">(padrão)</span></h3><p>Topo: imagem 704px + <code>headline</code>. Meio: avatar 608px (áudio). Base: painel de texto 608px (<code>hook</code>). A capa de impacto — o formato original.</p></div>
+<div class="card"><h3>empilhado-explicativo</h3><p>Igual, mas a base vira o <strong>vídeo explicativo</strong> daquela fala, mudo e em loop. Use quando o explicativo existe em vídeo.</p></div>
+<div class="card"><h3>diptico</h3><p>Metade e metade: imagem 960px em cima, avatar 960px embaixo. <strong>Sem terceira faixa.</strong> Bom para mito×realidade e comparação, onde a imagem carrega o contraste.</p></div>
+<div class="card"><h3>imagem-plena</h3><p>A imagem ocupa o quadro inteiro; o avatar entra num recorte no <strong>topo-direita</strong>. O rodapé é proibido: a interface da rede cobre o canto inferior e o avatar não apareceria.</p></div>
+</div>
+<div class="grid g2" style="margin-top:22px">
+<div class="card">
+<h3>O layout decorre do texto que você aprovou</h3>
+<p>A fase 1 grava a linha <code>Formato escolhido:</code> em cada <code>&lt;publico&gt;.md</code> (o PASSO ZERO do prompt), e o <code>templates/mapa.json</code> traduz. No A#19 real isso deu <strong>9 formatos diferentes para 12 públicos</strong> — variação de verdade, sem ninguém decidir nada em tempo de render.</p>
 <pre><span class="c"># precedência (resolvida pelo preparar.py)</span>
 --template explícito
   › template do ALVO no flow.json
     › mapa.json
       › template da raiz do flow.json</pre>
-    </div>
-    <div class="card">
-      <h3>headline e hook são obrigatórios</h3>
-      <p>Cada faixa declara uma <code>fonte</code>: <code>imagens</code>, <code>avatar</code>, <code>texto</code> ou <code>explicativo</code>. A <code>headline</code> vai no topo; o <code>hook</code> vai no painel de base. <strong>Layout com base e <code>hook</code> faltando = base preta</strong> — foi o A#23, com <code>hook</code> em 0 de 8 imagens. Por isso o prompt manda escrever <code>hook</code> sempre, mesmo nos layouts sem base.</p>
-    </div>
-  </div>
+</div>
+<div class="card">
+<h3>headline e hook são obrigatórios</h3>
+<p>Cada faixa declara uma <code>fonte</code>: <code>imagens</code>, <code>avatar</code>, <code>texto</code> ou <code>explicativo</code>. A <code>headline</code> vai no topo; o <code>hook</code> vai no painel de base. <strong>Layout com base e <code>hook</code> faltando = base preta</strong> — foi o A#23, com <code>hook</code> em 0 de 8 imagens. Por isso o prompt manda escrever <code>hook</code> sempre, mesmo nos layouts sem base.</p>
+</div>
+</div>
 </div></section>
-
 <section id="pre"><div class="wrap">
-  <span class="chip">Pré-requisitos</span>
-  <h2>O que precisa estar no ar</h2>
-  <p class="sub">Este repo sozinho não roda nada — ele é lido pelo bot. O que você precisa é o bot no ar, uma conta HeyGen e as pastas de canal.</p>
-  <div class="grid g3">
-    <div class="card"><h3>inemaccbot rodando</h3><p>O fluxo é executado pelo bot, com este repo declarado em <code>config/fluxos.json</code>.</p><pre><span class="c"># no chat autorizado</span>
+<span class="chip">Pré-requisitos</span>
+<h2>O que precisa estar no ar</h2>
+<p class="sub">Este repo sozinho não roda nada — ele é lido pelo bot. O que você precisa é o bot no ar, uma conta HeyGen e as pastas de canal.</p>
+<div class="grid g3">
+<div class="card"><h3>inemaccbot rodando</h3><p>O fluxo é executado pelo bot, com este repo declarado em <code>config/fluxos.json</code>.</p><pre><span class="c"># no chat autorizado</span>
 <span class="k">/fluxos</span>
 <span class="k">/promoavatar help</span></pre></div>
-    <div class="card"><h3>Conta HeyGen</h3><p>É onde você grava os avatares, na pausa entre as fases 1 e 2. O download casa por nome exato do vídeo.</p><pre><span class="c"># o título é o contrato</span>
+<div class="card"><h3>Conta HeyGen</h3><p>É onde você grava os avatares, na pausa entre as fases 1 e 2. O download casa por nome exato do vídeo.</p><pre><span class="c"># o título é o contrato</span>
 A&lt;N&gt;-&lt;publico&gt;-v1
 <span class="c"># ex.:</span> <span class="s">A8-mulheres-v1</span></pre></div>
-    <div class="card"><h3>Pasta do canal</h3><p>O canal do público vira pasta por regra derivada — o caminho não está escrito em lugar nenhum.</p><pre><span class="c"># criar um canal novo</span>
+<div class="card"><h3>Pasta do canal</h3><p>O canal do público vira pasta por regra derivada — o caminho não está escrito em lugar nenhum.</p><pre><span class="c"># criar um canal novo</span>
 <span class="k">mkdir -p</span> <span class="s">~/projetos/yt-pub-lives33/imports/videos</span></pre></div>
-  </div>
+</div>
 </div></section>
-
 <section id="guia"><div class="wrap">
-  <span class="chip">Guia de uso · passo a passo</span>
-  <h2>Do assunto ao reel entregue</h2>
-  <p class="sub">Todos os comandos são digitados no chat do Telegram, no bot autorizado.</p>
-
-  <div class="step"><div class="b">1</div><div>
-    <h3>Confira em sombra antes de gastar</h3>
-    <p><code>| sombra</code> imprime fase × público × fila × tarefa e <strong>não enfileira nada</strong>. Rodar os 12 públicos são 12 avatares gravados na mão — o normal é filtrar.</p>
+<span class="chip">Guia de uso · passo a passo</span>
+<h2>Do assunto ao reel entregue</h2>
+<p class="sub">Todos os comandos são digitados no chat do Telegram, no bot autorizado.</p>
+<div class="step"><div class="b">1</div><div>
+<h3>Confira em sombra antes de gastar</h3>
+<p><code>| sombra</code> imprime fase × público × fila × tarefa e <strong>não enfileira nada</strong>. Rodar os 12 públicos são 12 avatares gravados na mão — o normal é filtrar.</p>
 <pre><span class="k">/promoavatar Não comece aprendendo ferramentas | sombra</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">2</div><div>
-    <h3>Crie o fluxo</h3>
-    <p>Sem filtro vão os 12. Para testar barato, um público só. O <code>|</code> e o <code>--</code> convivem — mas campo escrito sem um dos dois é RECUSADO, não vira assunto em silêncio.</p>
+</div></div>
+<div class="step"><div class="b">2</div><div>
+<h3>Crie o fluxo</h3>
+<p>Sem filtro vão os 12. Para testar barato, um público só. O <code>|</code> e o <code>--</code> convivem — mas campo escrito sem um dos dois é RECUSADO, não vira assunto em silêncio.</p>
 <pre><span class="k">/promoavatar &lt;assunto&gt;</span>                        <span class="c"># os 12 públicos</span>
 <span class="k">/promoavatar &lt;assunto&gt; | alvos=mulheres</span>       <span class="c"># barato p/ testar</span>
 <span class="k">/promoavatar &lt;assunto&gt; --alvo=jovens --alvo=40mais</span>
 <span class="k">/promoavatar &lt;assunto&gt; | legenda</span>              <span class="c"># padrão é SEM legenda</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">3</div><div>
-    <h3>Escreva a sua posição no assunto</h3>
-    <p>Assunto em aberto ("isso é bom ou ruim?") fazia o agente explicar os dois lados e fechar morno — e ninguém comenta com equilibrista. Hoje o prompt manda cravar um lado e dizer no resumo qual foi. <strong>A posição que você mandar vence a dele</strong>, então escrever a sua continua sendo o melhor caminho.</p>
+</div></div>
+<div class="step"><div class="b">3</div><div>
+<h3>Escreva a sua posição no assunto</h3>
+<p>Assunto em aberto ("isso é bom ou ruim?") fazia o agente explicar os dois lados e fechar morno — e ninguém comenta com equilibrista. Hoje o prompt manda cravar um lado e dizer no resumo qual foi. <strong>A posição que você mandar vence a dele</strong>, então escrever a sua continua sendo o melhor caminho.</p>
 <pre><span class="c"># melhor: sua posição + um fato concreto + a pergunta</span>
 <span class="c"># que você quer nos comentários</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">4</div><div>
-    <h3>Revise os roteiros no portão</h3>
-    <p>O bot manda cada roteiro no chat e PARA. É aqui que discordar é barato: <code>/refazer</code> custa um texto, não um render.</p>
+</div></div>
+<div class="step"><div class="b">4</div><div>
+<h3>Revise os roteiros no portão</h3>
+<p>O bot manda cada roteiro no chat e PARA. É aqui que discordar é barato: <code>/refazer</code> custa um texto, não um render.</p>
 <pre><span class="k">/status A#7</span>              <span class="c"># fase × público, e os títulos</span>
 <span class="k">/refazer A#7 mulheres</span>    <span class="c"># só o público que não ficou bom</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">5</div><div>
-    <h3>Grave os avatares com o título exato</h3>
-    <p>No estúdio, o vídeo precisa se chamar exatamente <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. O download casa por igualdade exata de string: nome diferente = vídeo nunca encontrado, e a fase expira em 90 minutos. O chat te manda o título pronto justamente para não ser digitado de memória.</p>
+</div></div>
+<div class="step"><div class="b">5</div><div>
+<h3>Grave os avatares com o título exato</h3>
+<p>No estúdio, o vídeo precisa se chamar exatamente <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. O download casa por igualdade exata de string: nome diferente = vídeo nunca encontrado, e a fase expira em 90 minutos. O chat te manda o título pronto justamente para não ser digitado de memória.</p>
 <pre><span class="s">A7-mulheres-v1</span>
 <span class="s">A7-jovens-v1</span>
 <span class="c"># a legenda do avatar se decide AQUI: gravou com ela, o reel</span>
 <span class="c"># sai com ela — e não há como removê-la depois. Nesse caso,</span>
 <span class="c"># crie o fluxo SEM | legenda, senão saem duas.</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">6</div><div>
-    <h3>Libere o portão</h3>
-    <p>"Terminei minha parte." O bot então baixa os vídeos, monta os reels e entrega em cada canal.</p>
+</div></div>
+<div class="step"><div class="b">6</div><div>
+<h3>Libere o portão</h3>
+<p>"Terminei minha parte." O bot então baixa os vídeos, monta os reels e entrega em cada canal.</p>
 <pre><span class="k">/aprovar A#7</span>     <span class="c"># sinônimos: /pronto, /aprovado, /ok</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">7</div><div>
-    <h3>Acompanhe até o link final</h3>
-    <p>Se um público falhar, refaça só ele — as tentativas dele são zeradas. Cancelar é sobre o pipeline: o que já foi criado no estúdio continua lá.</p>
+</div></div>
+<div class="step"><div class="b">7</div><div>
+<h3>Acompanhe até o link final</h3>
+<p>Se um público falhar, refaça só ele — as tentativas dele são zeradas. Cancelar é sobre o pipeline: o que já foi criado no estúdio continua lá.</p>
 <pre><span class="k">/status A#7</span>
 <span class="k">/refazer A#7 mulheres</span>
 <span class="k">/cancelar A#7 [publico]</span></pre>
-  </div></div>
+</div></div>
 </div></section>
-
 <section id="onde"><div class="wrap">
-  <span class="chip">Onde mudar o quê</span>
-  <h2>Domínio, bot e skill são camadas diferentes</h2>
-  <p class="sub">A regra: o que é decisão de público ou de campanha mora neste repo; o que é identidade visual da marca mora na skill. A skill é global — mexer nela muda TODO reel, inclusive os disparados direto no chat.</p>
-  <div class="grid g2">
-    <div class="card">
-      <h3>Mora aqui (domínio)</h3>
-      <p>O canal e o gancho de cada público, como os roteiros são escritos, o que este pipeline pede ao reel, o clipe de CTA do fim e a ajuda do chat.</p>
+<span class="chip">Onde mudar o quê</span>
+<h2>Domínio, bot e skill são camadas diferentes</h2>
+<p class="sub">A regra: o que é decisão de público ou de campanha mora neste repo; o que é identidade visual da marca mora na skill. A skill é global — mexer nela muda TODO reel, inclusive os disparados direto no chat.</p>
+<div class="grid g2">
+<div class="card">
+<h3>Mora aqui (domínio)</h3>
+<p>O canal e o gancho de cada público, como os roteiros são escritos, o que este pipeline pede ao reel, o clipe de CTA do fim e a ajuda do chat.</p>
 <pre><span class="k">flow.json</span>              <span class="c"># alvos.&lt;publico&gt;.canal / .gatilho</span>
 <span class="k">prompts/fase1-texto.md</span> <span class="c"># como os roteiros são escritos</span>
 <span class="k">cta/cta-9x16.mp4</span>       <span class="c"># troque o arquivo</span>
 <span class="k">HELP.md</span>                <span class="c"># /promoavatar help</span></pre>
-    </div>
-    <div class="card">
-      <h3>Mora fora</h3>
-      <p>Como o reel é MONTADO (cores, fontes, posições, SFX) é da skill global; filas, timeouts, modelo e esforço são do bot.</p>
+</div>
+<div class="card">
+<h3>Mora fora</h3>
+<p>Como o reel é MONTADO (cores, fontes, posições, SFX) é da skill global; filas, timeouts, modelo e esforço são do bot.</p>
 <pre><span class="c"># skill (global — muda a marca inteira)</span>
 ~/.claude/skills/reel-edita-inema/SKILL.md
 <span class="c"># bot</span>
 inemaccbot/prompts/reel.md
 inemaccbot/config/skills.json</pre>
-    </div>
-  </div>
-  <p class="sub" style="margin-top:22px"><strong>Melhorar o reel, na ordem do mais barato:</strong> trocar o clipe de <code>cta/</code> → ajustar o <code>entrega</code> do <code>flow.json</code> → e só então mexer na skill.</p>
-  <div class="grid g2" style="margin-top:10px">
-    <div class="card"><h3>Para quem, e onde fica</h3><p>O domínio diz <strong>para quem</strong> (<code>mulheres</code> tem <code>"canal": "lives4"</code>); o bot sabe <strong>onde</strong> — sempre <code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code>. Nunca ponha caminho no <code>flow.json</code>.</p></div>
-    <div class="card"><h3>Legenda: o que é nosso e o que não é</h3><p>Quem decide a legenda do avatar é o <strong>estúdio</strong>: o download pega a versão legendada quando ela existe, e a limpa quando não. A opção <code>| legenda</code> é outra — é a que o nosso editor desenha. Ligar as duas faz sair <strong>duas</strong>; e legenda queimada vem enquadrada para 16:9, sem remoção possível depois.</p></div>
-  </div>
+</div>
+</div>
+<p class="sub" style="margin-top:22px"><strong>Melhorar o reel, na ordem do mais barato:</strong> trocar o clipe de <code>cta/</code> → ajustar o <code>entrega</code> do <code>flow.json</code> → e só então mexer na skill.</p>
+<div class="grid g2" style="margin-top:10px">
+<div class="card"><h3>Para quem, e onde fica</h3><p>O domínio diz <strong>para quem</strong> (<code>mulheres</code> tem <code>"canal": "lives4"</code>); o bot sabe <strong>onde</strong> — sempre <code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code>. Nunca ponha caminho no <code>flow.json</code>.</p></div>
+<div class="card"><h3>Legenda: o que é nosso e o que não é</h3><p>Quem decide a legenda do avatar é o <strong>estúdio</strong>: o download pega a versão legendada quando ela existe, e a limpa quando não. A opção <code>| legenda</code> é outra — é a que o nosso editor desenha. Ligar as duas faz sair <strong>duas</strong>; e legenda queimada vem enquadrada para 16:9, sem remoção possível depois.</p></div>
+</div>
 </div></section>
-
 <section id="alterar"><div class="wrap">
-  <span class="chip">Como alterar</span>
-  <h2>Prompts, templates, alvos e destino</h2>
-  <p class="sub">As quatro coisas que você mais vai querer mexer. Todas seguem a mesma trava: <strong>o que vale é o que existia quando o fluxo nasceu</strong> — editar vale para os PRÓXIMOS, e nem <code>/refazer</code> pega a mudança.</p>
-
-  <div class="grid g2">
-    <div class="card">
-      <h3>1 · O prompt <span style="opacity:.6;font-weight:400">(como os roteiros são escritos)</span></h3>
-      <p>Arquivo: <code>prompts/fase1-texto.md</code>. É o documento inteiro que a fase 1 entrega ao agente — CONTEXTO FIXO, PASSO ZERO, OFICINA DE GANCHO, as 16 REGRAS DE ESCRITA e o contrato de saída.</p>
-      <p><strong>Duas armadilhas:</strong> os 11 formatos do PASSO ZERO são <em>chaves</em> do <code>templates/mapa.json</code> — renomeou aqui, renomeie lá. E as cinco variáveis injetadas pelo bot não podem sumir:</p>
+<span class="chip">Como alterar</span>
+<h2>Prompts, templates, alvos e destino</h2>
+<p class="sub">As quatro coisas que você mais vai querer mexer. Todas seguem a mesma trava: <strong>o que vale é o que existia quando o fluxo nasceu</strong> — editar vale para os PRÓXIMOS, e nem <code>/refazer</code> pega a mudança.</p>
+<div class="grid g2">
+<div class="card">
+<h3>1 · O prompt <span style="opacity:.6;font-weight:400">(como os roteiros são escritos)</span></h3>
+<p>Arquivo: <code>prompts/fase1-texto.md</code>. É o documento inteiro que a fase 1 entrega ao agente — CONTEXTO FIXO, PASSO ZERO, OFICINA DE GANCHO, as 16 REGRAS DE ESCRITA e o contrato de saída.</p>
+<p><strong>Duas armadilhas:</strong> os 11 formatos do PASSO ZERO são <em>chaves</em> do <code>templates/mapa.json</code> — renomeou aqui, renomeie lá. E as cinco variáveis injetadas pelo bot não podem sumir:</p>
 <pre>{{input}}    <span class="c"># o assunto</span>
 {{publicos}} <span class="c"># os alvos REAIS do fluxo</span>
 {{pasta}}    <span class="c"># onde gravar (absoluto)</span>
 {{ref}} {{saida}}</pre>
-      <p>A skill <code>inemaclub-textos</code> dá a <strong>estrutura</strong> do arquivo; este prompt dá as <strong>regras</strong> e sobrescreve a skill. Mudar a estrutura é na skill — e vale para todo mundo.</p>
-    </div>
-
-    <div class="card">
-      <h3>2 · Os templates <span style="opacity:.6;font-weight:400">(o layout do reel)</span></h3>
-      <p><strong>a) mudar como um layout se parece</strong> → edite <code>templates/&lt;nome&gt;.json</code>. Três regras:</p>
-      <p><code>y</code> + <code>altura</code> das faixas têm que <strong>fechar 1920</strong> (<code>y</code> é posição absoluta, elas não se empilham sozinhas — faixa faltando é faixa preta). A <code>fonte</code> é o que alimenta a faixa: <code>imagens</code> · <code>avatar</code> · <code>texto</code> (o <code>hook</code>) · <code>explicativo</code>. E <code>escurecer</code> é o véu sob a headline: baixo demais, o texto some no claro da foto.</p>
-      <p><strong>b) mudar qual formato cai em qual layout</strong> → <code>templates/mapa.json</code>. As chaves existem <strong>com e sem acento</strong>, de propósito:</p>
+<p>A skill <code>inemaclub-textos</code> dá a <strong>estrutura</strong> do arquivo; este prompt dá as <strong>regras</strong> e sobrescreve a skill. Mudar a estrutura é na skill — e vale para todo mundo.</p>
+</div>
+<div class="card">
+<h3>2 · Os templates <span style="opacity:.6;font-weight:400">(o layout do reel)</span></h3>
+<p><strong>a) mudar como um layout se parece</strong> → edite <code>templates/&lt;nome&gt;.json</code>. Três regras:</p>
+<p><code>y</code> + <code>altura</code> das faixas têm que <strong>fechar 1920</strong> (<code>y</code> é posição absoluta, elas não se empilham sozinhas — faixa faltando é faixa preta). A <code>fonte</code> é o que alimenta a faixa: <code>imagens</code> · <code>avatar</code> · <code>texto</code> (o <code>hook</code>) · <code>explicativo</code>. E <code>escurecer</code> é o véu sob a headline: baixo demais, o texto some no claro da foto.</p>
+<p><strong>b) mudar qual formato cai em qual layout</strong> → <code>templates/mapa.json</code>. As chaves existem <strong>com e sem acento</strong>, de propósito:</p>
 <pre>"mito versus realidade": "diptico",
 "comparação": "diptico",
 "comparacao": "diptico"</pre>
-      <p>Formato fora do mapa cai no padrão da raiz — não inventa layout. <strong>c)</strong> Para fixar o layout de um público, use o campo <code>template</code> dentro do alvo.</p>
-    </div>
-
-    <div class="card">
-      <h3>3 · Os alvos <span style="opacity:.6;font-weight:400">(os públicos)</span></h3>
-      <p>Arquivo: <code>flow.json</code>, chave <code>alvos</code>.</p>
+<p>Formato fora do mapa cai no padrão da raiz — não inventa layout. <strong>c)</strong> Para fixar o layout de um público, use o campo <code>template</code> dentro do alvo.</p>
+</div>
+<div class="card">
+<h3>3 · Os alvos <span style="opacity:.6;font-weight:400">(os públicos)</span></h3>
+<p>Arquivo: <code>flow.json</code>, chave <code>alvos</code>.</p>
 <pre>"empreendedores": {
   "canal": "lives1",
   "gatilho": "Transforme IA em redução de custos…",
   "template": "diptico"   <span class="c"># opcional</span>
 }</pre>
-      <p>O <code>gatilho</code> é a dor daquele público (a regra 2 do prompt manda usá-lo). Adicionar = mais uma entrada; remover = apague. Para rodar só alguns sem mexer em nada, use <code>--alvo=</code> na criação.</p>
-      <p><strong>A chave é contrato, não rótulo:</strong> ela vira o arquivo <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>, o título <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>, o <code>--alvo</code> do reel e o <code>seed-key</code> das imagens. Minúsculas, sem acento, sem espaço e <strong>sem hífen</strong> — foi por isso que <code>pessoa-comum</code> virou <code>pessoacomum</code>.</p>
-    </div>
-
-    <div class="card">
-      <h3>4 · O destino <span style="opacity:.6;font-weight:400">(onde o reel é entregue)</span></h3>
-      <p>Não existe caminho escrito em lugar nenhum: o destino é <strong>derivado do <code>canal</code></strong> do público.</p>
+<p>O <code>gatilho</code> é a dor daquele público (a regra 2 do prompt manda usá-lo). Adicionar = mais uma entrada; remover = apague. Para rodar só alguns sem mexer em nada, use <code>--alvo=</code> na criação.</p>
+<p><strong>A chave é contrato, não rótulo:</strong> ela vira o arquivo <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>, o título <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>, o <code>--alvo</code> do reel e o <code>seed-key</code> das imagens. Minúsculas, sem acento, sem espaço e <strong>sem hífen</strong> — foi por isso que <code>pessoa-comum</code> virou <code>pessoacomum</code>.</p>
+</div>
+<div class="card">
+<h3>4 · O destino <span style="opacity:.6;font-weight:400">(onde o reel é entregue)</span></h3>
+<p>Não existe caminho escrito em lugar nenhum: o destino é <strong>derivado do <code>canal</code></strong> do público.</p>
 <pre>&lt;canal&gt; → ~/projetos/yt-pub-&lt;canal&gt;/imports/videos</pre>
-      <p>Trocar o canal = editar <code>alvos.&lt;publico&gt;.canal</code>. Criar canal novo = criar a pasta, só isso:</p>
+<p>Trocar o canal = editar <code>alvos.&lt;publico&gt;.canal</code>. Criar canal novo = criar a pasta, só isso:</p>
 <pre><span class="k">mkdir -p</span> <span class="s">~/projetos/yt-pub-lives33/imports/videos</span></pre>
-      <p>Dois públicos podem dividir o mesmo canal. Mudar a <strong>regra</strong> (a pasta base, o <code>imports/videos</code>) <strong>não é aqui</strong> — é o <code>destinos.ts</code> do bot, e muda todos os fluxos. Para um reel avulso fora do fluxo, use <code>montar-reel.py --saida &lt;caminho&gt;</code>.</p>
-    </div>
-  </div>
+<p>Dois públicos podem dividir o mesmo canal. Mudar a <strong>regra</strong> (a pasta base, o <code>imports/videos</code>) <strong>não é aqui</strong> — é o <code>destinos.ts</code> do bot, e muda todos os fluxos. Para um reel avulso fora do fluxo, use <code>montar-reel.py --saida &lt;caminho&gt;</code>.</p>
+</div>
+</div>
 </div></section>
-
 <section id="naoedaqui"><div class="wrap">
-  <span class="chip">Não é deste repo</span>
-  <h2>O que é do inemaccbot, e não daqui</h2>
-  <p class="sub">Este repo é <strong>domínio</strong>: ele declara o pipeline. Quem <em>executa</em> é o <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. Procurar aqui uma coisa que é de lá é a perda de tempo mais comum — a lista abaixo é justamente o que <strong>não</strong> está neste repo.</p>
-  <div class="grid g3">
-    <div class="card"><h3>Os comandos do chat</h3><p><code>/promoavatar</code>, <code>/status</code>, <code>/aprovar</code>, <code>/refazer</code>, <code>/cancelar</code> e o parser de <code>|</code> e <code>--</code> são do bot. Aqui só existe o <code>HELP.md</code>, que é o TEXTO da ajuda — não o código dela.</p></div>
-    <div class="card"><h3>O motor de fases</h3><p>Filas (<code>texto</code>, <code>io</code>, <code>navegador</code>, <code>render</code>), tentativas, timeouts, o congelamento na criação e o próprio conceito de portão. O <code>flow.json</code> só <em>declara</em>; quem obedece é o bot (<code>inemaccbot/config/skills.json</code>).</p></div>
-    <div class="card"><h3>As tarefas <code>heygen.*</code></h3><p><code>heygen.gerar</code>, <code>heygen.estudio</code>, <code>heygen.baixar</code> são nomes de funções que vivem no bot (<code>inemaccbot/src/fila/tarefas/heygen.ts</code>) — inclusive o <code>escolherUrl</code>, que decide entre o MP4 legendado e o limpo.</p></div>
-    <div class="card"><h3>O estado dos fluxos</h3><p><code>state/artefatos/fluxos/A&lt;N&gt;/</code> fica no repo do BOT, não aqui. É lá que os avatares baixados aterrissam.</p></div>
-    <div class="card"><h3>As pastas de canal</h3><p><code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code> é regra derivada pelo bot. O caminho não está escrito em lugar nenhum — aqui só existe o nome do canal.</p></div>
-    <div class="card"><h3>Como o reel é MONTADO</h3><p>Cores, fontes, posições, corte de silêncio e SFX são da skill global <code>~/.claude/skills/reel-edita-inema/SKILL.md</code>. Mexer ali muda TODO reel da marca, inclusive os disparados direto no chat.</p></div>
-  </div>
-  <p class="sub" style="margin-top:22px"><strong>A regra de bolso:</strong> se a resposta muda o comportamento de <em>todos</em> os fluxos, não é daqui. Se muda só o promoavatar, é daqui.</p>
+<span class="chip">Não é deste repo</span>
+<h2>O que é do inemaccbot, e não daqui</h2>
+<p class="sub">Este repo é <strong>domínio</strong>: ele declara o pipeline. Quem <em>executa</em> é o <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. Procurar aqui uma coisa que é de lá é a perda de tempo mais comum — a lista abaixo é justamente o que <strong>não</strong> está neste repo.</p>
+<div class="grid g3">
+<div class="card"><h3>Os comandos do chat</h3><p><code>/promoavatar</code>, <code>/status</code>, <code>/aprovar</code>, <code>/refazer</code>, <code>/cancelar</code> e o parser de <code>|</code> e <code>--</code> são do bot. Aqui só existe o <code>HELP.md</code>, que é o TEXTO da ajuda — não o código dela.</p></div>
+<div class="card"><h3>O motor de fases</h3><p>Filas (<code>texto</code>, <code>io</code>, <code>navegador</code>, <code>render</code>), tentativas, timeouts, o congelamento na criação e o próprio conceito de portão. O <code>flow.json</code> só <em>declara</em>; quem obedece é o bot (<code>inemaccbot/config/skills.json</code>).</p></div>
+<div class="card"><h3>As tarefas <code>heygen.*</code></h3><p><code>heygen.gerar</code>, <code>heygen.estudio</code>, <code>heygen.baixar</code> são nomes de funções que vivem no bot (<code>inemaccbot/src/fila/tarefas/heygen.ts</code>) — inclusive o <code>escolherUrl</code>, que decide entre o MP4 legendado e o limpo.</p></div>
+<div class="card"><h3>O estado dos fluxos</h3><p><code>state/artefatos/fluxos/A&lt;N&gt;/</code> fica no repo do BOT, não aqui. É lá que os avatares baixados aterrissam.</p></div>
+<div class="card"><h3>As pastas de canal</h3><p><code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code> é regra derivada pelo bot. O caminho não está escrito em lugar nenhum — aqui só existe o nome do canal.</p></div>
+<div class="card"><h3>Como o reel é MONTADO</h3><p>Cores, fontes, posições, corte de silêncio e SFX são da skill global <code>~/.claude/skills/reel-edita-inema/SKILL.md</code>. Mexer ali muda TODO reel da marca, inclusive os disparados direto no chat.</p></div>
+</div>
+<p class="sub" style="margin-top:22px"><strong>A regra de bolso:</strong> se a resposta muda o comportamento de <em>todos</em> os fluxos, não é daqui. Se muda só o promoavatar, é daqui.</p>
 </div></section>
-
 <section id="params"><div class="wrap">
-  <span class="chip">Parâmetros</span>
-  <h2>Os motores do reel, na mão</h2>
-  <p class="sub">A fase 3 chama <code>scripts/montar-reel.py</code>. Dá para rodar direto, fora do bot — útil para refazer um reel sem gastar fluxo.</p>
-  <div class="grid g2">
-    <div class="card">
-      <h3>montar-reel.py</h3>
+<span class="chip">Parâmetros</span>
+<h2>Os motores do reel, na mão</h2>
+<p class="sub">A fase 3 chama <code>scripts/montar-reel.py</code>. Dá para rodar direto, fora do bot — útil para refazer um reel sem gastar fluxo.</p>
+<div class="grid g2">
+<div class="card">
+<h3>montar-reel.py</h3>
 <pre><span class="k">--avatar</span>        <span class="c"># obrigatório: o MP4 do HeyGen</span>
 <span class="k">--ws</span>            <span class="c"># obrigatório: workspace do reel</span>
 <span class="k">--alvo</span>          <span class="c"># público; vira o seed-key das imagens</span>
@@ -390,10 +368,10 @@ inemaccbot/config/skills.json</pre>
 <span class="k">--cta --sem-cta</span> <span class="c"># o clipe de fecho</span>
 <span class="k">--pular-preparo</span> <span class="c"># reaproveita o preparo do --ws</span>
 <span class="k">--saida</span>         <span class="c"># destino do MP4</span></pre>
-      <p><code>preparar.py</code> tem as mesmas, mais <code>--explicativo</code>, <code>--sem-imagens</code>, <code>--sem-transcricao</code> e <code>--sem-montar</code>.</p>
-    </div>
-    <div class="card">
-      <h3>Exemplos</h3>
+<p><code>preparar.py</code> tem as mesmas, mais <code>--explicativo</code>, <code>--sem-imagens</code>, <code>--sem-transcricao</code> e <code>--sem-montar</code>.</p>
+</div>
+<div class="card">
+<h3>Exemplos</h3>
 <pre><span class="c"># reel padrão — layout sai do mapa</span>
 <span class="k">python3 scripts/montar-reel.py</span> \
   --avatar A34-jovens-v1.mp4 \
@@ -408,19 +386,17 @@ inemaccbot/config/skills.json</pre>
 
 <span class="c"># trocar CTA sem regerar imagem</span>
 ... <span class="k">--pular-preparo --saida saida/A34-jovens.mp4</span></pre>
-    </div>
-  </div>
+</div>
+</div>
 </div></section>
-
 <footer>
-  <div class="wrap">
-    <div class="pill">flow.json</div><div class="pill">prompts</div><div class="pill">HeyGen</div><div class="pill">inemaccbot</div><div class="pill">reel-edita-inema</div>
-    <p style="margin-top:18px">promoavatar · repo de domínio do fluxo <code>A#</code> ·
+<div class="wrap">
+<div class="pill">flow.json</div><div class="pill">prompts</div><div class="pill">HeyGen</div><div class="pill">inemaccbot</div><div class="pill">reel-edita-inema</div>
+<p style="margin-top:18px">promoavatar · repo de domínio do fluxo <code>A#</code> ·
       <a href="https://github.com/inematds/promoavatar">inematds/promoavatar</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
-  </div>
+</div>
 </footer>
-
 <script>
   (function(){
     var KEY='promoavatar-theme';

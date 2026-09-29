@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>promoavatar — one reel per audience, with a human gate</title>
+<meta content="Flow domain repo for /promoavatar in inemaccbot: one script for each of the 12 audiences; you record the avatars in HeyGen, the bot puts together the reels, and delivers them to each channel." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;display:block}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;margin-bottom:26px}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style>
+<link href="https://inematds.github.io/promoavatar/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/promoavatar/guia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/promoavatar/guia/es/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav><div class="wrap">
+<a class="brand" href="#top"><span class="emoji">🎬</span> promoavatar</a>
+<span class="sep">|</span>
+<span class="clubpro">
+<a class="inema" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+<span class="sep">-</span>
+<a class="pro" href="https://inema.pro" rel="noopener" target="_blank">PRO</a>
+</span>
+<div class="links">
+<a class="sec" href="#oque">What it is</a>
+<a class="sec" href="#fluxo">How it works</a>
+<a class="sec" href="#pre">Prerequisites</a>
+<a class="sec" href="#templates">Templates</a>
+<a class="sec" href="#guia">User guide</a>
+<a class="sec" href="#onde">Where to change it</a>
+<a class="sec" href="#alterar">How to change it</a>
+<a class="sec" href="#naoedaqui">Not from here</a>
+<button aria-label="Toggle theme" class="tgl" id="themeToggle" title="Toggle theme">🌙</button>
+<a class="btn" href="https://github.com/inematds/promoavatar" rel="noopener" target="_blank">GitHub</a>
+</div>
+</div></nav>
+<header class="hero" id="top">
+<div class="glow"></div>
+<div class="wrap">
+<div>
+<span class="chip">Flow A# · 12 audiences · human gate</span>
+<h1>One topic becomes <span class="amb">12 reels</span>, one for each audience.</h1>
+<p class="lead">The bot writes the scripts and STOPS. You record the avatars in HeyGen; when you’re done, open the gate and it downloads, assembles the 9:16 reels, and delivers them to each channel.</p>
+<div class="cta">
+<a class="btn" href="#guia">Start the guide</a>
+<a class="btn ghost" href="https://github.com/inematds/promoavatar" rel="noopener" target="_blank">View on GitHub</a>
+</div>
+</div>
+<figure><img alt="promoavatar — promotional reels by audience" src="../assets/hero.png"/></figure>
+</div>
+</header>
+<section id="oque"><div class="wrap">
+<span class="chip">What it is</span>
+<h2>Pipeline definition, not code</h2>
+<p class="sub">This is the repo for <strong>domain</strong> of the flow <code>/promoavatar</code> of the <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. There isn’t a single line of TypeScript here — only the <code>flow.json</code>, the prompts, and the chat help. A new workflow is an entry in the bot’s registry plus a repo like this one.</p>
+<div class="grid g3">
+<div class="card"><h3>👥 One script per audience</h3><p>There are 12: pessoacomum · jovens · profissionais · mulheres · empreendedores · tecnicos · 40mais · 60mais · educadores · criadores · recolocacao · familia. Each has its own channel and hook.</p></div>
+<div class="card"><h3>⏸️ Two gates, in the right places</h3><p>The bot stops after the <strong>text</strong> (before spending on the avatar) and after the <strong>download</strong> (before spending on the render). Disagreeing with a script at the gate costs a rewritten text, not 12 avatars recorded by hand.</p></div>
+<div class="card"><h3>🧊 Frozen at creation</h3><p><code>flow.json</code>, prompts, and options are frozen when the workflow is created. Editing applies to FUTURE ones — not even <code>/refazer</code> gets the change.</p></div>
+</div>
+</div></section>
+<section id="fluxo"><div class="wrap">
+<span class="chip">How it works</span>
+<h2>The cycle, on one screen</h2>
+<p class="sub"><strong>Four phases and two gates.</strong> The gates are the <code>"pausa_apos": true</code> of the phases <code>texto</code> e <code>baixar</code> in the <code>flow.json</code> — the pipeline stops there on its own and only proceeds when you approve.</p>
+<div class="flow">
+<span>1. text</span><span class="arr">→</span>
+<span>⏸️ /aprovar A#N</span><span class="arr">→</span>
+<span>2. avatar</span><span class="arr">→</span>
+<span>2.5 download</span><span class="arr">→</span>
+<span>⏸️ you review</span><span class="arr">→</span>
+<span>3. reel</span><span class="arr">→</span>
+<span>delivered in the channel</span>
+</div>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><h3>1 · text</h3><p>One script per audience, recorded in <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>. The chat sends you each script along with the video’s exact TITLE. <strong>Gate 1</strong> right after.</p></div>
+<div class="card"><h3>2 · avatar</h3><p>Normally <strong>you</strong>, in the HeyGen studio. There are 5 routes for this phase — the table below.</p></div>
+<div class="card"><h3>2.5 · download</h3><p>Finds the video in HeyGen by title and downloads the MP4 — <strong>with</strong> the caption burned in if the studio recorded it with one, clean if not. 90-minute window. <strong>Gate 2</strong> afterward.</p></div>
+<div class="card"><h3>3 · reel</h3><p>Build the 9:16 reel (an impactful cover with the audience’s trigger) and <strong>delivery</strong> directly into that audience’s channel folder. There is no separate publishing phase.</p></div>
+</div>
+<h3 style="margin-top:38px">Phase 2 has 5 routes — only one runs per flow</h3>
+<p class="sub">The four automated ones are phases with the key <code>opcional</code> in the <code>flow.json</code>. The fifth is the absence of all of them.</p>
+<div class="grid g3">
+<div class="card"><h3>✋ manual <span style="opacity:.6;font-weight:400">(default)</span></h3><p>No flags are enabled. You record in HeyGen and the bot has no idea how — it just waits for the <code>/aprovar</code>.</p></div>
+<div class="card"><h3>🖥️ studio</h3><p>Phase <code>estudio</code> (<code>opcional: estudio</code>). The bot opens/prepares the studio; you finish.</p></div>
+<div class="card"><h3>🔌 api</h3><p>Phase <code>gerar</code> (<code>opcional: api</code>). The BOT generates — using HeyGen’s prepaid wallet, ~US$ 1 per minute.</p></div>
+<div class="card"><h3>🎟️ credits</h3><p>Phase <code>gerar-creditos</code> (<code>opcional: creditos</code>). Same generation, consuming credits.</p></div>
+<div class="card"><h3>🤖 browser</h3><p>Phase <code>navega-avatar</code> (<code>opcional: navega</code>). LLM agent cloning the <code>TEMPLATE-AVATAR</code>. The most expensive route: <strong>~17.8k tokens per audience</strong>, ~214k in workflow 12.</p></div>
+<div class="card"><h3>🔑 what ties the 5 together</h3><p>O <strong>title</strong>. For any route, the video must be named <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. On the manual route, this is 100% your responsibility.</p></div>
+</div>
+<p class="sub" style="margin-top:18px">Documented in chat: <code>| api</code> e <code>| estudio</code>. The flags for <code>creditos</code> e <code>navega</code> exist as a phase in the <code>flow.json</code> but <strong>aren’t in the <code>HELP.md</code></strong> — confirm before using.</p>
+</div></section>
+<section id="templates"><div class="wrap">
+<span class="chip">Reel templates</span>
+<h2>Four layouts, and no one chooses at render time</h2>
+<p class="sub">Are stored in <code>templates/</code>. All 1080×1920, background <code>#0E1116</code>, amber accent <code>#F5A623</code>.</p>
+<div class="grid g4">
+<div class="card"><h3>stacked-cover <span style="opacity:.6;font-weight:400">(default)</span></h3><p>Top: 704px image + <code>headline</code>. Middle: 608px avatar (audio). Base: 608px text panel (<code>hook</code>). The high-impact cover — the original format.</p></div>
+<div class="card"><h3>stacked-explanatory</h3><p>Same, but the base becomes the <strong>explainer video</strong> of that speech, muted and on a loop. Use when the explainer exists as a video.</p></div>
+<div class="card"><h3>diptych</h3><p>Half and half: 960px image on top, 960px avatar on the bottom. <strong>No third track.</strong> Good for myth vs. reality and comparisons, where the image carries the contrast.</p></div>
+<div class="card"><h3>full-image</h3><p>The image fills the frame; the avatar goes into a crop in the <strong>top-right</strong>. The footer is prohibited: the network interface covers the bottom corner, and the avatar would not appear.</p></div>
+</div>
+<div class="grid g2" style="margin-top:22px">
+<div class="card">
+<h3>The layout follows from the text you approved</h3>
+<p>Phase 1 writes the line <code>Formato escolhido:</code> in each <code>&lt;publico&gt;.md</code> (the prompt’s ZERO STEP), and the <code>templates/mapa.json</code> translate. In the real A#19, this gave <strong>9 different formats for 12 audiences</strong> — a real variation, with no one deciding anything at render time.</p>
+<pre><span class="c"># precedence (resolved by preparar.py)</span>
+--template explícito
+  › template do ALVO no flow.json
+    › mapa.json
+      › template da raiz do flow.json</pre>
+</div>
+<div class="card">
+<h3>headline and hook are required</h3>
+<p>Each track declares a <code>fonte</code>: <code>imagens</code>, <code>avatar</code>, <code>texto</code> or <code>explicativo</code>. A <code>headline</code> goes at the top; the <code>hook</code> goes in the base panel. <strong>Layout with base and <code>hook</code> missing = black base</strong> — it was A#23, with <code>hook</code> in 0 of 8 images. That’s why the prompt says to write <code>hook</code> always, even in layouts without a base.</p>
+</div>
+</div>
+</div></section>
+<section id="pre"><div class="wrap">
+<span class="chip">Prerequisites</span>
+<h2>What needs to be live</h2>
+<p class="sub">This repo doesn’t run anything on its own — the bot reads it. What you need is the bot running, a HeyGen account, and the channel folders.</p>
+<div class="grid g3">
+<div class="card"><h3>inemaccbot running</h3><p>The bot runs the flow, with this repo declared in <code>config/fluxos.json</code>.</p><pre><span class="c"># in the authorized chat</span>
+<span class="k">/fluxos</span>
+<span class="k">/promoavatar help</span></pre></div>
+<div class="card"><h3>HeyGen account</h3><p>This is where you record the avatars, during the break between phases 1 and 2. The download matches by the video's exact name.</p><pre><span class="c"># the title is the contract</span>
+A&lt;N&gt;-&lt;publico&gt;-v1
+<span class="c"># e.g.:</span> <span class="s">A8-mulheres-v1</span></pre></div>
+<div class="card"><h3>Channel folder</h3><p>The audience’s channel becomes a folder based on a derived rule — the path isn’t written down anywhere.</p><pre><span class="c"># create a new channel</span>
+<span class="k">mkdir -p</span> <span class="s">~/projetos/yt-pub-lives33/imports/videos</span></pre></div>
+</div>
+</div></section>
+<section id="guia"><div class="wrap">
+<span class="chip">User guide · step by step</span>
+<h2>From topic to delivered reel</h2>
+<p class="sub">All commands are typed in the Telegram chat with the authorized bot.</p>
+<div class="step"><div class="b">1</div><div>
+<h3>Check in shadow mode before spending</h3>
+<p><code>| sombra</code> prints phase × audience × queue × task and <strong>doesn’t queue anything</strong>. Running all 12 audiences means 12 avatars recorded by hand — normally, you filter.</p>
+<pre><span class="k">/promoavatar Não comece aprendendo ferramentas | sombra</span></pre>
+</div></div>
+<div class="step"><div class="b">2</div><div>
+<h3>Create the flow</h3>
+<p>All 12 go through without filtering. To test cheaply, use just one audience. The <code>|</code> e o <code>--</code> coexist—but a field entered without either one is REJECTED; it doesn’t silently become a topic.</p>
+<pre><span class="k">/promoavatar &lt;assunto&gt;</span>                        <span class="c"># the 12 audiences</span>
+<span class="k">/promoavatar &lt;assunto&gt; | alvos=mulheres</span>       <span class="c"># cheap for testing</span>
+<span class="k">/promoavatar &lt;assunto&gt; --alvo=jovens --alvo=40mais</span>
+<span class="k">/promoavatar &lt;assunto&gt; | legenda</span>              <span class="c"># default is WITHOUT caption</span></pre>
+</div></div>
+<div class="step"><div class="b">3</div><div>
+<h3>Write your position on the topic</h3>
+<p>An open-ended topic (“is this good or bad?”) made the agent explain both sides and end lukewarm — and nobody comments on a fence-sitter. Now the prompt tells it to take a clear side and say which one in the summary. <strong>The position you specify takes precedence over its own</strong>, so writing your own is still the best approach.</p>
+<pre><span class="c"># best: your position + a concrete fact + the question</span>
+<span class="c"># what you want in the comments</span></pre>
+</div></div>
+<div class="step"><div class="b">4</div><div>
+<h3>Review the scripts at the gate</h3>
+<p>The bot sends each script in the chat and STOPS. This is where disagreeing is cheap: <code>/refazer</code> costs one text, not a render.</p>
+<pre><span class="k">/status A#7</span>              <span class="c"># phase × audience, and the titles</span>
+<span class="k">/refazer A#7 mulheres</span>    <span class="c"># just the audience that didn’t turn out well</span></pre>
+</div></div>
+<div class="step"><div class="b">5</div><div>
+<h3>Record the avatars using the exact title</h3>
+<p>In the studio, the video must be named exactly <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>. The download matches by exact string equality: a different name means the video is never found, and the phase expires in 90 minutes. The chat sends you the title ready to use precisely so you don’t have to type it from memory.</p>
+<pre><span class="s">A7-mulheres-v1</span>
+<span class="s">A7-jovens-v1</span>
+<span class="c"># the avatar caption is decided HERE: record with it, and the reel</span>
+<span class="c"># it comes with it — and there’s no way to remove it afterward. In that case,</span>
+<span class="c"># create the flow WITHOUT | caption, or you’ll get two.</span></pre>
+</div></div>
+<div class="step"><div class="b">6</div><div>
+<h3>Open the gate</h3>
+<p>“I’m done with my part.” The bot then downloads the videos, assembles the reels, and delivers them to each channel.</p>
+<pre><span class="k">/aprovar A#7</span>     <span class="c"># synonyms: /pronto, /aprovado, /ok</span></pre>
+</div></div>
+<div class="step"><div class="b">7</div><div>
+<h3>Follow it through to the final link</h3>
+<p>If an audience fails, redo only that one—its attempts are reset. Canceling applies to the pipeline: what has already been created in the studio stays there.</p>
+<pre><span class="k">/status A#7</span>
+<span class="k">/refazer A#7 mulheres</span>
+<span class="k">/cancelar A#7 [publico]</span></pre>
+</div></div>
+</div></section>
+<section id="onde"><div class="wrap">
+<span class="chip">Where to change what</span>
+<h2>Domain, bot, and skill are different layers</h2>
+<p class="sub">The rule: decisions about the audience or campaign belong in this repo; brand visual identity belongs in the skill. The skill is global — changing it affects EVERY reel, including those triggered directly in chat.</p>
+<div class="grid g2">
+<div class="card">
+<h3>Lives here (domain)</h3>
+<p>The channel and hook for each audience, how the scripts are written, what this pipeline asks of the reel, the closing CTA clip, and help from the chat.</p>
+<pre><span class="k">flow.json</span>              <span class="c"># targets.&lt;audience&gt;.channel / .trigger</span>
+<span class="k">prompts/fase1-texto.md</span> <span class="c"># how the scripts are written</span>
+<span class="k">cta/cta-9x16.mp4</span>       <span class="c"># replace the file</span>
+<span class="k">HELP.md</span>                <span class="c"># /promoavatar help</span></pre>
+</div>
+<div class="card">
+<h3>Lives elsewhere</h3>
+<p>How the reel is ASSEMBLED (colors, fonts, positions, SFX) is handled by the global skill; queues, timeouts, model, and effort are handled by the bot.</p>
+<pre><span class="c"># skill (global — changes the entire brand)</span>
+~/.claude/skills/reel-edita-inema/SKILL.md
+<span class="c"># bot</span>
+inemaccbot/prompts/reel.md
+inemaccbot/config/skills.json</pre>
+</div>
+</div>
+<p class="sub" style="margin-top:22px"><strong>Improve the reel, from cheapest to most expensive:</strong> replace the clip from <code>cta/</code> → adjust the <code>entrega</code> of the <code>flow.json</code> → and only then edit the skill.</p>
+<div class="grid g2" style="margin-top:10px">
+<div class="card"><h3>For whom, and where it lives</h3><p>The domain says <strong>for whom</strong> (<code>mulheres</code> has <code>"canal": "lives4"</code>); the bot knows <strong>where</strong> — always <code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code>. Never put a path in the <code>flow.json</code>.</p></div>
+<div class="card"><h3>Legend: what’s ours and what isn’t</h3><p>Who decides the avatar’s caption is the <strong>studio</strong>: the download grabs the subtitled version when available, and the clean version when it isn’t. The option <code>| legenda</code> is another one — it's the one our editor draws. Turning both on makes <strong>two</strong>; and burned-in captions are framed for 16:9, with no way to remove them afterward.</p></div>
+</div>
+</div></section>
+<section id="alterar"><div class="wrap">
+<span class="chip">How to change it</span>
+<h2>Prompts, templates, targets, and destination</h2>
+<p class="sub">The four things you’ll most want to change. They all follow the same constraint: <strong>what matters is what existed when the flow was created</strong> — editing applies to FUTURE ones, and not even <code>/refazer</code> gets the change.</p>
+<div class="grid g2">
+<div class="card">
+<h3>1 · The prompt <span style="opacity:.6;font-weight:400">(how the scripts are written)</span></h3>
+<p>File: <code>prompts/fase1-texto.md</code>. It is the entire document that phase 1 delivers to the agent — FIXED CONTEXT, STEP ZERO, HOOK WORKSHOP, the 16 WRITING RULES, and the output contract.</p>
+<p><strong>Two pitfalls:</strong> the 11 formats from STEP ZERO are <em>keys</em> of the <code>templates/mapa.json</code> — renamed it here, rename it there. And the five variables injected by the bot must not disappear:</p>
+<pre>{{input}}    <span class="c"># the topic</span>
+{{publicos}} <span class="c"># the flow’s REAL targets</span>
+{{pasta}}    <span class="c"># where to record (absolute)</span>
+{{ref}} {{saida}}</pre>
+<p>The skill <code>inemaclub-textos</code> provides the <strong>structure</strong> of the file; this prompt provides the <strong>rules</strong> and overrides the skill. Change the structure in the skill—and it applies to everyone.</p>
+</div>
+<div class="card">
+<h3>2 · The templates <span style="opacity:.6;font-weight:400">(the reel layout)</span></h3>
+<p><strong>a) change what a layout looks like</strong> → edit <code>templates/&lt;nome&gt;.json</code>. Three rules:</p>
+<p><code>y</code> + <code>altura</code> of the tracks have to <strong>close 1920</strong> (<code>y</code> is absolute positioning; they don't stack by themselves — a missing strip means a black strip). The <code>fonte</code> is what feeds the strip: <code>imagens</code> · <code>avatar</code> · <code>texto</code> (o <code>hook</code>) · <code>explicativo</code>. E <code>escurecer</code> is the veil beneath the headline: too low, and the text disappears against the light parts of the photo.</p>
+<p><strong>b) change which format goes into which layout</strong> → <code>templates/mapa.json</code>. The keys exist <strong>with and without accents</strong>, on purpose:</p>
+<pre>"mito versus realidade": "diptico",
+"comparação": "diptico",
+"comparacao": "diptico"</pre>
+<p>A format outside the map falls back to the root default — don’t invent a layout. <strong>c)</strong> To lock in an audience’s layout, use the field <code>template</code> within the target.</p>
+</div>
+<div class="card">
+<h3>3 · The targets <span style="opacity:.6;font-weight:400">(the audiences)</span></h3>
+<p>File: <code>flow.json</code>, key <code>alvos</code>.</p>
+<pre>"empreendedores": {
+  "canal": "lives1",
+  "gatilho": "Transforme IA em redução de custos…",
+  "template": "diptico"   <span class="c"># optional</span>
+}</pre>
+<p>O <code>gatilho</code> is that audience's pain point (prompt rule 2 says to use it). Adding means one more entry; removing means delete it. To run just a few without changing anything, use <code>--alvo=</code> during creation.</p>
+<p><strong>The key is a contract, not a label:</strong> it becomes the file <code>textos/A&lt;N&gt;/&lt;publico&gt;.md</code>, the title <code>A&lt;N&gt;-&lt;publico&gt;-v1</code>, o <code>--alvo</code> of the reel and the <code>seed-key</code> of the images. Lowercase, no accents, no spaces, and <strong>without a hyphen</strong> — that's why <code>pessoa-comum</code> became <code>pessoacomum</code>.</p>
+</div>
+<div class="card">
+<h3>4 · The destination <span style="opacity:.6;font-weight:400">(where the reel is delivered)</span></h3>
+<p>There’s no path written down anywhere: the destination is <strong>derived from the <code>canal</code></strong> of the audience.</p>
+<pre>&lt;canal&gt; → ~/projetos/yt-pub-&lt;canal&gt;/imports/videos</pre>
+<p>To change the channel = edit <code>alvos.&lt;publico&gt;.canal</code>. Creating a new channel = creating the folder, that’s all:</p>
+<pre><span class="k">mkdir -p</span> <span class="s">~/projetos/yt-pub-lives33/imports/videos</span></pre>
+<p>Two audiences can share the same channel. Changing the <strong>rule</strong> (the base folder, the <code>imports/videos</code>) <strong>isn’t here</strong> — é o <code>destinos.ts</code> of the bot, and changes all flows. For a one-off reel outside the flow, use <code>montar-reel.py --saida &lt;caminho&gt;</code>.</p>
+</div>
+</div>
+</div></section>
+<section id="naoedaqui"><div class="wrap">
+<span class="chip">Not from this repo</span>
+<h2>What belongs to inemaccbot, not here</h2>
+<p class="sub">This repo is <strong>domain</strong>: it declares the pipeline. Whoever <em>runs</em> é o <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. Looking here for something that belongs there is the most common waste of time — the list below is exactly what <strong>no</strong> is in this repo.</p>
+<div class="grid g3">
+<div class="card"><h3>The chat commands</h3><p><code>/promoavatar</code>, <code>/status</code>, <code>/aprovar</code>, <code>/refazer</code>, <code>/cancelar</code> and the <code>|</code> e <code>--</code> belong to the bot. Here, only the <code>HELP.md</code>, which is the HELP TEXT — not its code.</p></div>
+<div class="card"><h3>The phase engine</h3><p>Queues (<code>texto</code>, <code>io</code>, <code>navegador</code>, <code>render</code>), retries, timeouts, freezing during creation, and the very concept of a gate. The <code>flow.json</code> only <em>declares</em>; the bot is the one that follows it (<code>inemaccbot/config/skills.json</code>).</p></div>
+<div class="card"><h3>The tasks <code>heygen.*</code></h3><p><code>heygen.gerar</code>, <code>heygen.estudio</code>, <code>heygen.baixar</code> are names of functions that live in the bot (<code>inemaccbot/src/fila/tarefas/heygen.ts</code>) — including the <code>escolherUrl</code>, which decides between the captioned and clean MP4.</p></div>
+<div class="card"><h3>The flow status</h3><p><code>state/artefatos/fluxos/A&lt;N&gt;/</code> is in the BOT repo, not here. That’s where the downloaded avatars land.</p></div>
+<div class="card"><h3>The channel folders</h3><p><code>~/projetos/yt-pub-&lt;canal&gt;/imports/videos</code> is a rule derived by the bot. The path isn't written anywhere — only the channel name exists here.</p></div>
+<div class="card"><h3>How the reel is ASSEMBLED</h3><p>Colors, fonts, positions, silence trimming, and SFX are handled by the global skill <code>~/.claude/skills/reel-edita-inema/SKILL.md</code>. Changing that affects EVERY reel for the brand, including those triggered directly in chat.</p></div>
+</div>
+<p class="sub" style="margin-top:22px"><strong>The rule of thumb:</strong> if the answer changes the behavior of <em>all</em> the flows, not from here. If only promoavatar changes, it’s from here.</p>
+</div></section>
+<section id="params"><div class="wrap">
+<span class="chip">Parameters</span>
+<h2>The reel engines, at your fingertips</h2>
+<p class="sub">Phase 3 calls <code>scripts/montar-reel.py</code>. You can run it directly, outside the bot — useful for redoing a reel without spending a workflow.</p>
+<div class="grid g2">
+<div class="card">
+<h3>montar-reel.py</h3>
+<pre><span class="k">--avatar</span>        <span class="c"># required: the HeyGen MP4</span>
+<span class="k">--ws</span>            <span class="c"># required: the reel workspace</span>
+<span class="k">--alvo</span>          <span class="c"># audience; becomes the image seed-key</span>
+<span class="k">--textos</span>        <span class="c"># the &lt;audience&gt;.md (## IMAGES section)</span>
+<span class="k">--template</span>      <span class="c"># layout override (takes precedence over everything)</span>
+<span class="k">--flow --mapa</span>   <span class="c"># where to resolve the template and map</span>
+<span class="k">--qualidade</span>     <span class="c"># high (default) · standard · draft</span>
+<span class="k">--cta --sem-cta</span> <span class="c"># the closing clip</span>
+<span class="k">--pular-preparo</span> <span class="c"># reuses the --ws setup</span>
+<span class="k">--saida</span>         <span class="c"># MP4 destination</span></pre>
+<p><code>preparar.py</code> has the same ones, plus <code>--explicativo</code>, <code>--sem-imagens</code>, <code>--sem-transcricao</code> e <code>--sem-montar</code>.</p>
+</div>
+<div class="card">
+<h3>Examples</h3>
+<pre><span class="c"># standard reel — layout comes from the map</span>
+<span class="k">python3 scripts/montar-reel.py</span> \
+  --avatar A34-jovens-v1.mp4 \
+  --ws /tmp/ws-A34-jovens --alvo jovens \
+  --textos textos/A34/jovens.md --flow flow.json
+
+<span class="c"># cheap draft, just to check the framing</span>
+... <span class="k">--qualidade draft --sem-cta</span>
+
+<span class="c"># force the layout, ignoring the map</span>
+... <span class="k">--template imagem-plena</span>
+
+<span class="c"># change the CTA without regenerating the image</span>
+... <span class="k">--pular-preparo --saida saida/A34-jovens.mp4</span></pre>
+</div>
+</div>
+</div></section>
+<footer>
+<div class="wrap">
+<div class="pill">flow.json</div><div class="pill">prompts</div><div class="pill">HeyGen</div><div class="pill">inemaccbot</div><div class="pill">reel-edita-inema</div>
+<p style="margin-top:18px">promoavatar · flow domain repo <code>A#</code> ·
+      <a href="https://github.com/inematds/promoavatar">inematds/promoavatar</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+  (function(){
+    var KEY='promoavatar-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>

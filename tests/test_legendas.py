@@ -100,6 +100,25 @@ def test_palavra_curtissima_nao_invade_a_proxima():
     assert r[0]["start"] + r[0]["dur"] == pytest.approx(r[1]["start"])
 
 
+def test_asr_fora_de_ordem_nao_gera_duracao_negativa():
+    """Bug de 01/10/2026: 803 de 1.966 reels tinham palavra com dur <= 0 (o ASR devolve
+    palavras fora de ordem ou com o mesmo inicio). No C184 'APARECER' ficou presa na
+    tela e as palavras seguintes foram desenhadas por cima dela."""
+    r = legendas.montar(tr(("aparecer", 24.70, 24.9), ("seu", 24.64, 24.7),
+                           ("agente", 25.0, 25.4)), set())
+    assert [p["palavra"] for p in r] == ["SEU", "APARECER", "AGENTE"]
+    assert all(p["dur"] > 0 for p in r)
+    for a, b in zip(r, r[1:]):
+        assert a["start"] + a["dur"] <= b["start"] + 1e-9
+
+
+def test_mesmo_inicio_empurra_a_seguinte_sem_sobrepor():
+    r = legendas.montar(tr(("um", 1.0, 1.2), ("dois", 1.0, 1.3), ("tres", 1.5, 1.8)), set())
+    assert all(p["dur"] > 0 for p in r)
+    for a, b in zip(r, r[1:]):
+        assert a["start"] + a["dur"] <= b["start"] + 1e-9
+
+
 def test_ultima_palavra_tem_duracao_propria():
     r = legendas.montar(tr(("fim", 2.0, 2.6)), set())
     assert r[-1]["dur"] > 0
